@@ -1,0 +1,16 @@
+<?wpl version="1.0"?>
+<smil>
+    <head>
+        <meta name="Generator" content="Microsoft Windows Media Player -- 12.0.14393.447"/>
+        <meta name="ItemCount" content="3"/>
+        <title>Driving</title>
+    </head>
+    <body>
+        <seq>
+            <media src="https://selene.hud.ac.uk/u1273400/vid/Driving002.aac"/>
+            <media src="https://selene.hud.ac.uk/u1273400/vid/Driving001.mp3"/>
+            <media src="https://selene.hud.ac.uk/u1273400/vid/driving003.mp3"/>
+            <media src="https://selene.hud.ac.uk/u1273400/vid/driving004.mp3"/>
+        </seq>
+    </body>
+</smil>
