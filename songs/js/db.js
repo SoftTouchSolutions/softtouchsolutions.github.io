@@ -50,13 +50,12 @@ function run_query(q) {
 function serverGet() {
 	var st = hchcs.sterm();
 	hchcs.show_loader(true);
-	const q = [{$limit:pageSize},{$sort:{order_date:-1}},{$skip:hchcs.pageSkip*pageSize}];
-	if(getCount)
-		run_query(q).then(docs=>{ 
-			if(search_mode){
+	const q1 = [{$sort:{order_date:-1}}];
+	const q = [{$sort:{order_date:-1}},{$skip:hchcs.pageSkip*pageSize},{$limit:pageSize}];
+	if(getCount || search_mode)
+		run_query(q1).then(docs=>{ 
 					console.log("found "+docs.length+" songs!");
 					hchcs.pageCount=Math.floor(docs.length/pageSize);//+1;
-			}
 		}).catch(err=> {
 				//dbg("Ooops! Something went wrong!", response.errors[0].message);
 				console.error(err);
