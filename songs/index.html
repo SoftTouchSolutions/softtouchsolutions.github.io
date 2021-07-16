@@ -111,9 +111,12 @@
                 <h1><span data-bind="text:title"></span></h1>
 	</div><!-- /header -->
 
-	<div role="main" class="ui-content">
-		
-        <iframe data-bind="attr: {src:vurl}" frameborder="0" allowfullscreen></iframe>      
+	<div role="main" class="ui-content wrapper">
+            <div class="h_iframe">
+                <!-- a transparent image is preferable -->
+                <img class="ratio" src="http://placehold.it/16x9"/>
+                <iframe data-bind="attr: {src:vurl}" frameborder="0" allowfullscreen></iframe>
+            </div>
 	</div><!-- /content -->
 </div>
 <!-- /ko -->
