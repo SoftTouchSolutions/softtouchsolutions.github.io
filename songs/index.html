@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hope Connection Huddersfield Choir Songs</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/vis.min.js"></script>
+	<script src="js/toastr.js"></script>
+    <link rel="favicon" type= "img/jpg" href="images/pp2.jpg"/>
+    <link rel="stylesheet" type="text/css" href="css/toastr.css" />
+    <link rel="stylesheet" type="text/css" href="css/vis.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="js/knockout-3.3.0.js"></script>
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.2.min.css" />
+	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/lodash.compat.js"></script>
+    <script type="text/javascript" src="js/minimongo.js"></script>
+    <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.9.0/stitch.js"></script>
+    <script type="text/javascript" src="js/db.js"></script>
+    <script type="text/javascript" src="js/mvvm.js"></script>
+    <script>
+        $(document).ready(function() { 
+            serverGet();
+            page_load();
+            ko.applyBindings(hchcs);
+       }); 
+    </script>
+   <style>
+        #me{
+            /*border-radius: 50%;*/
+            display: block;
+            margin: 0 auto 20px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div data-role="page" id="home">
+
+	<div data-role="header">
+		<h1>HC Choir Songs</h1>
+        <div class="loader" data-bind="visible:show_loader">
+          <span class="l-1"></span>
+          <span class="l-2"></span>
+          <span class="l-3"></span>
+          <span class="l-4"></span>
+          <span class="l-5"></span>
+          <span class="l-6"></span>
+        </div>
+        </div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+        <img src="images/pp.jpg" width="200" height="200" id="me">
+        
+        <input placeholder="Search for songs by title. Enter string here and hit search" data-bind="value:sterm"/>
+        <button data-bind="click:search">Search</button>
+        <div class="ui-grid-a">
+            <div class="ui-block-a"><button type="button" data-theme="c" data-bind="click:prevPage">Previous</button></div>
+            <div class="ui-block-b"><button type="button" data-theme="c" data-bind="click:nextPage">Next</button></div>	   
+        </div>
+        <ul data-role="listview" data-inset="true" data-bind="foreach:songs">
+            <li><a href="#currsong" data-transition="slide" data-bind="text:title, event:{mouseup:song_selected}"></a></li>
+        </ul>
+        
+        
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>&copy; 2016 Soft Touch Solutions</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- ko with:curr_song -->
+<div data-role="page" id="currsong">
+   
+	<div data-role="header">
+		<a href="#home" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" data-transition="slide" data-direction="reverse">No text</a>
+                <h4><a data-bind="attr:{href:aurl}, text:title"></a></h4>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+            <audio controls loop id="Player">
+              <source  data-bind="attr: {src:aurl}" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><button type="button" data-theme="c" data-bind="click:rwd">&lt;&lt; Skip Back</button></div>
+                <div class="ui-block-b"><button type="button" data-theme="c" data-bind="click:fwd">Skip Forward &gt;&gt;</button></div>	   
+            </div>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#youwatch" data-transition="slide">Watch Youtube Video</a></li>
+            </ul>
+            <textarea rows="4" cols="50" data-bind="value:lyrics, event: { onkeyup: chkSave }"></textarea>
+            <button type="button" data-bind="click:save">Update</button>
+            <!--pre data-bind="text: lyrics" ></pre-->
+            <!--div data-bind="text: lyrics2" ></div-->
+        
+	</div><!-- /content -->
+</div>
+<!-- /ko  -->
+
+<!-- ko with:curr_song -->
+<div data-role="page" id="youwatch">
+
+	<div data-role="header">
+		<a href="#currsong" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" data-transition="slide" data-direction="reverse">No text</a>
+                <h1><span data-bind="text:title"></span></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+        <iframe data-bind="attr: {src:vurl}" frameborder="0" allowfullscreen></iframe>      
+	</div><!-- /content -->
+</div>
+<!-- /ko -->
+</body>
+</html>
