@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Test 5 Fitting by least squares: Step s02</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:10,odz:2},qzc:["p02","s12","t02","q02","s02"],sww:["AKCDT","ADDDT","ATDDT","AGEDT","AREDT","ABFDT","AIGDT","ANGDT","ASGDT","AXGDT"],pok:{AKCDT:{ydd:0,uey:"\u0030\u002E\u0035\u0036\u0036\u0030",eho:"",aek:false},ADDDT:{ydd:0,uey:"\u0035\u002E\u0030\u0036\u0034\u0033",eho:"",aek:false},ATDDT:{ydd:0,uey:"\u0030\u002E\u0034\u0033\u0039\u0033",eho:"",aek:false},AGEDT:{ydd:0,uey:"\u0032\u002E\u0035\u0039\u0039\u0039",eho:"",aek:false},AREDT:{ydd:0,uey:"\u0036\u002E\u0037\u0035\u0039\u0035",eho:"",aek:false},ABFDT:{ydd:0,uey:"\u0030\u002E\u0036\u0032\u0030\u0031",eho:"",aek:false},AIGDT:{ydd:0,uey:"\u0031\u0034\u002E\u0039\u0035\u0030\u0035",eho:"",aek:false},ANGDT:{ydd:0,uey:"\u0032\u002E\u0039\u0033\u0038\u0033",eho:"",aek:false},ASGDT:{ydd:0,uey:"\u0037\u002E\u0035\u0034\u0037\u0039",eho:"",aek:false},AXGDT:{ydd:0,uey:"\u0033\u0037\u002E\u0036\u0036\u0038\u0039",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm"><span class="rac">k</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">Taking logs</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">k</span></td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">a</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">This is of the form</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">c</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">where </td>
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc">,   </td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">P</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"><span class="rac">Y</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">126</td>
+<td class="eqc" style="text-align:right">1.86</td>
+<td class="eqc" style="text-align:right">2.1003</td>
+<td class="eqc" style="text-align:right">0.2695</td>
+<td class="eqc" style="text-align:right"><span id="AKCDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="text-align:right">4.4113</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">178</td>
+<td class="eqc" style="text-align:right">2.34</td>
+<td class="eqc" style="text-align:right">2.2504</td>
+<td class="eqc" style="text-align:right">0.3692</td>
+<td class="eqc" style="text-align:right">0.8308</td>
+<td class="eqc" style="text-align:right"><span id="ADDDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">263</td>
+<td class="eqc" style="text-align:right">2.75</td>
+<td class="eqc" style="text-align:right">2.4200</td>
+<td class="eqc" style="text-align:right"><span id="ATDDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="text-align:right">1.0631</td>
+<td class="eqc" style="text-align:right">5.8564</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">398</td>
+<td class="eqc" style="text-align:right">3.63</td>
+<td class="eqc" style="text-align:right"><span id="AGEDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="text-align:right">0.5599</td>
+<td class="eqc" style="text-align:right">1.4557</td>
+<td class="eqc" style="text-align:right"><span id="AREDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">525</td>
+<td class="eqc" style="text-align:right">4.17</td>
+<td class="eqc" style="text-align:right">2.7202</td>
+<td class="eqc" style="text-align:right"><span id="ABFDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="text-align:right">1.6868</td>
+<td class="eqc" style="text-align:right">7.3995</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">724</td>
+<td class="eqc" style="text-align:right">4.79</td>
+<td class="eqc" style="text-align:right">2.8597</td>
+<td class="eqc" style="text-align:right">0.6803</td>
+<td class="eqc" style="text-align:right">1.9455</td>
+<td class="eqc" style="text-align:right">8.1779</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">&#8721;</td>
+<td class="eqc" style="text-align:right"> </td>
+<td class="eqc" style="text-align:right"><span id="AIGDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="text-align:right"><span id="ANGDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="text-align:right"><span id="ASGDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="text-align:right"><span id="AXGDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">(All to 4 dp)</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">Complete the table. </div>
+</div>
+<div class="sga" id="vhg">63</div>
+</body>
+</html>

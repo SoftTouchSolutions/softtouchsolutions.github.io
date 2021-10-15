@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Further problems 13 Gaussian elimination: Step s02</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:10,odz:2},qzc:["p02","s05","t03","q09","s02"],sww:["AGHDT","AQHDT","AVHDT","A4HDT","AKIDT","APIDT","AUIDT","AXIDT","A2IDT","AAJDT"],pok:{AGHDT:{ydd:0,uey:"\u0037",eho:"",aek:false},AQHDT:{ydd:0,uey:"\u0030",eho:"",aek:false},AVHDT:{ydd:0,uey:"\u0031\u0032",eho:"",aek:false},A4HDT:{ydd:0,uey:"\u0031\u0032",eho:"",aek:false},AKIDT:{ydd:0,uey:"\u0030",eho:"",aek:false},APIDT:{ydd:0,uey:"\u0030",eho:"",aek:false},AUIDT:{ydd:0,uey:"\u2212",eho:"",aek:false},AXIDT:{ydd:0,uey:"\u0036",eho:"",aek:false},A2IDT:{ydd:0,uey:"\u0031\u0034",eho:"",aek:false},AAJDT:{ydd:0,uey:"\u0030",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="dck">Written in matrix form, these equations become:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_5.gif" height="110" width="14" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:40px;height:44px">7</td>
+<td class="eqc" style="width:40px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">4</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:40px">0</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:44px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">4</td>
+</tr>
+</table>
+</td>
+<td class="eqc">12</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">6</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:44px">0</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">6</td>
+</tr>
+</table>
+</td>
+<td class="eqc">14</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_5.gif" height="110" width="14" /></td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_5.gif" height="110" width="14" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:40px;height:44px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">i</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">1</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:44px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">i</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">2</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:44px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">i</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">3</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_5.gif" height="110" width="14" /></td>
+</tr>
+</table>
+</td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_5.gif" height="110" width="14" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:30px;height:44px">12</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:44px">0</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:44px">0</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_5.gif" height="110" width="14" /></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="dck">The augmented matrix is then:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_3.gif" height="66" width="8" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:40px"><span id="AGHDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="width:40px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">4</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:40px;border-right:dashed 1px #000000"><span id="AQHDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="width:40px"><span id="AVHDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">4</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><span id="A4HDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="width:40px;border-right:dashed 1px #000000">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">6</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><span id="AKIDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"><span id="APIDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span id="AUIDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="AXIDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:40px;border-right:dashed 1px #000000"><span id="A2IDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="AAJDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_3.gif" height="66" width="8" /></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">The elements in the column matrix are incorporated into the matrix of coefficients to form the augmented matrix.</div>
+</div>
+<div class="sga" id="vhg"></div>
+</body>
+</html>

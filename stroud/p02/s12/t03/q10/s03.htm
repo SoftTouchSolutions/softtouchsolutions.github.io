@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Further problems 9 Least squares method: Step s03</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:9,odz:2},qzc:["p02","s12","t03","q10","s03"],sww:["ARADT","AWADT","A0ADT","ABBDT","ANBDT","ATBDT","AXBDT","A4BDT","ATCDT"],pok:{ARADT:{ydd:0,uey:"\u0036",eho:"",aek:false},AWADT:{ydd:0,uey:"\u0037\u002E\u0034\u0036\u0032\u0038\u0035",eho:"",aek:false},A0ADT:{ydd:0,uey:"\u006E",eho:"",aek:false},ABBDT:{ydd:0,uey:"\u0031\u0031\u002E\u0032\u0031\u0033\u0038",eho:"",aek:false},ANBDT:{ydd:0,uey:"\u0037\u002E\u0034\u0036\u0032\u0038\u0035",eho:"",aek:false},ATBDT:{ydd:0,uey:"\u0039\u002E\u0035\u0037\u0032\u0034\u0031",eho:"",aek:false},AXBDT:{ydd:0,uey:"\u006E",eho:"",aek:false},A4BDT:{ydd:0,uey:"\u0031\u0034\u002E\u0031\u0036\u0035\u0033",eho:"",aek:false},ATCDT:{ydd:0,uey:"\u0030\u002E\u0037\u0035",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="dck">Tabulating for the method of least squares to find the line of best fit for the data, we find that, by retaining all the digits in an 8 digit calculator display:</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">X</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">7.46285</td>
+<td class="eqc">29</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">Y</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">11.2138</td>
+<td class="eqc">26</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"><span class="rac">Y</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">14.1653</td>
+<td class="eqc">98</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">X</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">9.57241</td>
+<td class="eqc">72</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="dck">Using the method of least squares, the two equations obtained in <i>n</i> and <i>b</i> are then</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span id="ARADT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span id="AWADT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">29</td>
+<td class="eqc"><span id="A0ADT" onclick="hey(event,this)" class="xqh">_</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc"><span id="ABBDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">26</td>
+<td class="eqc" style="padding-left:2em;height:24px"><span class="eqc" style="height:24px">[1]</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span id="ANBDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">29</td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span id="ATBDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">72</td>
+<td class="eqc"><span id="AXBDT" onclick="hey(event,this)" class="xqh">_</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc"><span id="A4BDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">98</td>
+<td class="eqc" style="padding-left:2em;height:24px"><span class="eqc" style="height:24px">[2]</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">Solving for <i>n</i> gives</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">n</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="ATCDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">  to 2 dp</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Refer to the equations for the method of least squares as given for </td>
+<td class="eqc"><span class="rac">y</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">+</td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">,</td>
+<td class="eqc"> namely </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">y</span></td>
+<td class="eqc">  and  </td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> = </td>
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"><span class="rac">y</span></td>
+<td class="eqc">.</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="vhg"></div>
+</body>
+</html>

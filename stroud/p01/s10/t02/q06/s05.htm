@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor : Step s05</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:4,odz:2},qzc:["p01","s10","t02","q06","s05"],sww:["AWGDT","A1GDT","ANIDT","AAJDT"],pok:{AWGDT:{ydd:0,uey:"\u002D\u0030\u002E\u0031\u0032\u0038\u0030\u0030\u0030\u0030",eho:"",aek:false},A1GDT:{ydd:0,uey:"\u002D\u0036\u002E\u0033\u0032\u0030\u0030\u0030\u0030\u0030",eho:"",aek:false},ANIDT:{ydd:0,uey:"\u0031\u002E\u0031\u0037\u0039\u0035\u0030\u0039\u0030",eho:"",aek:false},AAJDT:{ydd:0,uey:"\u0031\u002E\u0031\u0037\u0039\u0035\u0030\u0039\u0030",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="dck">Using a spreadsheet we enter the values of:</div>
+<div class="dck" style="padding-left:1em;"><i>n</i> from 0 to 4 in column A from cell A2 to A6,</div>
+<div class="dck" style="padding-left:1em;"><i>x<sub>n</sub></i> from <i>x</i><sub>0</sub> to <i>x</i><sub>4</sub> in column B from cell B2 to B6,</div>
+<div class="dck" style="padding-left:1em;"><i>f </i>(<i>x<sub>n</sub></i>) from <i>f </i>(<i>x</i><sub>0</sub>) to <i>f </i>(<i>x</i><sub>4</sub>) in column C from cell C2 to C6,</div>
+<div class="dck" style="padding-left:1em;"><i>f &#8242; </i>(<i>x<sub>n</sub></i>) from <i>f &#8242; </i>(<i>x</i><sub>0</sub>) to <i>f &#8242; </i>(<i>x</i><sub>4</sub>) in column D from cell D2 to D6.</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">The formula in cell C2 is =</td>
+<td class="eqc">4</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">2</td>
+<td class="eqc">*</td>
+<td class="eqc">C2</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">C2</td>
+<td class="eqc">^</td>
+<td class="eqc">3</td>
+<td class="eqc"> copied down to C6</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">The formula in cell D2 is =</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">2</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">3</td>
+<td class="eqc">*</td>
+<td class="eqc">(</td>
+<td class="eqc">C2</td>
+<td class="eqc">^</td>
+<td class="eqc">2</td>
+<td class="eqc">)</td>
+<td class="eqc"> copied down to D6</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">The formula in cell B3 is =</td>
+<td class="eqc">B2</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">C2</td>
+<td class="eqc">/</td>
+<td class="eqc">D2</td>
+<td class="eqc"> copied down to B6</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="dck">The number in cell B2 is 1.2 and the resulting spreadsheet is, with all results displayed to 7 decimal places:</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="border-collapse:collapse;margin-left:20px">
+<table class="eqc" style="border-collapse:collapse;margin-left:20px">
+<tr class="eqc" style="height:24px">
+<td class="eqc" style="width:24px;border:dotted 1px #999999"> </td>
+<td class="eqc" style="width:80px;border:dotted 1px #999999"> A </td>
+<td class="eqc" style="width:100px;border:dotted 1px #999999"> B </td>
+<td class="eqc" style="width:100px;border:dotted 1px #999999"> C </td>
+<td class="eqc" style="width:100px;border:dotted 1px #999999"> D </td>
+</tr>
+<tr class="eqc" style="height:24px">
+<td class="eqc" style="border:dotted 1px #999999">1</td>
+<td class="eqc" style="font-weight:bold;font-style:italic;border:dotted 1px #999999">n</td>
+<td class="eqc" style="font-weight:bold;font-style:italic;border:dotted 1px #999999">x</td>
+<td class="eqc" style="font-weight:bold;font-style:italic;border:dotted 1px #999999">f (xn)</td>
+<td class="eqc" style="font-weight:bold;font-style:italic;border:dotted 1px #999999">f '(xn)</td>
+</tr>
+<tr class="eqc" style="height:24px">
+<td class="eqc" style="border:dotted 1px #999999">2</td>
+<td class="eqc" style="border:dotted 1px #999999">0</td>
+<td class="eqc" style="border:dotted 1px #999999">1.2000000</td>
+<td class="eqc" style="border:dotted 1px #999999"><span id="AWGDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="border:dotted 1px #999999"><span id="A1GDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+<tr class="eqc" style="height:24px">
+<td class="eqc" style="border:dotted 1px #999999">3</td>
+<td class="eqc" style="border:dotted 1px #999999">1</td>
+<td class="eqc" style="border:dotted 1px #999999">1.1797468</td>
+<td class="eqc" style="border:dotted 1px #999999">-0.0014684</td>
+<td class="eqc" style="border:dotted 1px #999999">-6.1754078</td>
+</tr>
+<tr class="eqc" style="height:24px">
+<td class="eqc" style="border:dotted 1px #999999">4</td>
+<td class="eqc" style="border:dotted 1px #999999">2</td>
+<td class="eqc" style="border:dotted 1px #999999">1.1795091</td>
+<td class="eqc" style="border:dotted 1px #999999">-0.0000002</td>
+<td class="eqc" style="border:dotted 1px #999999">-6.1737248</td>
+</tr>
+<tr class="eqc" style="height:24px">
+<td class="eqc" style="border:dotted 1px #999999">5</td>
+<td class="eqc" style="border:dotted 1px #999999">3</td>
+<td class="eqc" style="border:dotted 1px #999999"><span id="ANIDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="border:dotted 1px #999999">0.0000000</td>
+<td class="eqc" style="border:dotted 1px #999999">-6.1737246</td>
+</tr>
+<tr class="eqc" style="height:24px">
+<td class="eqc" style="border:dotted 1px #999999">6</td>
+<td class="eqc" style="border:dotted 1px #999999">4</td>
+<td class="eqc" style="border:dotted 1px #999999"><span id="AAJDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="border:dotted 1px #999999">0.0000000</td>
+<td class="eqc" style="border:dotted 1px #999999">-6.1737246</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">The display can be accessed via the Format button.</div>
+</div>
+<div class="sga" id="vhg">46-64</div>
+</body>
+</html>

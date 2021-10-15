@@ -33,15 +33,15 @@ function run_query(q) {
   return client.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user => {
     // document.getElementById('auth-status').innerHTML = 
     //   `Logged in as anonymous user with id ${user.id}`;
-      console.log(`Logged in as anonymous user with id ${user.id}`);
-			return db.collection('Songs').aggregate(q).asArray()
-			// .then(docs => {
-			// 	console.dir(docs);
-			// 	// const html = docs.map(c => "<div>" + c.Title + "</div>").join("");
-			// 	// document.getElementById("test").innerHTML = html;
-			// }).catch(err => {
-			// 	console.error(err);
-			// })
+		console.log(`Logged in as anonymous user with id ${user.id}`);
+		return db.collection('Songs').aggregate(q).asArray()
+		// .then(docs => {
+		// 	console.dir(docs);
+		// 	// const html = docs.map(c => "<div>" + c.Title + "</div>").join("");
+		// 	// document.getElementById("test").innerHTML = html;
+		// }).catch(err => {
+		// 	console.error(err);
+	// })
 	});
 }
 // const app = new Realm.App({ id: "<Your App ID>" });
@@ -54,11 +54,11 @@ function serverGet() {
 	const q = [{$sort:{order_date:-1}},{$skip:hchcs.pageSkip*pageSize},{$limit:pageSize}];
 	if(getCount || search_mode)
 		run_query(q1).then(docs=>{ 
-					console.log("found "+docs.length+" songs!");
-					hchcs.pageCount=Math.floor(docs.length/pageSize);//+1;
+			console.log("found "+docs.length+" songs!");
+			hchcs.pageCount=Math.floor(docs.length/pageSize);//+1;
 		}).catch(err=> {
-				//dbg("Ooops! Something went wrong!", response.errors[0].message);
-				console.error(err);
+			//dbg("Ooops! Something went wrong!", response.errors[0].message);
+			console.error(err);
 		});
 	run_query(q).then(data=>{
 		if (Array.isArray(data)){

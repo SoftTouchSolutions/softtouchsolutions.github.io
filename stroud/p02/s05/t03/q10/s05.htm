@@ -1,0 +1,644 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Further problems 15 Gaussian elimination: Step s05</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:10,odz:2},qzc:["p02","s05","t03","q10","s05"],sww:["ARDET","A2DET","AHEET","APEET","ABFET","ARFET","A5GET","AFHET","AQHET","AWHET"],pok:{ARDET:{ydd:0,uey:"\u0031",eho:"",aek:false},A2DET:{ydd:0,uey:"\u0033",eho:"",aek:false},AHEET:{ydd:0,uey:"\u0032",eho:"",aek:false},APEET:{ydd:0,uey:"\u0033",eho:"",aek:false},ABFET:{ydd:0,uey:"\u0033",eho:"",aek:false},ARFET:{ydd:0,uey:"\u0032",eho:"",aek:false},A5GET:{ydd:0,uey:"\u0056",eho:"",aek:false},AFHET:{ydd:0,uey:"\u0030",eho:"",aek:false},AQHET:{ydd:0,uey:"\u0056",eho:"",aek:false},AWHET:{ydd:0,uey:"\u0031",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Add </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk" style="padding-top:24px;"><span class="eqc" style="">1</span></td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">2</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> of row 2 to row 3 to give:</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_7.gif" height="154" width="22" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:50px;height:44px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">1</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:50px">0</td>
+<td class="eqc" style="width:130px;border-right:dashed 1px #000000">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">3</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:80px"><span class="rac">V</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:44px">0</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">2</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="border-right:dashed 1px #000000">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">3</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">0</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:44px">0</td>
+<td class="eqc">0</td>
+<td class="eqc" style="border-right:dashed 1px #000000">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">1</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">3</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">1</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">3</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">2</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk" style="padding-top:22px;"><span class="rac">V</span></td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">1</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_7.gif" height="154" width="22" /></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="dck">Reforming the matrix equation:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_7.gif" height="154" width="22" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:50px;height:44px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm"><span id="ARDET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:80px">0</td>
+<td class="eqc" style="width:120px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm"><span id="A2DET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:44px">0</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm"><span id="AHEET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm"><span id="APEET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:100px">0</td>
+<td class="eqc">0</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">1</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm"><span id="ABFET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">1</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">3</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm"><span id="ARFET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_7.gif" height="154" width="22" /></td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_7.gif" height="154" width="22" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:30px;height:44px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">i</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">1</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:44px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">i</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">2</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:100px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">i</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">3</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_7.gif" height="154" width="22" /></td>
+</tr>
+</table>
+</td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_7.gif" height="154" width="22" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:60px;height:44px"><span id="A5GET" onclick="hey(event,this)" class="xqh">_</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:44px"><span id="AFHET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="height:100px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk" style="padding-top:22px;"><span id="AQHET" onclick="hey(event,this)" class="xqh">_</span></td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Z</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm"><span id="AWHET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_7.gif" height="154" width="22" /></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">Detach the right-hand column. </div>
+</div>
+<div class="sga" id="vhg"></div>
+</body>
+</html>

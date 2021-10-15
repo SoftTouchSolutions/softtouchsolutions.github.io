@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Further problems 17 Eigenvalues and eigenvectors: Step s08</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:7,odz:2},qzc:["p02","s05","t03","q11","s08"],sww:["AQ2ET","AT2ET","A42ET","AH3ET","AM3ET","AI4ET","AM4ET"],pok:{AQ2ET:{ydd:0,uey:"\u2212",eho:"",aek:false},AT2ET:{ydd:0,uey:"\u0031",eho:"",aek:false},A42ET:{ydd:0,uey:"\u0031",eho:"",aek:false},AH3ET:{ydd:0,uey:"\u2212",eho:"",aek:false},AM3ET:{ydd:0,uey:"\u0035",eho:"",aek:false},AI4ET:{ydd:0,uey:"\u0031",eho:"",aek:false},AM4ET:{ydd:0,uey:"\u0035",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc">+</td>
+<td class="eqc">5</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">1</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<div class="eqc" style="border-top:solid 1px #000000;border-left:solid 1px #000000;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">+</td>
+<td class="eqc">5</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">+</td>
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">5</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<div class="eqc" style="border-bottom:solid 1px #000000;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="padding-left:3em;">+</td>
+<td class="eqc"><span class="rac">&#955;</span></td>
+</tr>
+</table>
+</div>
+</td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="padding-left:3em;text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="padding-left:1em;"><span class="eqc" style="">5</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> </td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">5</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="padding-left:3em;text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<div class="eqc" style="border-bottom:solid 1px #000000;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="padding-left:1em;"><span class="eqc" style="">5</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> </td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">5</td>
+</tr>
+</table>
+</div>
+</td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="padding-left:6.5em;text-align:left;">0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="dck">So non-trivial solutions exist if</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">(</td>
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc"><span id="AQ2ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="AT2ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">)</td>
+<td class="eqc">(</td>
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc">+</td>
+<td class="eqc"><span id="A42ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">)</td>
+<td class="eqc">(</td>
+<td class="eqc"><span id="AH3ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc">+</td>
+<td class="eqc"><span id="AM3ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">)</td>
+<td class="eqc"> = </td>
+<td class="eqc">0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">That is, if </td>
+<td class="eqc"><span class="rac">&#955;</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">1</td>
+<td class="eqc">,</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc"><span id="AI4ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">or</td>
+<td class="eqc"><span id="AM4ET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">Find the three eigenvalues from the characteristic equation. </div>
+</div>
+<div class="sga" id="vhg"></div>
+</body>
+</html>

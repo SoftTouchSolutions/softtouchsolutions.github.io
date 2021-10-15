@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Test 5 Fitting by least squares: Step s01</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:10,odz:2},qzc:["p02","s12","t02","q02","s01"],sww:["AU2CT","AZ2CT","A22CT","A52CT","AC3CT","AF3CT","A53CT","AC4CT","AI4CT","AL4CT"],pok:{AU2CT:{ydd:0,uey:"\u0056",eho:"",aek:false},AZ2CT:{ydd:0,uey:"\u006C\u006F\u0067",eho:"",aek:false},A22CT:{ydd:0,uey:"\u0050",eho:"",aek:false},A52CT:{ydd:0,uey:"\u002B",eho:"",aek:false},AC3CT:{ydd:0,uey:"\u006C\u006F\u0067",eho:"",aek:false},AF3CT:{ydd:0,uey:"\u0061",eho:"",aek:false},A53CT:{ydd:0,uey:"\u006C\u006F\u0067",eho:"",aek:false},AC4CT:{ydd:0,uey:"\u0056",eho:"",aek:false},AI4CT:{ydd:0,uey:"\u006C\u006F\u0067",eho:"",aek:false},AL4CT:{ydd:0,uey:"\u0050",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="dck">The force, <i>P</i> newtons, required to keep an object moving at speed, <i>V</i> metres per second, was recorded.</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:30px;text-align:left;height:30px"><span class="rac">P</span></td>
+<td class="eqc" style="width:50px;text-align:right">126</td>
+<td class="eqc" style="width:50px;text-align:right">178</td>
+<td class="eqc" style="width:50px;text-align:right">263</td>
+<td class="eqc" style="width:50px;text-align:right">398</td>
+<td class="eqc" style="width:50px;text-align:right">525</td>
+<td class="eqc" style="width:50px;text-align:right">724</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:left"><span class="rac">V</span></td>
+<td class="eqc" style="text-align:right">1.86</td>
+<td class="eqc" style="text-align:right">2.34</td>
+<td class="eqc" style="text-align:right">2.75</td>
+<td class="eqc" style="text-align:right">3.63</td>
+<td class="eqc" style="text-align:right">4.17</td>
+<td class="eqc" style="text-align:right">4.79</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">If the law connecting <i>P</i> and <i>V</i> is of the form </td>
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm"><span class="rac">k</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">where <i>a</i> and <i>k</i> are constants, apply the method of least squares to obtain values of <i>a</i> and <i>k</i> that give the best fit to the given set of values.</div>
+</div>
+<div class="ees">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm"><span class="rac">k</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">Taking logs</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span id="AU2CT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">k</span></td>
+<td class="eqc"><span id="AZ2CT" onclick="hey(event,this)" class="pwr" style="eqc">_</span></td>
+<td class="eqc"><span id="A22CT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc"> <span id="A52CT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc"><span id="AC3CT" onclick="hey(event,this)" class="pwr" style="eqc">_</span></td>
+<td class="eqc"><span id="AF3CT" onclick="hey(event,this)" class="xqh">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">This is of the form</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">c</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">where </td>
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="A53CT" onclick="hey(event,this)" class="pwr" style="eqc">_</span></td>
+<td class="eqc"><span id="AC4CT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc">,   </td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="AI4CT" onclick="hey(event,this)" class="pwr" style="eqc">_</span></td>
+<td class="eqc"><span id="AL4CT" onclick="hey(event,this)" class="xqh">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Select a method of converting  </td>
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm"><span class="rac">k</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">into the equation of a straight line. </div>
+</div>
+<div class="sga" id="vhg">62</div>
+</body>
+</html>

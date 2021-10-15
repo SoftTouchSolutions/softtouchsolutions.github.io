@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Further problems 13 Manipulation of determinants: Step s01</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:10,odz:2},qzc:["p02","s04","t03","q07","s01"],sww:["AY2CT","A33CT","AD4CT","AS4CT","AW4CT","AZ5CT","AJADT","ANADT","AXADT","A1ADT"],pok:{AY2CT:{ydd:0,uey:"\u0032",eho:"",aek:false},A33CT:{ydd:0,uey:"\u0062",eho:"",aek:false},AD4CT:{ydd:0,uey:"\u0062",eho:"",aek:false},AS4CT:{ydd:0,uey:"\u0063",eho:"",aek:false},AW4CT:{ydd:0,uey:"\u0063",eho:"",aek:false},AZ5CT:{ydd:0,uey:"\u0031",eho:"",aek:false},AJADT:{ydd:0,uey:"\u0031",eho:"",aek:false},ANADT:{ydd:0,uey:"\u0062",eho:"",aek:false},AXADT:{ydd:0,uey:"\u0031",eho:"",aek:false},A1ADT:{ydd:0,uey:"\u0063",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="dck">Show that (<i>a + b + c</i>) is a factor of the determinant</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">    </td>
+<td class="eqc"><img class="eqc" src="../../../../img/mBar_5.gif" height="112" width="2" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:60px;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">c</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:60px;"><span class="rac">a</span></td>
+<td class="eqc" style="width:60px;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">a</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">b</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mBar_5.gif" height="112" width="2" /></td>
+</tr>
+</table>
+</div>
+<div class="dck">and express the determinant as a product of five factors</div>
+</div>
+<div class="ees">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Add column </td>
+<td class="eqc"><span id="AY2CT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> to column 1</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mBar_5.gif" height="112" width="2" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:60px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">c</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:60px"><span class="rac">a</span></td>
+<td class="eqc" style="width:60px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span id="A33CT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">c</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc"><span id="AD4CT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span id="AS4CT" onclick="hey(event,this)" class="xqh">_</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc"><span id="AW4CT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mBar_5.gif" height="112" width="2" /></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">(</td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">+</td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc">+</td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc">)</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mBar_5.gif" height="112" width="2" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:40px"><span id="AZ5CT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc" style="width:40px"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"><span id="AJADT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="ANADT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"><span id="AXADT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="A1ADT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mBar_5.gif" height="112" width="2" /></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">Add column 2 to column 1. The common factor can then be factored out of the determinant.</div>
+</div>
+<div class="sga" id="vhg"></div>
+</body>
+</html>

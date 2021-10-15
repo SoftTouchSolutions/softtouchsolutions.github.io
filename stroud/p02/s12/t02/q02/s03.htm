@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Test 5 Fitting by least squares: Step s03</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:8,odz:2},qzc:["p02","s12","t02","q02","s03"],sww:["ALJDT","ARJDT","AXJDT","A1JDT","AHKDT","ANKDT","ATKDT","AXKDT"],pok:{ALJDT:{ydd:0,uey:"\u0037\u002E\u0035\u0034\u0037\u0039",eho:"",aek:false},ARJDT:{ydd:0,uey:"\u0033\u0037\u002E\u0036\u0036\u0038\u0039",eho:"",aek:false},AXJDT:{ydd:0,uey:"\u0031\u0034\u002E\u0039\u0035\u0030\u0035",eho:"",aek:false},A1JDT:{ydd:0,uey:"\u0030",eho:"",aek:false},AHKDT:{ydd:0,uey:"\u0032\u002E\u0039\u0033\u0038\u0033",eho:"",aek:false},ANKDT:{ydd:0,uey:"\u0031\u0034\u002E\u0039\u0035\u0030\u0035",eho:"",aek:false},ATKDT:{ydd:0,uey:"\u0036",eho:"",aek:false},AXKDT:{ydd:0,uey:"\u0030",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"><span class="rac">Y</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">126</td>
+<td class="eqc" style="text-align:right">1.86</td>
+<td class="eqc" style="text-align:right">2.1003</td>
+<td class="eqc" style="text-align:right">0.2695</td>
+<td class="eqc" style="text-align:right">0.5660</td>
+<td class="eqc" style="text-align:right">4.4113</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">178</td>
+<td class="eqc" style="text-align:right">2.34</td>
+<td class="eqc" style="text-align:right">2.2504</td>
+<td class="eqc" style="text-align:right">0.3692</td>
+<td class="eqc" style="text-align:right">0.8308</td>
+<td class="eqc" style="text-align:right">5.0643</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">263</td>
+<td class="eqc" style="text-align:right">2.75</td>
+<td class="eqc" style="text-align:right">2.4200</td>
+<td class="eqc" style="text-align:right">0.4393</td>
+<td class="eqc" style="text-align:right">1.0631</td>
+<td class="eqc" style="text-align:right">5.8564</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">398</td>
+<td class="eqc" style="text-align:right">3.63</td>
+<td class="eqc" style="text-align:right">2.5999</td>
+<td class="eqc" style="text-align:right">0.5599</td>
+<td class="eqc" style="text-align:right">1.4557</td>
+<td class="eqc" style="text-align:right">6.7595</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">525</td>
+<td class="eqc" style="text-align:right">4.17</td>
+<td class="eqc" style="text-align:right">2.7202</td>
+<td class="eqc" style="text-align:right">0.6201</td>
+<td class="eqc" style="text-align:right">1.6868</td>
+<td class="eqc" style="text-align:right">7.3995</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">724</td>
+<td class="eqc" style="text-align:right">4.79</td>
+<td class="eqc" style="text-align:right">2.8597</td>
+<td class="eqc" style="text-align:right">0.6803</td>
+<td class="eqc" style="text-align:right">1.9455</td>
+<td class="eqc" style="text-align:right">8.1779</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">&#8721;</td>
+<td class="eqc" style="text-align:right"> </td>
+<td class="eqc" style="text-align:right">14.9505</td>
+<td class="eqc" style="text-align:right">2.9383</td>
+<td class="eqc" style="text-align:right">7.5479</td>
+<td class="eqc" style="text-align:right">37.6689</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">(All to 4 dp)</div>
+</div>
+<div class="ees">
+<div class="dck">Normal equations give:</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span id="ALJDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"> × </td>
+<td class="eqc"><span id="ARJDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> × </td>
+<td class="eqc"><span id="AXJDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="A1JDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">and</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span id="AHKDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"> × </td>
+<td class="eqc"><span id="ANKDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> × </td>
+<td class="eqc"><span id="ATKDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="AXKDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">Substitute the sums found in step 2 into the two normal equations. </div>
+</div>
+<div class="sga" id="vhg">63</div>
+</body>
+</html>

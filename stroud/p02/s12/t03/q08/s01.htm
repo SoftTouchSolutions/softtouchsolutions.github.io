@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Further problems 5 Least squares method: Step s01</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:5,odz:2},qzc:["p02","s12","t03","q08","s01"],sww:["A4UCT","AFVCT","ARVCT","AVVCT","AYVCT"],pok:{A4UCT:{ydd:0,uey:"\u0050",eho:"",aek:false},AFVCT:{ydd:0,uey:"\u0057",eho:"",aek:false},ARVCT:{ydd:0,uey:"\u0061",eho:"",aek:false},AVVCT:{ydd:0,uey:"\u002B",eho:"",aek:false},AYVCT:{ydd:0,uey:"\u0062",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="dck">Two quantities <i>P</i> and <i>W</i> are related by the law</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc" style="">
+<tr class="eqc">
+<td class="sai"><img class="eqc" src="../../../../img/mRad_1.gif"  height="22"  width="12" /></td>
+<td class="eqc" style="border-top:solid 1px #000000;"><span class="rac">W</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">b</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">where <i>a</i> and <i>b</i> are constants. From the data given find <i>a</i> and <i>b</i></div>
+<div class="dck">
+<table style="margin:10px 0px 10px 10px;border-collapse:collapse">
+<tr>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">W</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">7.0</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">10</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">15</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">24</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">40</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">60</td>
+</tr>
+<tr>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">P</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">9.76</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">11.0</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">12.8</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">15.4</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">18.9</td>
+<td style="border:solid 1px #000000;padding:2px 2px 2px 6px;width:50px">22.4</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc" style="">
+<tr class="eqc">
+<td class="sai"><img class="eqc" src="../../../../img/mRad_1.gif"  height="22"  width="12" /></td>
+<td class="eqc" style="border-top:solid 1px #000000;"><span class="rac">W</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">b</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="A4UCT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc">  and  </td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc" style="">
+<tr class="eqc">
+<td class="sai"><img class="eqc" src="../../../../img/mRad_1.gif"  height="22"  width="12" /></td>
+<td class="eqc" style="border-top:solid 1px #000000;"><span id="AFVCT" onclick="hey(event,this)" class="xqh">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">this equation becomes the equation of a straight line</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="ARVCT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> <span id="AVVCT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc"><span id="AYVCT" onclick="hey(event,this)" class="xqh">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">Change variables to transform the equation into that of a straight line.</div>
+</div>
+<div class="sga" id="vhg"></div>
+</body>
+</html>

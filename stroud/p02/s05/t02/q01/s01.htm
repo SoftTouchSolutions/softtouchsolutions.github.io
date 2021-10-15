@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Test 1(a) Arithmetic of matrices: Step s01</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:8,odz:2},qzc:["p02","s05","t02","q01","s01"],sww:["APVCT","AXVCT","A5VCT","AHWCT","APWCT","AWWCT","A3WCT","AEXCT"],pok:{APVCT:{ydd:0,uey:"\u002B",eho:"",aek:false},AXVCT:{ydd:0,uey:"\u002B",eho:"",aek:false},A5VCT:{ydd:0,uey:"\u002B",eho:"",aek:false},AHWCT:{ydd:0,uey:"\u002B",eho:"",aek:false},APWCT:{ydd:0,uey:"\u002B",eho:"",aek:false},AWWCT:{ydd:0,uey:"\u002B",eho:"",aek:false},A3WCT:{ydd:0,uey:"\u002B",eho:"",aek:false},AEXCT:{ydd:0,uey:"\u002B",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">If </td>
+<td class="eqc"><span class="eqc" style="font-weight:bold;font-style:upright;">A</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_2.gif" height="44" width="6" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:30px">2</td>
+<td class="eqc" style="width:30px">4</td>
+<td class="eqc" style="width:30px">6</td>
+<td class="eqc" style="width:30px">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">1</td>
+<td class="eqc">7</td>
+<td class="eqc">0</td>
+<td class="eqc">4</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_2.gif" height="44" width="6" /></td>
+</tr>
+</table>
+</td>
+<td class="eqc"> </td>
+<td class="eqc">and</td>
+<td class="eqc"> </td>
+<td class="eqc"><span class="eqc" style="font-weight:bold;font-style:upright;">B</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_2.gif" height="44" width="6" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:30px">3</td>
+<td class="eqc" style="width:30px">5</td>
+<td class="eqc" style="width:30px">2</td>
+<td class="eqc" style="width:30px">7</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">9</td>
+<td class="eqc">1</td>
+<td class="eqc">6</td>
+<td class="eqc">3</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_2.gif" height="44" width="6" /></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">determine A + B</div>
+</div>
+<div class="ees">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="eqc" style="font-weight:bold;font-style:upright;">A</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="eqc" style="font-weight:bold;font-style:upright;">B</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_2.gif" height="44" width="6" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:30px">2</td>
+<td class="eqc" style="width:30px">4</td>
+<td class="eqc" style="width:30px">6</td>
+<td class="eqc" style="width:30px">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">1</td>
+<td class="eqc">7</td>
+<td class="eqc">0</td>
+<td class="eqc">4</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_2.gif" height="44" width="6" /></td>
+</tr>
+</table>
+</td>
+<td class="eqc">+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_2.gif" height="44" width="6" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:30px">3</td>
+<td class="eqc" style="width:30px">5</td>
+<td class="eqc" style="width:30px">2</td>
+<td class="eqc" style="width:30px">7</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">9</td>
+<td class="eqc">1</td>
+<td class="eqc">6</td>
+<td class="eqc">3</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_2.gif" height="44" width="6" /></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mParO_2.gif" height="44" width="6" /></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="width:60px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">2</td>
+<td class="eqc"> <span id="APVCT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc">3</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:60px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">4</td>
+<td class="eqc"> <span id="AXVCT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc">5</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:60px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">6</td>
+<td class="eqc"> <span id="A5VCT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc">2</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:60px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">3</td>
+<td class="eqc"> <span id="AHWCT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc">7</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">1</td>
+<td class="eqc"> <span id="APWCT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc">9</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">7</td>
+<td class="eqc"> <span id="AWWCT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc">1</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">0</td>
+<td class="eqc"> <span id="A3WCT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc">6</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">4</td>
+<td class="eqc"> <span id="AEXCT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc">3</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><img class="eqc" src="../../../../img/mParC_2.gif" height="44" width="6" /></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">Add corresponding elements. </div>
+</div>
+<div class="sga" id="vhg">10 and 11</div>
+</body>
+</html>

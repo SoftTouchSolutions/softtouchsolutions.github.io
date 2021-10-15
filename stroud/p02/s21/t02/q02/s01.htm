@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Test 3 Simpson's rule: Step s01</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:9,odz:2},qzc:["p02","s21","t02","q02","s01"],sww:["AZXCT","AMYCT","A2YCT","AIZCT","AYZCT","AE0CT","AU0CT","AA1CT","AM1CT"],pok:{AZXCT:{ydd:0,uey:"\u0033\u002E\u0035\u0030",eho:"",aek:false},AMYCT:{ydd:0,uey:"\u0036\u002E\u0032\u0030",eho:"",aek:false},A2YCT:{ydd:0,uey:"\u0037\u002E\u0032\u0032",eho:"",aek:false},AIZCT:{ydd:0,uey:"\u0036\u002E\u0038\u0030",eho:"",aek:false},AYZCT:{ydd:0,uey:"\u0035\u002E\u0037\u0034",eho:"",aek:false},AE0CT:{ydd:0,uey:"\u0035\u002E\u0030\u0033",eho:"",aek:false},AU0CT:{ydd:0,uey:"\u0036\u002E\u0032\u0031",eho:"",aek:false},AA1CT:{ydd:0,uey:"\u0038\u002E\u0037\u0032",eho:"",aek:false},AM1CT:{ydd:0,uey:"\u0031\u0031\u002E\u0031\u0030",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="dck">The values of a function <i>y</i> = <i>f</i> (<i>x</i>) at stated values of <i>x</i> are given below:</div>
+<div class="dck">
+<table>
+<tr>
+<td style="width:50px;height:30px">
+<i>x</i>
+</td>
+<td style="width:50px">2.0</td>
+<td style="width:50px">2.5</td>
+<td style="width:50px">3.0</td>
+<td style="width:50px">3.5</td>
+<td style="width:50px">4.0</td>
+<td style="width:50px">4.5</td>
+<td style="width:50px">5.0</td>
+<td style="width:50px">5.5</td>
+<td style="width:50px">6.0</td>
+</tr>
+<tr>
+<td style="width:50px">
+<i>y</i>
+</td>
+<td>3.50</td>
+<td>6.20</td>
+<td>7.22</td>
+<td>6.80</td>
+<td>5.74</td>
+<td>5.03</td>
+<td>6.21</td>
+<td>8.72</td>
+<td>11.10</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">Using Simpson&#8217;s rule, with 8 intervals, find the approximate value of </div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="zga">6</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mInt_2.gif" height="44" width="10" /></td>
+</tr>
+<tr class="eqc">
+<td class="ubs">2</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">y</span></td>
+<td class="eqc">&#8201;</td>
+<td class="eqc"><span class="rac">d</span></td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc" style="border-collapse:collapse">
+<tr class="eqc" style="height:30px;font-weight:bold">
+<td class="eqc" style="width:60px"><span class="rac">x</span></td>
+<td class="eqc" style="width:60px"><span class="rac">y</span></td>
+<td class="eqc" style="width:60px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">F</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">L</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="width:60px"><span class="rac">E</span></td>
+<td class="eqc" style="width:60px"><span class="rac">R</span></td>
+</tr>
+<tr class="eqc" style="background-color:#e4f6ff;height:24px">
+<td class="eqc">2.0</td>
+<td class="eqc">3.50</td>
+<td class="eqc"><span id="AZXCT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> </td>
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc" style="height:24px">
+<td class="eqc">2.5</td>
+<td class="eqc">6.20</td>
+<td class="eqc"> </td>
+<td class="eqc"><span id="AMYCT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc" style="background-color:#e4f6ff;height:24px">
+<td class="eqc">3.0</td>
+<td class="eqc">7.22</td>
+<td class="eqc"> </td>
+<td class="eqc"> </td>
+<td class="eqc"><span id="A2YCT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+<tr class="eqc" style="height:24px">
+<td class="eqc">3.5</td>
+<td class="eqc">6.80</td>
+<td class="eqc"> </td>
+<td class="eqc"><span id="AIZCT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc" style="background-color:#e4f6ff;height:24px">
+<td class="eqc">4.0</td>
+<td class="eqc">5.74</td>
+<td class="eqc"> </td>
+<td class="eqc"> </td>
+<td class="eqc"><span id="AYZCT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+<tr class="eqc" style="height:24px">
+<td class="eqc">4.5</td>
+<td class="eqc">5.03</td>
+<td class="eqc"> </td>
+<td class="eqc"><span id="AE0CT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc" style="background-color:#e4f6ff;height:24px">
+<td class="eqc">5.0</td>
+<td class="eqc">6.21</td>
+<td class="eqc"> </td>
+<td class="eqc"> </td>
+<td class="eqc"><span id="AU0CT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+<tr class="eqc" style="height:24px">
+<td class="eqc">5.5</td>
+<td class="eqc">8.72</td>
+<td class="eqc"> </td>
+<td class="eqc"><span id="AA1CT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc" style="background-color:#e4f6ff;height:24px">
+<td class="eqc">6.0</td>
+<td class="eqc">11.10</td>
+<td class="eqc"><span id="AM1CT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> </td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">Complete the table. </div>
+</div>
+<div class="sga" id="vhg">24</div>
+</body>
+</html>

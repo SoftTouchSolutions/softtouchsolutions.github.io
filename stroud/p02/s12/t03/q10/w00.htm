@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html xmlns:mx="http://www.lexeos.com/XMLSchema">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Further problems 9 Least squares method: Full Working</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_wrk.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head>
+<body class="kqo" onload="knn()" onunload="ptq()" onselectstart="mwf()">
+<div class="pyy"><img class="pyy" src="../../../../img/title.gif" width="706" height="50"></div>
+<div class="erz">
+<div class="heq">Further problems 9 Least squares method</div>
+</div>
+<div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Given the equation </td>
+<td class="eqc"><span class="rac">I</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm"><span class="rac">n</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">,</td>
+<td class="eqc"> taking logs of both sides gives</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">I</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">n</span></td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">V</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">Selecting</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">I</span></td>
+<td class="eqc">,</td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc">  and  </td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">a</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">this equation becomes the equation of a straight line</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">n</span></td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">b</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">Tabulating for the method of least squares to find the line of best fit for the data, we find that, by retaining all the digits in an 8 digit calculator display:</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">X</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">7.4628529</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">Y</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">11.213826</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"><span class="rac">Y</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">14.165398</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8721;</td>
+<td class="eqc"><span class="rac">X</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">9.5724172</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">Using the method of least squares, the two equations obtained in <i>n</i> and <i>b</i> are then</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">6</td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> + </td>
+<td class="eqc">7.4628529</td>
+<td class="eqc"><span class="rac">n</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">11.213826</td>
+<td class="eqc" style="padding-left:2em;height:24px"><span class="eqc" style="height:24px">[1]</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">7.4628529</td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> + </td>
+<td class="eqc">9.5724172</td>
+<td class="eqc"><span class="rac">n</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">14.165398</td>
+<td class="eqc" style="padding-left:2em;height:24px"><span class="eqc" style="height:24px">[2]</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">Solving for <i>n</i> gives</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">n</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0.75</td>
+<td class="eqc">  to 2 dp</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">Substituting this value of <i>n</i> in [1] gives</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0.9361143</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">where</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">a</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">so</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">8.63</td>
+<td class="eqc"> to 2 dp</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">The data, therefore, fits the equation</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">I</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">8.63</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">0.75</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<table class="gui">
+<tr class="gui">
+<td class="gui"><img class="xrb" id="btp" onmouseover="lir(this)" onmouseout="opw(this)" onclick="ahc(this)" title="Click to go to the top of the page." src="../../../../img/btn_wrkToTop_0.gif" height="30" width="174"></td>
+<td class="gui"> </td>
+<td class="gui"> </td>
+<td class="gui"><img class="xrb" id="fle" onmouseover="lir(this)" onmouseout="opw(this)" onclick="hky(this)" title="Click to close the full working." src="../../../../img/btn_wrkClose_0.gif" height="30" width="174"></td>
+</tr>
+</table>
+<div class="ikz"><a class="ikz" href="../../../../sys/copyright.htm" target="_blank" title="Click to show the the copyright statement for this product.">Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 &amp; 2007</a></div>
+</body>
+</html>

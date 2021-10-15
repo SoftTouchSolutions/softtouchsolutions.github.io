@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html xmlns:mx="http://www.lexeos.com/XMLSchema">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Test 5 Fitting by least squares: Full Working</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_wrk.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head>
+<body class="kqo" onload="knn()" onunload="ptq()" onselectstart="mwf()">
+<div class="pyy"><img class="pyy" src="../../../../img/title.gif" width="706" height="50"></div>
+<div class="erz">
+<div class="heq">Test 5 Fitting by least squares</div>
+</div>
+<div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm"><span class="rac">k</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">Taking logs:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">k</span></td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">a</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">This is of the form:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">c</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">where</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> </td>
+<td class="eqc">and</td>
+<td class="eqc"> </td>
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">P</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">Y</span></td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc"><span class="rac">Y</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:right;width:80px">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">X</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">126</td>
+<td class="eqc" style="text-align:right">1.86</td>
+<td class="eqc" style="text-align:right">2.1003</td>
+<td class="eqc" style="text-align:right">0.2695</td>
+<td class="eqc" style="text-align:right">0.5660</td>
+<td class="eqc" style="text-align:right">4.4113</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">178</td>
+<td class="eqc" style="text-align:right">2.34</td>
+<td class="eqc" style="text-align:right">2.2504</td>
+<td class="eqc" style="text-align:right">0.3692</td>
+<td class="eqc" style="text-align:right">0.8308</td>
+<td class="eqc" style="text-align:right">5.0643</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">263</td>
+<td class="eqc" style="text-align:right">2.75</td>
+<td class="eqc" style="text-align:right">2.4200</td>
+<td class="eqc" style="text-align:right">0.4393</td>
+<td class="eqc" style="text-align:right">1.0631</td>
+<td class="eqc" style="text-align:right">5.8564</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">398</td>
+<td class="eqc" style="text-align:right">3.63</td>
+<td class="eqc" style="text-align:right">2.5999</td>
+<td class="eqc" style="text-align:right">0.5599</td>
+<td class="eqc" style="text-align:right">1.4557</td>
+<td class="eqc" style="text-align:right">6.7595</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">525</td>
+<td class="eqc" style="text-align:right">4.17</td>
+<td class="eqc" style="text-align:right">2.7202</td>
+<td class="eqc" style="text-align:right">0.6201</td>
+<td class="eqc" style="text-align:right">1.6868</td>
+<td class="eqc" style="text-align:right">7.3995</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">724</td>
+<td class="eqc" style="text-align:right">4.79</td>
+<td class="eqc" style="text-align:right">2.8597</td>
+<td class="eqc" style="text-align:right">0.6803</td>
+<td class="eqc" style="text-align:right">1.9455</td>
+<td class="eqc" style="text-align:right">8.1779</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;height:30px">&#8721;</td>
+<td class="eqc" style="text-align:right"> </td>
+<td class="eqc" style="text-align:right">14.9505</td>
+<td class="eqc" style="text-align:right">2.9383</td>
+<td class="eqc" style="text-align:right">7.5479</td>
+<td class="eqc" style="text-align:right">37.6689</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">Normal equations give:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">7.5479</td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"> × </td>
+<td class="eqc">37.6669</td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> × </td>
+<td class="eqc">14.9505</td>
+<td class="eqc"> = </td>
+<td class="eqc">0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">and</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">2.9383</td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"> × </td>
+<td class="eqc">14.9505</td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> × </td>
+<td class="eqc">6</td>
+<td class="eqc"> = </td>
+<td class="eqc">0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">That is</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"> + </td>
+<td class="eqc">0.3969</td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0.2004</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"> + </td>
+<td class="eqc">0.4013</td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0.1965</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">so that:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">0.0044</td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">0.0039</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">therefore:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">0.8864</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">and so:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">0.3518</td>
+<td class="eqc"> = </td>
+<td class="eqc">0.2004</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">therefore:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"><span class="rac">m</span></td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">0.5522</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">k</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">Now</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"><span class="rac">c</span></td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">0.8864</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc"><span class="eqc" style="eqc">log</span></td>
+<td class="eqc"><span class="rac">a</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">So:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0.1299</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">Therefore</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">V</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0.13</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">0.55</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<table class="gui">
+<tr class="gui">
+<td class="gui"><img class="xrb" id="btp" onmouseover="lir(this)" onmouseout="opw(this)" onclick="ahc(this)" title="Click to go to the top of the page." src="../../../../img/btn_wrkToTop_0.gif" height="30" width="174"></td>
+<td class="gui"> </td>
+<td class="gui"> </td>
+<td class="gui"><img class="xrb" id="fle" onmouseover="lir(this)" onmouseout="opw(this)" onclick="hky(this)" title="Click to close the full working." src="../../../../img/btn_wrkClose_0.gif" height="30" width="174"></td>
+</tr>
+</table>
+<div class="ikz"><a class="ikz" href="../../../../sys/copyright.htm" target="_blank" title="Click to show the the copyright statement for this product.">Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 &amp; 2007</a></div>
+</body>
+</html>

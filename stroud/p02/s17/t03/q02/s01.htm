@@ -1,0 +1,691 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Further problems 3 Integration by parts: Step s01</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:10,odz:2},qzc:["p02","s17","t03","q02","s01"],sww:["AJADT","ASADT","AZADT","A2ADT","APBDT","ASBDT","A1BDT","ADCDT","AGCDT","AKCDT"],pok:{AJADT:{ydd:0,uey:"\u006E",eho:"",aek:false},ASADT:{ydd:0,uey:"\u006E",eho:"",aek:false},AZADT:{ydd:0,uey:"\u2212",eho:"",aek:false},A2ADT:{ydd:0,uey:"\u0031",eho:"",aek:false},APBDT:{ydd:0,uey:"\u2212",eho:"",aek:false},ASBDT:{ydd:0,uey:"\u0061",eho:"",aek:false},A1BDT:{ydd:0,uey:"\u2212",eho:"",aek:false},ADCDT:{ydd:0,uey:"\u2212",eho:"",aek:false},AGCDT:{ydd:0,uey:"\u0061",eho:"",aek:false},AKCDT:{ydd:0,uey:"\u0061",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">If </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">I</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm"><span class="rac">n</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="zga"><span class="rac">&#8734;</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mInt_2.gif" height="44" width="10" /></td>
+</tr>
+<tr class="eqc">
+<td class="ubs">0</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm"><span class="rac">n</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">e</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">d</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">,</td>
+<td class="eqc"> show that </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">I</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm"><span class="rac">n</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk"><span class="rac">n</span></td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp"><span class="rac">a</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">I</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">n</span></td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">1</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">.</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Hence evaluate </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="zga"><span class="rac">&#8734;</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mInt_2.gif" height="44" width="10" /></td>
+</tr>
+<tr class="eqc">
+<td class="ubs">0</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">9</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">e</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">2</td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">d</td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">I</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+<tr class="eqc">
+<td class="glm"><span class="rac">n</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="zga"><span class="rac">&#8734;</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mInt_2.gif" height="44" width="10" /></td>
+</tr>
+<tr class="eqc">
+<td class="ubs">0</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm"><span class="rac">n</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">e</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">d</td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="zga"><span class="rac">&#8734;</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mInt_2.gif" height="44" width="10" /></td>
+</tr>
+<tr class="eqc">
+<td class="ubs">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">u</span></td>
+<td class="eqc">d</td>
+<td class="eqc"><span class="rac">v</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mBrkO_1.gif" height="22" width="3" /></td>
+<td class="eqc"><span class="rac">u</span></td>
+<td class="eqc"><span class="rac">v</span></td>
+<td class="eqc"><img class="eqc" src="../../../../img/mBrkC_1.gif" height="22" width="3" /></td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm"><span class="rac">&#8734;</span></td>
+</tr>
+<tr class="eqc">
+<td class="glm">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="zga"><span class="rac">&#8734;</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"><img class="eqc" src="../../../../img/mInt_2.gif" height="44" width="10" /></td>
+</tr>
+<tr class="eqc">
+<td class="ubs">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">v</span></td>
+<td class="eqc">d</td>
+<td class="eqc"><span class="rac">u</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">where  </td>
+<td class="eqc"><span class="rac">u</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm"><span id="AJADT" onclick="hey(event,this)" class="xqh">_</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="padding-left:3em;"><span class="eqc" style="">so  </span></td>
+<td class="eqc">d</td>
+<td class="eqc"><span class="rac">u</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="ASADT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">n</span></td>
+<td class="eqc"> <span id="AZADT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc"><span id="A2ADT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">d</td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">and  </td>
+<td class="eqc">d</td>
+<td class="eqc"><span class="rac">v</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">e</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span id="APBDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="ASBDT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">d</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">  so  </td>
+<td class="eqc"><span class="rac">v  </span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="A1BDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">e</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span id="ADCDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="AGCDT" onclick="hey(event,this)" class="xqh">_</span></td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp" style="padding-bottom:24px;"><span id="AKCDT" onclick="hey(event,this)" class="xqh">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Integrate by parts choosing  </td>
+<td class="eqc"><span class="rac">u</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm"><span class="rac">n</span></td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">.</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="vhg"></div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Test 5 Fitting by least squares: Step s05</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:6,odz:2},qzc:["p02","s12","t02","q02","s05"],sww:["A0ODT","A3ODT","AKPDT","ANPDT","ACQDT","AUQDT"],pok:{A0ODT:{ydd:0,uey:"\u2212",eho:"",aek:false},A3ODT:{ydd:0,uey:"\u0030\u002E\u0030\u0030\u0033\u0039",eho:"",aek:false},AKPDT:{ydd:0,uey:"\u2212",eho:"",aek:false},ANPDT:{ydd:0,uey:"\u0030\u002E\u0038\u0038\u0036\u0034",eho:"",aek:false},ACQDT:{ydd:0,uey:"\u0030\u002E\u0033\u0035\u0031\u0038",eho:"",aek:false},AUQDT:{ydd:0,uey:"\u0030\u002E\u0035\u0035\u0032\u0032",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="dck">That is:</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"> + </td>
+<td class="eqc">0.3969</td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0.2004</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"> + </td>
+<td class="eqc">0.4013</td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0.1965</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="dck">So that:</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">0.0044</td>
+<td class="eqc"><span class="rac">c</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc"><span id="A0ODT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="A3ODT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">therefore  </td>
+<td class="eqc"><span class="rac">c</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc"><span id="AKPDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="ANPDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">and so:</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">m</span></td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc"><span id="ACQDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">0.2004</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">therefore  </td>
+<td class="eqc"><span class="rac">m</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc"><span id="AUQDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc"><span class="rac">k</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">Solve the two equations for <i>m</i> and <i>c</i>. </div>
+</div>
+<div class="sga" id="vhg">63</div>
+</body>
+</html>

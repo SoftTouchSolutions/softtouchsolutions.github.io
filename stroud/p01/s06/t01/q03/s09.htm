@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Quiz 5 Solving quartics: Step s09</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:10,odz:2},qzc:["p01","s06","t01","q03","s09"],sww:["AS1ET","AV1ET","AG2ET","AJ2ET","AX2ET","AD3ET","AR3ET","AD4ET","AJ4ET","AO4ET"],pok:{AS1ET:{ydd:0,uey:"\u2212",eho:"",aek:false},AV1ET:{ydd:0,uey:"\u0033",eho:"",aek:false},AG2ET:{ydd:0,uey:"\u2212",eho:"",aek:false},AJ2ET:{ydd:0,uey:"\u0033",eho:"",aek:false},AX2ET:{ydd:0,uey:"\u0032",eho:"",aek:false},AD3ET:{ydd:0,uey:"\u0031",eho:"",aek:false},AR3ET:{ydd:0,uey:"\u0032",eho:"",aek:false},AD4ET:{ydd:0,uey:"\u0033",eho:"",aek:false},AJ4ET:{ydd:0,uey:"\u0031\u0037",eho:"",aek:false},AO4ET:{ydd:0,uey:"\u0034",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">The </td>
+<td class="eqc">2</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">3</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">1</td>
+<td class="eqc"> = </td>
+<td class="eqc">0</td>
+</tr>
+</table>
+</td>
+<td class="eqc">equation is of the form</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> + </td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">0</td>
+<td class="eqc">, where </td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">2</td>
+<td class="eqc">, </td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">3</td>
+<td class="eqc"> and </td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">1</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">4</td>
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">(</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">3</td>
+<td class="eqc">)</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">4</td>
+<td class="eqc">(</td>
+<td class="eqc">2</td>
+<td class="eqc">)</td>
+<td class="eqc">(</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">1</td>
+<td class="eqc">)</td>
+<td class="eqc"> = </td>
+<td class="eqc">17</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">is not a perfect square so simple factors do not exist.</div>
+</div>
+<div class="ees">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> &#8722; </td>
+<td class="eqc">(</td>
+<td class="eqc"><span id="AS1ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="AV1ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">)</td>
+<td class="eqc"> ± </td>
+<td class="eqc">
+<table class="eqc" style="">
+<tr class="eqc">
+<td class="sai"><img class="eqc" src="../../../../img/mRad_2.gif"  height="44"  width="14" /></td>
+<td class="eqc" style="border-top:solid 1px #000000;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">(</td>
+<td class="eqc"><span id="AG2ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="AJ2ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">)</td>
+</tr>
+</table>
+</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">4</td>
+<td class="eqc">(</td>
+<td class="eqc"><span id="AX2ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">)</td>
+<td class="eqc">(</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc"><span id="AD3ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp" style="padding-bottom:36px;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">2</td>
+<td class="eqc">(</td>
+<td class="eqc"><span id="AR3ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">That is:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span id="AD4ET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"> ± </td>
+<td class="eqc">
+<table class="eqc" style="">
+<tr class="eqc">
+<td class="sai"><img class="eqc" src="../../../../img/mRad_1.gif"  height="22"  width="12" /></td>
+<td class="eqc" style="border-top:solid 1px #000000;"><span id="AJ4ET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp" style="padding-bottom:12px;"><span id="AO4ET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Solve </td>
+<td class="eqc">2</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">3</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">1</td>
+<td class="eqc"> = </td>
+<td class="eqc">0</td>
+<td class="eqc"> by the formula. </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="vhg">27</div>
+</body>
+</html>

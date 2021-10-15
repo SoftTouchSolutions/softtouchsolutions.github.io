@@ -1,0 +1,633 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Test 05 Solving quartics: Step s05</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:10,odz:2},qzc:["p01","s06","t02","q05","s05"],sww:["A25DT","ACAET","AGAET","AJAET","ATAET","AWAET","A0AET","A3AET","AECET","ACDET"],pok:{A25DT:{ydd:0,uey:"\u2212",eho:"",aek:false},ACAET:{ydd:0,uey:"\u0036",eho:"",aek:false},AGAET:{ydd:0,uey:"\u2212",eho:"",aek:false},AJAET:{ydd:0,uey:"\u0033",eho:"",aek:false},ATAET:{ydd:0,uey:"\u2212",eho:"",aek:false},AWAET:{ydd:0,uey:"\u0033",eho:"",aek:false},A0AET:{ydd:0,uey:"\u002B",eho:"",aek:false},A3AET:{ydd:0,uey:"\u0032",eho:"",aek:false},AECET:{ydd:0,uey:"\u0031\u0032",eho:"",aek:false},ACDET:{ydd:0,uey:"\u0031\u0035",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">f</span></td>
+<td class="eqc">(</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">)</td>
+<td class="eqc"> = </td>
+<td class="eqc">(</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">1</td>
+<td class="eqc">)</td>
+<td class="eqc">(</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">2</td>
+<td class="eqc">)</td>
+<td class="eqc"><span class="rac">g</span></td>
+<td class="eqc">(</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">)</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">(</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">3</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">+</td>
+<td class="eqc">2</td>
+<td class="eqc">)</td>
+<td class="eqc"><span class="rac">g</span></td>
+<td class="eqc">(</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">where:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">g</span></td>
+<td class="eqc">(</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">)</td>
+<td class="eqc"> = </td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="slk">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">4</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">4</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">18</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> + </td>
+<td class="eqc">23</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">3</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">6</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="epy"></td>
+</tr>
+<tr class="eqc">
+<td class="rcp">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">3</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">+</td>
+<td class="eqc">2</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">4</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> <span id="A25DT" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc"><span id="ACAET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> <span id="AGAET" onclick="hey(event,this)" class="pwr">_</span> </td>
+<td class="eqc"><span id="AJAET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"><span id="ATAET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="AWAET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"><span id="A0AET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc"><span id="A3AET" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<div class="eqc" style="border-top:solid 1px #000000;border-left:solid 1px #000000;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">4</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">4</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">18</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> + </td>
+<td class="eqc">23</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">3</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc">6</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<div class="eqc" style="border-bottom:solid 1px #000000;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">4</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">4</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> &#8722; </td>
+<td class="eqc"><span id="AECET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc"> + </td>
+<td class="eqc">&#8201;</td>
+<td class="eqc">&#8201;</td>
+<td class="eqc">&#8201;</td>
+<td class="eqc">&#8201;</td>
+<td class="eqc">8</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="padding-left:3em;text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">6</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">+</td>
+<td class="eqc"><span id="ACDET" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">&#8201;</td>
+<td class="eqc">&#8201;</td>
+<td class="eqc">&#8201;</td>
+<td class="eqc">&#8201;</td>
+<td class="eqc">3</td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="padding-left:3em;text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<div class="eqc" style="border-bottom:solid 1px #000000;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">6</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">3</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">+</td>
+<td class="eqc">18</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">12</td>
+<td class="eqc"><span class="rac">x</span></td>
+</tr>
+</table>
+</div>
+</td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="padding-left:6.5em;text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">3</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">+</td>
+<td class="eqc">9</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">6</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="padding-left:6.5em;text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<div class="eqc" style="border-bottom:solid 1px #000000;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">&#8722;</td>
+<td class="eqc">3</td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="dpm">2</td>
+</tr>
+<tr class="eqc">
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="eqc">+</td>
+<td class="eqc">9</td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc">&#8722;</td>
+<td class="eqc">6</td>
+</tr>
+</table>
+</div>
+</td>
+<td class="eqc"> </td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;"> </td>
+<td class="eqc" style="padding-left:10em;text-align:left;">0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">Perform the division. </div>
+</div>
+<div class="sga" id="vhg">27</div>
+</body>
+</html>

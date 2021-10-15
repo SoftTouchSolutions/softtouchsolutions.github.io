@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Further problems 5 Least squares method: Step s04</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:3,odz:2},qzc:["p02","s12","t03","q08","s04"],sww:["AMBDT","A1BDT","ABCDT"],pok:{AMBDT:{ydd:0,uey:"\u0033\u002E\u0032\u0030",eho:"",aek:false},A1BDT:{ydd:0,uey:"\u0032\u002E\u0034\u0038",eho:"",aek:false},ABCDT:{ydd:0,uey:"\u0033\u002E\u0032\u0030",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="dck">Using the method of least squares, the two equations obtained in <i>a</i> and <i>b</i> are then</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">6</td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> + </td>
+<td class="eqc">28.6505</td>
+<td class="eqc">14</td>
+<td class="eqc"><span class="rac">a</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">90.2</td>
+<td class="eqc">6</td>
+<td class="eqc" style="padding-left:4em;height:24px"><span class="eqc" style="height:24px">[1]</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="text-align:right;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">28.6505</td>
+<td class="eqc">14</td>
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> + </td>
+<td class="eqc">156</td>
+<td class="eqc"><span class="rac">a</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="text-align:left;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"> = </td>
+<td class="eqc">478.668</td>
+<td class="eqc">91</td>
+<td class="eqc" style="padding-left:2em;height:24px"><span class="eqc" style="height:24px">[2]</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">Solving for <i>a</i> gives</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">a</span></td>
+<td class="eqc"> = </td>
+<td class="eqc">2.48</td>
+<td class="eqc">  to 2 dp</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ees">
+<div class="dck">Substituting this value of <i>a</i> into [1] gives</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">b</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="AMBDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">  to 2 dp</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck" style="padding-top:1em;">The data, therefore, fits the equation</div>
+<div class="kin" style="padding-top:1em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc"><span class="rac">P</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="A1BDT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">
+<table class="eqc" style="">
+<tr class="eqc">
+<td class="sai"><img class="eqc" src="../../../../img/mRad_1.gif"  height="22"  width="12" /></td>
+<td class="eqc" style="border-top:solid 1px #000000;"><span class="rac">W</span></td>
+</tr>
+</table>
+</td>
+<td class="eqc"> + </td>
+<td class="eqc"><span id="ABCDT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">Use the value found for <i>a</i> in equation [1] to calculate the value of <i>b</i>.</div>
+</div>
+<div class="sga" id="vhg"></div>
+</body>
+</html>

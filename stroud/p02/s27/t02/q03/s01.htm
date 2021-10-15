@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 strict//en"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Engineering Mathematics Personal Tutor Test 3(c) Coding procedure for mode: Step s01</title>
+<meta name="description" content="none">
+<meta name="author" content="K.A. Stroud and Dexter Booth">
+<meta name="copyright" content="Engineering Mathematics Personal Tutor copyright © Palgrave Macmillan Ltd 2001 and 2007">
+<meta name="robots" content="none">
+<meta http-equiv="Content-Language" content="">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../../sys/engMathsPT_stp.js"></script><link rel="stylesheet" type="text/css" href="../../../../sys/engMathsPT_exr.css">
+</head><script type="text/javascript"><!--
+tyn();var isk={xgi:{ynz:"../../../../",wyx:"_",vfc:6,odz:2},qzc:["p02","s27","t02","q03","s01"],sww:["ADRCT","AHRCT","ATRCT","A5RCT","ALSCT","AXSCT"],pok:{ADRCT:{ydd:0,uey:"\u0035",eho:"",aek:false},AHRCT:{ydd:0,uey:"\u0031\u0030\u002E\u0037",eho:"",aek:false},ATRCT:{ydd:0,uey:"\u0031\u0030\u002E\u0034\u0035",eho:"",aek:false},A5RCT:{ydd:0,uey:"\u0034",eho:"",aek:false},ALSCT:{ydd:0,uey:"\u0031",eho:"",aek:false},AXSCT:{ydd:0,uey:"\u0030\u002E\u0033",eho:"",aek:false}}};
+//--></script><body class="zsh" onload="prc()" onclick="okl()" tabindex="3" onselectstart="mwf()">
+<div class="svn">
+<div class="dck">The thicknesses of 40 samples of steel plate were measured:</div>
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc" style="padding-bottom:10px;text-align:right">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Thickness </td>
+<td class="eqc"><span class="rac">x</span></td>
+<td class="eqc"> mm</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="padding-bottom:10px;text-align:right">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">  Frequency </td>
+<td class="eqc"><span class="rac">f</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">9.6</td>
+<td class="eqc">&#8211;</td>
+<td class="eqc">9.8</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">1</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">9.9</td>
+<td class="eqc">&#8211;</td>
+<td class="eqc">10.1</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">4</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">10.2</td>
+<td class="eqc">&#8211;</td>
+<td class="eqc">10.4</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">10</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">10.5</td>
+<td class="eqc">&#8211;</td>
+<td class="eqc">10.7</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">11</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">10.8</td>
+<td class="eqc">&#8211;</td>
+<td class="eqc">11.0</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">7</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">11.1</td>
+<td class="eqc">&#8211;</td>
+<td class="eqc">11.3</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999">4</td>
+</tr>
+<tr class="eqc">
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999;border-bottom:solid 1px #999999">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">11.4</td>
+<td class="eqc">&#8211;</td>
+<td class="eqc">11.6</td>
+</tr>
+</table>
+</td>
+<td class="eqc" style="padding-bottom:10px;text-align:right;border-top:solid 1px #999999;border-bottom:solid 1px #999999">3</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="dck">Calculate the mode.</div>
+</div>
+<div class="ees">
+<div class="kin">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Group with highest frequency </td>
+<td class="eqc">10.</td>
+<td class="eqc"><span id="ADRCT" onclick="hey(event,this)" class="pwr">_</span></td>
+<td class="eqc">&#8211;</td>
+<td class="eqc"><span id="AHRCT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</div>
+<div class="kin" style="padding-top:0.5em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Lower boundary value </td>
+<td class="eqc"><span class="rac">L</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="ATRCT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</div>
+<div class="kin" style="padding-top:0.5em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Difference in frequency on the lower adjacent boundary </td>
+<td class="eqc"><span class="rac">l</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="A5RCT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</div>
+<div class="kin" style="padding-top:0.5em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Difference in frequency on the upper adjacent boundary </td>
+<td class="eqc"><span class="rac">u</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="ALSCT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</div>
+<div class="kin" style="padding-top:0.5em;">
+<table class="eqc">
+<tr class="eqc">
+<td class="eqc">Class interval </td>
+<td class="eqc"><span class="rac">c</span></td>
+<td class="eqc"> = </td>
+<td class="eqc"><span id="AXSCT" onclick="hey(event,this)" class="pwr">_</span></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sga" id="mon">
+<div class="dck">The modal group is the group with the highest frequency. Boundaries between groups are halfway between the upper and lower data values.</div>
+</div>
+<div class="sga" id="vhg">32-36</div>
+</body>
+</html>
