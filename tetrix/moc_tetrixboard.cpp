@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_TetrixBoard_t {
-    QByteArrayData data[10];
-    char stringdata0[92];
+    QByteArrayData data[14];
+    char stringdata0[134];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,12 +41,17 @@ QT_MOC_LITERAL(5, 45, 5), // "level"
 QT_MOC_LITERAL(6, 51, 19), // "linesRemovedChanged"
 QT_MOC_LITERAL(7, 71, 8), // "numLines"
 QT_MOC_LITERAL(8, 80, 5), // "start"
-QT_MOC_LITERAL(9, 86, 5) // "pause"
+QT_MOC_LITERAL(9, 86, 5), // "pause"
+QT_MOC_LITERAL(10, 92, 8), // "moveLeft"
+QT_MOC_LITERAL(11, 101, 9), // "moveRight"
+QT_MOC_LITERAL(12, 111, 10), // "rotateLeft"
+QT_MOC_LITERAL(13, 122, 11) // "rotateRight"
 
     },
     "TetrixBoard\0scoreChanged\0\0score\0"
     "levelChanged\0level\0linesRemovedChanged\0"
-    "numLines\0start\0pause"
+    "numLines\0start\0pause\0moveLeft\0moveRight\0"
+    "rotateLeft\0rotateRight"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,7 +61,7 @@ static const uint qt_meta_data_TetrixBoard[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,13 +69,17 @@ static const uint qt_meta_data_TetrixBoard[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   39,    2, 0x06 /* Public */,
-       4,    1,   42,    2, 0x06 /* Public */,
-       6,    1,   45,    2, 0x06 /* Public */,
+       1,    1,   59,    2, 0x06 /* Public */,
+       4,    1,   62,    2, 0x06 /* Public */,
+       6,    1,   65,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       8,    0,   48,    2, 0x0a /* Public */,
-       9,    0,   49,    2, 0x0a /* Public */,
+       8,    0,   68,    2, 0x0a /* Public */,
+       9,    0,   69,    2, 0x0a /* Public */,
+      10,    0,   70,    2, 0x0a /* Public */,
+      11,    0,   71,    2, 0x0a /* Public */,
+      12,    0,   72,    2, 0x0a /* Public */,
+      13,    0,   73,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
@@ -78,6 +87,10 @@ static const uint qt_meta_data_TetrixBoard[] = {
     QMetaType::Void, QMetaType::Int,    7,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -95,6 +108,10 @@ void TetrixBoard::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 2: _t->linesRemovedChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->start(); break;
         case 4: _t->pause(); break;
+        case 5: _t->moveLeft(); break;
+        case 6: _t->moveRight(); break;
+        case 7: _t->rotateLeft(); break;
+        case 8: _t->rotateRight(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -152,13 +169,13 @@ int TetrixBoard::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 9)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 5;
+        _id -= 9;
     }
     return _id;
 }
