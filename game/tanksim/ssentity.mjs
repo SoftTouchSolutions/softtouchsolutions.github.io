@@ -21,8 +21,8 @@ class SSEntity {
     this.speed = SPEED / (w * h);
     this.speed *= this.speed;
 
-    const rand = new Random();
-    this.tgt = 51 + rand.nextInt(50);
+    this.rand = new Random();
+    this.tgt = 51 + this.rand.nextInt(50);
 
     if (this.name.toLowerCase().startsWith("car")) {
       this.entity = TankModel.CAR;
@@ -35,8 +35,8 @@ class SSEntity {
 
   render() {
     if (this.filling_done && this.entity === TankModel.CAR) {
-      this.pc = rand.nextInt(50);
-      this.tgt = 51 + rand.nextInt(50);
+      this.pc = this.rand.nextInt(50);
+      this.tgt = 51 + this.rand.nextInt(50);
       this.filling_done = false;
       TankSim.FILLED = TankSim.FILLED === TankSim.CARS ? 0 : TankSim.FILLED + 1;
     }
@@ -80,7 +80,7 @@ class SSEntity {
     switch (this.entity) {
       case TankModel.TANK:
         const f = 1 / v[0];
-        console.log("tank rate =" + f);
+        // console.log("tank rate =" + f);
         this.pc += f;
         break;
       case TankModel.STATION:

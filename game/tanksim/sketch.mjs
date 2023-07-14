@@ -1,26 +1,28 @@
 
 // import SSEntity from './ssentity.mjs';
-// import TankModel from './tankmodel.mjs';
+const range = (start, stop, step = 1) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
+
 const sim = new TankModel();
+const mxsz = 50;
+let chart = {}
 function setup() {
     let canvas = createCanvas(600, 400);
     canvas.position(300, 50);
   // var ctx = document.getElementById('myChart').getContext('2d');
-    var chart = new Chart(canvas, {
+    chart = new Chart(canvas, {
         // The type of chart we want to create
         type: 'line',
   
         // The data for our dataset
         data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            labels:range(0,50),
             datasets: [{
-                label: "My First dataset",
+                label: "Tank model",
                 backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45],
+                borderColor: 'rgb(0, 99, 132)',
+                data: [],
             }]
         },
-  
         // Configuration options e
         options: {
             // Boolean - whether or not the chart should be responsive and resize when the browser does.
@@ -29,13 +31,18 @@ function setup() {
             maintainAspectRatio: false,
         }
     });
+    console.log(chart.data.datasets[0].data);
+    frameRate(10);
   }
   
   function draw() {
-    //background(220, 180, 200);
-  
-    // ellipse(width/2, height/2, 100, 100);
-    // ellipse(width/4, height/2, 50, 50);
+    // console.log(sim)
+    // console.log(sim.mainTank.pc)
+    let x = chart.data.datasets[0].data;
+    let pc = sim.mainTank.pc;
+    if(x.length>50) x.shift()
+    x.push(pc)
+    chart.update()
     sim.render();
   }
   

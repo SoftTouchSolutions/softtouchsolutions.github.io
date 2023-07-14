@@ -4,7 +4,7 @@
 
 class TankModel {
   constructor() {
-    this.mainTank = new SSEntity("Tank", 0, 0, 80, 80);
+    this.mainTank = new SSEntity("Tank", -85, 0, 80, 80);
     this.fillers = new Array(4);
     this.cars = new Array(4);
     this.stations = new Array(4);
@@ -15,12 +15,12 @@ class TankModel {
     for (let j = 0; j < this.fillers.length; j++) {
       let i = 50;
       let y = 100 + (i * j);
-      this.fillers[j] = new SSEntity(`station${j + 1}`, 40, y, 40, 40);
+      this.fillers[j] = new SSEntity(`station${j + 1}`, -45, y, 40, 40);
     }
     for (let j = 0; j < this.cars.length; j++) {
       let i = 30;
       let x = 100 + (i * j);
-      this.cars[j] = new SSEntity(`car${j + 1}`, x, 0, 20, 40);
+      this.cars[j] = new SSEntity(`car${j + 1}`, x, -45, 20, 40);
     }
   }
 
@@ -35,17 +35,18 @@ class TankModel {
 
   simulate() {
     if (TankSim.FILLED == 0) {
-      TankSim.CARS = this.rand.nextInt(this.cars.length) + 1;
+      TankSim.CARS = this.rand.nextInt(this.cars.length);
       for (let i = 0; i < TankSim.CARS; i++) {
         let j = this.rand.nextInt(this.cars.length);
         while (this.stations.includes(j)) {
-          j = this.rand.nextInt(4);
+          j = this.rand.nextInt(this.cars.length);
         }
         this.stations[i] = j;
       }
     }
-
+    // console.log(this.stations)
     let v = 1;
+    // console.log('here0',TankSim.CARS)
     for (let i = 0; i < TankSim.CARS; i++) {
       if (!this.fillers[this.stations[i]].done()) {
         v++;
