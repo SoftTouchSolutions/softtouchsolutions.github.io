@@ -160,3 +160,33 @@ main[b-xppf3xpkt4] {
         overflow-y: auto;
     }
 }
+/* /Pages/Components/LoginForm.razor.rz.scp.css */
+.scene[b-0xlaqwsmar] {
+  border: 1px solid #CCC;
+  perspective: 600px;
+}
+
+.card[b-0xlaqwsmar] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card.is-flipped[b-0xlaqwsmar] {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face[b-0xlaqwsmar] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card__face--back[b-0xlaqwsmar] {
+  transform: rotateY(180deg);
+}
