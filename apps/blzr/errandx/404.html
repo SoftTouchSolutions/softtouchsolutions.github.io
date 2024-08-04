@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blzr</title>
+    <base href="/apps/blzr/errandx/" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self' data:;">
+    <!-- <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" /> -->
+    <!-- <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"> -->
+    <!-- <link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script> -->
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="img/cc.png" />
+    <link href="blzr.styles.css" rel="stylesheet" />
+    <!-- <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style> -->
+</head>
+
+<body>
+    <div id="app">
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
+    </div>
+    <!-- <script>
+        function initMap() {
+            mapboxgl.accessToken = 'pk.eyJ1Ijoiam9objR4IiwiYSI6ImNsejV3MW9weDQ3ZDQybHNnaGZpam81YjUifQ._wa0kXU4CKI4AcTR4EYOYQ';
+            const map = new mapboxgl.Map({
+                container: 'map', // container ID
+                center: [-74.5, 40], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+                zoom: 9 //starting zoom
+            });
+        }
+    </script>
+     -->
+    <!-- <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div> -->
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>
