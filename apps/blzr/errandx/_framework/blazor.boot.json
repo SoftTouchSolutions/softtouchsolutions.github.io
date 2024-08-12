@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "blzr",
   "resources": {
-    "hash": "sha256-YVILQrPPdI4KCYXytp8C41XCPOxtGDn7C26BG6C1VBI=",
+    "hash": "sha256-VVJO/w3ekn8/qdnKMYVUMMBbGBUeb3hTdzvwmJfwaWI=",
     "jsModuleNative": {
       "dotnet.native.8.0.7.0vs2o4ok2f.js": "sha256-gnxgb5xGB6Dt6sRRrYVkCy/Gi/gtl/HerAu6IbsvR+w="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.7.urcsr75yt5.js": "sha256-soZyw6XWXOLKhA26AOyzSpCP5cAsw1wvhdPHSYNTMfQ="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-GO6sq7xD6mhsspj1EVj3oZAr29QIYvgvCcunZOoU30k="
+      "dotnet.native.wasm": "sha256-9/ZCVrCaLMGh0Nq09tLGQimxzbHKSBhuwhR910Zi9vY="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -17,12 +17,12 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "Application.wasm": "sha256-ul+UXpN4LpSMp6/+y4btASj1H4GClCaQ1TouXctss1U=",
-      "blzr.wasm": "sha256-xTTfbxVR1XzwPpxxbhva74+msG/qglXG2JV02OVpFu8=",
-      "Domain.wasm": "sha256-1X/Elu/UQWrCEnRG94fz9p2aIfXBLFtzApcsXWat594=",
+      "Application.wasm": "sha256-0274T0ZpbPMmGKf7u+3g+AmAEHxbEjoYtaONjDcP/2g=",
+      "blzr.wasm": "sha256-Wic+3XE9g99i0VRavJZAAwxEWDd0/pCuXanKPv7OryI=",
+      "Domain.wasm": "sha256-IL0JqUU6iq7IDFaTHVVFf8s2ZwMUIDQ9dhINhv6/gzU=",
       "FluentValidation.DependencyInjectionExtensions.wasm": "sha256-nL7eCbVX/bTUjd/GYPr6vlmuqpkgbyB2+cuKX6eLu7s=",
       "FluentValidation.wasm": "sha256-aj8Jl+hkfz7zU+50kgPxs2Py/gfFGchvGDLdk63v35g=",
-      "Infrastructure.wasm": "sha256-mwemRNrzfsZz/+hfK9aTmYG6/oah/pVVzxinAo8+u+c=",
+      "Infrastructure.wasm": "sha256-ocPr9Ctu/OI2Dd53oAIhjZqaM35Jd+8LpwQVeOaL6GQ=",
       "MediatR.Contracts.wasm": "sha256-BJxhundNxkmTX8ZmJ3p4iMbR10vrmF7s4p9BtzesYIk=",
       "MediatR.wasm": "sha256-8pNmAASdRvykIvqXnZBH8jV92khwbR7bOXpK1l6wBGI=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-cmY8k/YlGUoMD2xiFJOph67yKoS9CSprueGbqIboQak=",
@@ -57,7 +57,7 @@
       "System.ComponentModel.Primitives.wasm": "sha256-PkCo0IepAqNNdZPYOmbygkfmwXkLf6zxZY05jYkH7w8=",
       "System.ComponentModel.TypeConverter.wasm": "sha256-DblB85FWjbQS8rHULPb62qT5q1e1TERf1Dva28JiJ4c=",
       "System.ComponentModel.wasm": "sha256-nuUzMLQhd7bkS35ceFD8NLkfVFuvHOZ10Ia//q+ma0o=",
-      "System.Console.wasm": "sha256-/jc+UdBy7GHE+r+Pr+MaUaOyng90pgiatC+51JA3ilw=",
+      "System.Console.wasm": "sha256-VqBcZpy68KE0TXDIgiXOtpSk6FiRJ8ZbgL0PP4C58l8=",
       "System.Diagnostics.DiagnosticSource.wasm": "sha256-+SnqV7ecVpLF8upP7Aoz2rmY6zYGUc6cMFiYEGtMZsk=",
       "System.Linq.Expressions.wasm": "sha256-IHVuPEoM9Aqrh4plX0Xink3HQlSx+jl5qdN0Hcd4aqU=",
       "System.Linq.wasm": "sha256-QmLL65KFzjSXzD5MkTfWdEskhVq9ZzAU2XejvvNdwWc=",
@@ -67,12 +67,12 @@
       "System.Net.Primitives.wasm": "sha256-2QJd4OPRsgzc4G/ooVGZyuG18M8NS44ZCS/y4IDPUdI=",
       "System.Net.WebSockets.wasm": "sha256-ETScmkAU6/R3C7ngHFphQGZhiH24EySXg8eOyV/gCYk=",
       "System.ObjectModel.wasm": "sha256-rg+ED+IIJofbAeZP5XemedaTzvfbiYxEiNcIlLaQ71k=",
-      "System.Private.CoreLib.wasm": "sha256-GtGUL349v+K7lMrAJ3cp3gZDeDGSV4bpuqVAq8h8ilw=",
+      "System.Private.CoreLib.wasm": "sha256-rWG1xw1ZuhBaFRXO3iK03DLLi6HfCb7SyWl0WeMwQK0=",
       "System.Private.Uri.wasm": "sha256-siacT1o2ZBsWJyS9X1RLmG7ZZnSo2qBFqTaCe1eSTWY=",
       "System.Runtime.InteropServices.JavaScript.wasm": "sha256-8m7q6IfvTajy/UhTPL/oSXLq+HE7txOHKCFLDDkFoyA=",
       "System.Runtime.Intrinsics.wasm": "sha256-16z7Y85W9IwxELcBRextKyJGeSFRNLGWGWxsOvQ/45E=",
       "System.Runtime.Serialization.Primitives.wasm": "sha256-kJNByIvRJQGycUFaYzv2Asaov8d14mmPfXcOFWikXWI=",
-      "System.Runtime.wasm": "sha256-kxYHStP/pXuxaUVOqm+HRVCxaRTv3bHTl/jpaAKIQ6E=",
+      "System.Runtime.wasm": "sha256-iWh72yMfCIXtSMPK/wYuf3p7dPrF5cGyq6E5+NKmwAc=",
       "System.Security.Claims.wasm": "sha256-bWfZqnyWLmSIjs3IfnTQN5XBZ5Al4gyqDTWd559ndEk=",
       "System.Security.Cryptography.wasm": "sha256-PTfG/BkDaxsL9AzeMZMwZZUOJzIcf8blN1QH9AiWphs=",
       "System.Text.Encodings.Web.wasm": "sha256-UZ5gwpuSGaHrrl8PbB706y6zQa6N4mSrBEcwLfiWME0=",
