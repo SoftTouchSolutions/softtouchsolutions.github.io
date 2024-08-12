@@ -1,6 +1,6 @@
 ﻿
 // Set a cookie
-export function set(name, value, days) {
+window.set = function(name, value, days) {
     var expires = "";
     if (days) {
         var date = new Date();
@@ -11,7 +11,7 @@ export function set(name, value, days) {
 }
 
 // Get a cookie
-export function get(name) {
+window.get = function(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
     for(var i=0;i < ca.length;i++) {
