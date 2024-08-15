@@ -1,15 +1,15 @@
 {
   "mainAssemblyName": "blzr",
   "resources": {
-    "hash": "sha256-hkFMKprT1KoHUGzHPHPCSVKnr7HFNF6BFjeH8wUrmAE=",
+    "hash": "sha256-ZZHz60gcbNrQB/rZjQqtaDTQZ08SOBEgz5oGlwqFfHw=",
     "jsModuleNative": {
-      "dotnet.native.8.0.8.x1zh7lfveu.js": "sha256-juC5sA7gHTLXFEhAKgdM2/RavswpwCtDfjYGsAz2FXg="
+      "dotnet.native.8.0.8.0vs2o4ok2f.js": "sha256-CC6791/fuN3JkEw/6qYCD2P3x6+3Eh6Vnu7XWsyxtMA="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.8.0.8.kjb7xqfj6w.js": "sha256-0Dpj/NkVD5WqSC16ZvJLmlc38iv9+Je+umYBVOycPVU="
+      "dotnet.runtime.8.0.8.80cvijctdx.js": "sha256-0Dpj/NkVD5WqSC16ZvJLmlc38iv9+Je+umYBVOycPVU="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-OcUTcd7qQceenWEF93409WZcaXp2qQbEyhdchog4RUE="
+      "dotnet.native.wasm": "sha256-zds5fVJmahx8OMrnI0bidg0bcHxXOyl7RjSWEJQs9zA="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -17,12 +17,12 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "Application.wasm": "sha256-sH4k3sDeFtLpzYRfUx4SEG2qd9yOUR3iwBtTC1QcP2g=",
-      "blzr.wasm": "sha256-DV1PxP328etRn58WUEudBuQtDEH7bLFQhghdWpSbE3E=",
-      "Domain.wasm": "sha256-qfmtNXWeUNfu1bKG6snF7FzmTqU1AypLyPXcNq8mdyY=",
+      "Application.wasm": "sha256-Kd/jBqRm0ioT7yqdb1oyQchP2JEub1Yl+W/W5x8ooJM=",
+      "blzr.wasm": "sha256-AMFYGFLamb6oNlHzKDB9BUg8+K5j+DF19or6IkmJu+s=",
+      "Domain.wasm": "sha256-d6VeMjbvRIGw8zMKDz55iKCCbHjloB6xyEMO7yyN68E=",
       "FluentValidation.DependencyInjectionExtensions.wasm": "sha256-nL7eCbVX/bTUjd/GYPr6vlmuqpkgbyB2+cuKX6eLu7s=",
       "FluentValidation.wasm": "sha256-aj8Jl+hkfz7zU+50kgPxs2Py/gfFGchvGDLdk63v35g=",
-      "Infrastructure.wasm": "sha256-6qX2INF2YTN55ZzWwwg1Ho3uak6VOE+iAotMPWTWIkE=",
+      "Infrastructure.wasm": "sha256-RjGjgwqvOD+lfodTeFlSiiPy9zZpNH6imlYjOXK1hQk=",
       "MediatR.Contracts.wasm": "sha256-BJxhundNxkmTX8ZmJ3p4iMbR10vrmF7s4p9BtzesYIk=",
       "MediatR.wasm": "sha256-8pNmAASdRvykIvqXnZBH8jV92khwbR7bOXpK1l6wBGI=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-cmY8k/YlGUoMD2xiFJOph67yKoS9CSprueGbqIboQak=",
