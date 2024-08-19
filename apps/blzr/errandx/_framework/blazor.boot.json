@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "blzr",
   "resources": {
-    "hash": "sha256-Ze23UnLkl0pK70lS09374043fqzyNcIXFBfUoSGgABI=",
+    "hash": "sha256-TGzatZ9MLIKEVI9hLRroZnTm0bEXfj83CbjG5uzA/ok=",
     "jsModuleNative": {
       "dotnet.native.8.0.8.0vs2o4ok2f.js": "sha256-CC6791/fuN3JkEw/6qYCD2P3x6+3Eh6Vnu7XWsyxtMA="
     },
@@ -18,7 +18,7 @@
     },
     "assembly": {
       "Application.wasm": "sha256-8ft35aw7sPFKWlMXEPU6ICSkMg4fG/fwlUYK/ri/Il8=",
-      "blzr.wasm": "sha256-YeUvdVxhNJSPoJSYzvgrfFr1gmEbWze9Kxp1L1loDKw=",
+      "blzr.wasm": "sha256-MkAWcSALLwGUUjs7hxVLh+xTd7+4EhVfatZvKP+oSUo=",
       "Domain.wasm": "sha256-lsV0SI0Rih8U9TyTnIT5QvgkF1T2TsVZuh2KzlNz3i0=",
       "FluentValidation.DependencyInjectionExtensions.wasm": "sha256-nL7eCbVX/bTUjd/GYPr6vlmuqpkgbyB2+cuKX6eLu7s=",
       "FluentValidation.wasm": "sha256-aj8Jl+hkfz7zU+50kgPxs2Py/gfFGchvGDLdk63v35g=",
