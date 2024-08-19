@@ -21,3 +21,8 @@ export function getCookie (name) {
     }
     return null;
 }
+
+export function refreshPage()
+{
+    location.reload();
+}
