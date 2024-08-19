@@ -160,6 +160,37 @@ main[b-xppf3xpkt4] {
         overflow-y: auto;
     }
 }
+/* /Pages/Components/LandingForm.razor.rz.scp.css */
+
+.scene[b-wbnyb7iqvd] {
+  border: 1px solid #CCC;
+  perspective: 600px;
+}
+
+.card[b-wbnyb7iqvd] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card.is-flipped[b-wbnyb7iqvd] {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face[b-wbnyb7iqvd] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card__face--back[b-wbnyb7iqvd] {
+  transform: rotateY(180deg);
+}
 /* /Pages/Components/LoginForm.razor.rz.scp.css */
 .scene[b-0xlaqwsmar] {
   border: 1px solid #CCC;
