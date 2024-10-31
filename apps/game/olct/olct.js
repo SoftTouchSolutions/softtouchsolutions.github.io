@@ -22,34 +22,48 @@ export class olcSprite {
 
 export class olcConsoleGameEngine {
   constructor(canvasId) {
-      this.canvas = document.getElementById(canvasId);
-      this.context = this.canvas.getContext('2d');
-      this.m_nScreenWidth = 80;
-      this.m_nScreenHeight = 30;
-      this.m_nFontWidth = 10;
-      this.m_nFontHeight = 20;
-      this.m_bufScreen = Array.from({ length: 2 }, () => new Array(this.m_nScreenWidth * this.m_nScreenHeight).fill({ colour: 'black' }));
-      this.m_nCurrentBuffer = 0;
-      this.m_bAtomActive = false;
-      this.m_status = "";
+    this.canvas = document.getElementById(canvasId);
+    this.context = this.canvas.getContext('2d');
+    this.m_nScreenWidth = 80;
+    this.m_nScreenHeight = 30;
+    this.m_nFontWidth = 10;
+    this.m_nFontHeight = 20;
+    this.m_bufScreen = Array.from({ length: 2 }, () => new Array(this.m_nScreenWidth * this.m_nScreenHeight).fill({ colour: 'black' }));
+    this.m_nCurrentBuffer = 0;
+    this.m_bAtomActive = false;
+    this.m_status = "";
 
-      // Additional members for event handling
-      this.m_keys = new Array(512).fill({bPressed:false, bReleased:false, bHeld:false })
-      this.m_keyNewState = new Array(512).fill(false);
-      this.m_keyOldState = new Array(512).fill(false);
-      this.m_mouse = new Array(5).fill({bPressed:false, bReleased:false, bHeld:false })
-      this.m_mouseNewState = new Array(5).fill(false);
-      this.m_mouseOldState = new Array(5).fill(false);
-      this.m_mousePosX = 0;
-      this.m_mousePosY = 0;
+    // Additional members for event handling
+    this.m_keys = new Array(512).fill({bPressed:false, bReleased:false, bHeld:false })
+    this.m_keyNewState = new Array(512).fill(false);
+    this.m_keyOldState = new Array(512).fill(false);
+    this.m_mouse = new Array(5).fill({bPressed:false, bReleased:false, bHeld:false })
+    this.m_mouseNewState = new Array(5).fill(false);
+    this.m_mouseOldState = new Array(5).fill(false);
+    this.m_mousePosX = 0;
+    this.m_mousePosY = 0;
 
-      // Bind the event handler
-      window.addEventListener('keydown', (e) => this.handleEvent(e));
-      window.addEventListener('keyup', (e) => this.handleEvent(e));
-      this.canvas.addEventListener('mousemove', (e) => this.handleEvent(e));
-      this.canvas.addEventListener('mousedown', (e) => this.handleEvent(e));
-      this.canvas.addEventListener('mouseup', (e) => this.handleEvent(e));
-  }
+    // Bind the event handler
+    window.addEventListener('keydown', (e) => this.handleEvent(e));
+    window.addEventListener('keyup', (e) => this.handleEvent(e));
+    this.canvas.addEventListener('mousemove', (e) => this.handleEvent(e));
+    this.canvas.addEventListener('mousedown', (e) => this.handleEvent(e));
+    this.canvas.addEventListener('mouseup', (e) => this.handleEvent(e));
+    element.addEventListener('touchstart', (event) => {
+        bindings.touchStartTime = new Date().getTime();
+    });
+    
+    element.addEventListener('touchend', (event) => {
+        const touchEndTime = new Date().getTime();
+        const timeDiff = touchEndTime - bindings.touchStartTime;
+    
+        // Consider it a tap if the duration is less than 300ms
+        if (timeDiff < 300) {
+            console.log('Tap detected');
+            bindings.click = true;
+        }
+    });
+    }
 
   SetStatus(str){ this.m_status=str;}
   ScreenWidth() { return this.m_nScreenWidth; }
