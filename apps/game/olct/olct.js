@@ -49,11 +49,11 @@ export class olcConsoleGameEngine {
     this.canvas.addEventListener('mousemove', (e) => this.handleEvent(e));
     this.canvas.addEventListener('mousedown', (e) => this.handleEvent(e));
     this.canvas.addEventListener('mouseup', (e) => this.handleEvent(e));
-    element.addEventListener('touchstart', (event) => {
+    this.canvas.addEventListener('touchstart', (event) => {
         bindings.touchStartTime = new Date().getTime();
     });
     
-    element.addEventListener('touchend', (event) => {
+    this.canvas.addEventListener('touchend', (event) => {
         const touchEndTime = new Date().getTime();
         const timeDiff = touchEndTime - bindings.touchStartTime;
     
