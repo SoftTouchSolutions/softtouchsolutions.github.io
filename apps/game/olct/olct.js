@@ -59,7 +59,6 @@ export class olcConsoleGameEngine {
     
         // Consider it a tap if the duration is less than 300ms
         if (timeDiff < 300) {
-            console.log('Tap detected');
             bindings.click = true;
         }
     });
