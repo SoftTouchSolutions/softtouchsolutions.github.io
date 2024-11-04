@@ -194,11 +194,14 @@ export class OneLoneCoderFlappyBird extends olcConsoleGameEngine { // Inherit fr
     if(this.fBirdPosition < this.ScreenHeight() /2){
         t += 50;
     }
-    if(this.fBirdAcceleration < 50 || this.fBirdVelocity < 0){
-        t += 0;
+    if(this.fBirdAcceleration < 50 
+        || (this.fBirdVelocity < 50
+        && this.fBirdPosition < this.ScreenHeight() /2)
+    ){
+        t += 1000;
     }
     if(bindings.tmp++%10==0){
-        console.log( this.fNextFlapTime.toFixed(2), this.fBirdPosition.toFixed(2),'v:',this.fBirdVelocity.toFixed(2),'a:', this.fBirdAcceleration.toFixed(2));
+        console.log( this.nFlapCount, this.fNextFlapTime.toFixed(2), this.fBirdPosition.toFixed(2),'v:',this.fBirdVelocity.toFixed(2),'a:', this.fBirdAcceleration.toFixed(2));
     }
     return t;
 }
