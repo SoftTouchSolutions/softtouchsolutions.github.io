@@ -70,7 +70,7 @@ function serverGet() {
 		}
 		hchcs.show_loader(false);
 	}).catch(err=>{
-		console.console.error(err);
+		console.error(err);
 	});
 }
 
@@ -81,7 +81,8 @@ function saveSong(){
 	console.log("saving song="+pd);
 	$.post(usong_url, pd)
 	.done(function(data) {
-			console.log("Server Response: " + data);
-			alert('Success!')
-	});
-}
+		console.log("Server Response: " + data);
+		alert('Success!')
+	}).catch(err=>{
+		console.error(err);
+	});}
