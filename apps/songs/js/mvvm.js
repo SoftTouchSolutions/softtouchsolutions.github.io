@@ -76,7 +76,6 @@ function Song(data) {
         bindings.tcount++%2==0?
             self.lyrics(transpose(root))
             :self.lyrics(self.olyrics());
-        console.log('here0', root, bindings.tcount);
     };
 
     self.fwd = function() {
