@@ -3,7 +3,7 @@ function ViewModel(){
     var self = this
     self.pageSkip=0;
     self.pageCount=0;
-    self.sterm=ko.observableArray("");
+    self.sterm=ko.observable("");
     self.show_loader=ko.observable(false);
     self.songs=ko.observableArray([]);
     self.curr_idx = ko.observable(0);
@@ -62,13 +62,23 @@ function Song(data) {
     self.lyrics=ko.observable(data.lyrics);
     self.aurl = ko.observable("vid/"+data.audio);
     self.vurl=ko.observable(data.link);
+    self.triads=ko.observableArray(triads);
+    self.olyrics = ko.observable(data.lyrics);
     self.lyrics2 = ko.computed(function() {
         if(self.lyrics())return self.lyrics().replace(/\n/g, "<br/>");
     }, self);
     self.song_selected = function() {
+        bindings.tcount=0;
         hchcs.curr_idx(hchcs.songs.indexOf(self));
         document.getElementById("Player").play();
     };
+    self.transpose = function(root) {
+        bindings.tcount++%2==0?
+            self.lyrics(transpose(root))
+            :self.lyrics(self.olyrics());
+        console.log('here0', root, bindings.tcount);
+    };
+
     self.fwd = function() {
         forwardAudio(true);
     };  

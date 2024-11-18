@@ -85,7 +85,6 @@ function serverGet() {
       console.error(err);
     });
   }
-	console.log(q3);
 	run_query(q4).then(data=>{
 		if (Array.isArray(data)){
 			if (data.length>0)hchcs.songs.removeAll();

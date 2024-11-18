@@ -18,6 +18,7 @@
     <script type="text/javascript" src="js/lodash.compat.js"></script>
     <script type="text/javascript" src="js/minimongo.js"></script>
     <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.9.0/stitch.js"></script>
+    <script type="text/javascript" src="js/music.js"></script>
     <script type="text/javascript" src="js/db.js"></script>
     <script type="text/javascript" src="js/mvvm.js"></script>
     <script>
@@ -96,22 +97,22 @@
             </ul>
             <div class="ui-grid-b ui-responsive">
                 <div class="ui-block-a ui-grid-c">                
-                    <div class="ui-block-a"><a href="#" class="ui-btn ui-shadow ui-corner-all">Ab</a></div>
-                    <div class="ui-block-b"><a href="#" class="ui-btn ui-shadow ui-corner-all">A</a></div>
-                    <div class="ui-block-c"><a href="#" class="ui-btn ui-shadow ui-corner-all">A#</a></div>
-                    <div class="ui-block-d"><a href="#" class="ui-btn ui-shadow ui-corner-all">B</a></div>
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('Ab')}">Ab</a></div>
+                    <div class="ui-block-b"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('Ab')}">A</a></div>
+                    <div class="ui-block-c"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('Ab')}">A#</a></div>
+                    <div class="ui-block-d"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('Ab')}">B</a></div>
                 </div>
                 <div class="ui-block-b ui-grid-c">                
-                    <div class="ui-block-a"><a href="#" class="ui-btn ui-shadow ui-corner-all">C</a></div>
-                    <div class="ui-block-b"><a href="#" class="ui-btn ui-shadow ui-corner-all">C#</a></div>
-                    <div class="ui-block-c"><a href="#" class="ui-btn ui-shadow ui-corner-all">D</a></div>
-                    <div class="ui-block-d"><a href="#" class="ui-btn ui-shadow ui-corner-all">Eb</a></div>
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('G')}">C</a></div>
+                    <div class="ui-block-b"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('G')}">C#</a></div>
+                    <div class="ui-block-c"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('G')}">D</a></div>
+                    <div class="ui-block-d"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('G')}">Eb</a></div>
                 </div>
                 <div class="ui-block-c ui-grid-c">                
-                    <div class="ui-block-a"><a href="#" class="ui-btn ui-shadow ui-corner-all">E</a></div>
-                    <div class="ui-block-b"><a href="#" class="ui-btn ui-shadow ui-corner-all">F</a></div>
-                    <div class="ui-block-c"><a href="#" class="ui-btn ui-shadow ui-corner-all">F#</a></div>
-                    <div class="ui-block-d"><a href="#" class="ui-btn ui-shadow ui-corner-all">G</a></div>
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('G')}">E</a></div>
+                    <div class="ui-block-b"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('G')}">F</a></div>
+                    <div class="ui-block-c"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('G')}">F#</a></div>
+                    <div class="ui-block-d"><a href="#" class="ui-btn ui-shadow ui-corner-all" data-bind="event:{mouseup:transpose('G')}">G</a></div>
                 </div>
 
             </div>
