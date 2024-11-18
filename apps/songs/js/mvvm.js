@@ -77,14 +77,14 @@ function Song(data) {
     };
     self.save = function() {
         console.log("savin..");//var x = event.which || event.keyCode;
-        saveSong();
+        updateSong();
     };
     self.chkSave = function(e) {
         console.log("here");//var x = event.which || event.keyCode;
         var key = e.keyCode ? e.keyCode : e.which;
         if (key == 192) {
             console.log("saving..")
-            saveSong();
+            updateSong();
         }
     };
 }

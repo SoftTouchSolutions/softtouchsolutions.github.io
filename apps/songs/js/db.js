@@ -44,23 +44,49 @@ function run_query(q) {
 	// })
 	});
 }
+function updateSong(){
+  client.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user => {
+		const song={id:hchcs.curr_song().id(),Lyrics:hchcs.curr_song().lyrics()};
+		console.log("saving song=",song);
+		db.collection('Songs').updateOne(
+			{ id: song.id }, // Filter
+			{ $set: { lyrics: song.Lyrics } } // Update
+		).then(result => {
+			console.log(`Successfully updated document:}`, result);
+		}).catch(err => {
+			console.error(`Failed to update document:`, err);
+		});
+	});
+}
 // const app = new Realm.App({ id: "<Your App ID>" });
 // window.onload = initializeAndLogin;
+//db.collection('Songs').find().asArray().then(docs=>console.log(docs))
+//const s = {$match:{ lyrics: { $regex: "Jireh", $options: 'i' } }};
 
 function serverGet() {
-	var st = hchcs.sterm();
+	var st = hchcs.sterm().length>0?hchcs.sterm():"";
 	hchcs.show_loader(true);
 	const q1 = [{$sort:{order_date:-1}}];
-	const q = [{$sort:{order_date:-1}},{$skip:hchcs.pageSkip*pageSize},{$limit:pageSize}];
-	if(getCount || search_mode)
-		run_query(q1).then(docs=>{ 
-			console.log("found "+docs.length+" songs!");
-			hchcs.pageCount=Math.floor(docs.length/pageSize);//+1;
-		}).catch(err=> {
-			//dbg("Ooops! Something went wrong!", response.errors[0].message);
-			console.error(err);
-		});
-	run_query(q).then(data=>{
+	const q2 = [{$sort:{order_date:-1}},{$skip:hchcs.pageSkip*pageSize},{$limit:pageSize}];
+  // Add search query
+  const searchQuery = {
+    $or: [
+      { Title: { $regex: st, $options: 'i' } },
+      { lyrics: { $regex: st, $options: 'i' } }
+    ]
+  };
+	const q3 = [{ $match: searchQuery }, ...q1]
+	const q4 = [{ $match: searchQuery }, ...q2]
+  if (getCount || search_mode) {
+    run_query(q3).then(docs => { 
+      console.log("found " + docs.length + " songs!");
+      hchcs.pageCount = Math.floor(docs.length / pageSize); // +1;
+    }).catch(err => {
+      console.error(err);
+    });
+  }
+	console.log(q3);
+	run_query(q4).then(data=>{
 		if (Array.isArray(data)){
 			if (data.length>0)hchcs.songs.removeAll();
 			for(var i=0;i<data.length;i++){
@@ -74,7 +100,7 @@ function serverGet() {
 	});
 }
 
-function saveSong(){
+function saveSong_deprecated(){
 	//hchcs.curr_song().lyrics().replace(new RegExp('`', 'g'), "")
 	//var pd=JSON.stringify({Id:hchcs.curr_song().id(),Lyrics:hchcs.curr_song().lyrics()});
 	var pd=JSON.stringify({id:hchcs.curr_song().id(),Lyrics:hchcs.curr_song().lyrics()});
