@@ -99,10 +99,7 @@ function Song(data) {
 }
 var hchcs = new ViewModel();
 
-//dbgtest("hello","hello again");
-function temp(){
 
-}
 
 function dbgtest(msg,msg2) {
     //quest.dbg(quest.dbg() + ' ' + msg);
