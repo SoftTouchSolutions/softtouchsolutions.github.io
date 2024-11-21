@@ -52,9 +52,9 @@ function updateSong(){
 			{ id: song.id }, // Filter
 			{ $set: { lyrics: song.Lyrics } } // Update
 		).then(result => {
-			console.log(`Successfully updated document:}`, result);
+			alert(`Successfully updated document:}`, result);
 		}).catch(err => {
-			console.error(`Failed to update document:`, err);
+			hchcs.curr_song().lyrics(`Failed to update document:`, err);
 		});
 	});
 }
