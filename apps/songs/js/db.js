@@ -50,7 +50,7 @@ function updateSong(){
 		console.log("saving song=",song);
 		db.collection('Songs').updateOne(
 			{ id: song.id }, // Filter
-			{ $set: { lyrics: song.Lyrics } } // Update
+			{ $set: { lyrics: song.Lyrics, order_date:	new Date()		} } // Update
 		).then(result => {
 			alert(`Successfully updated document:}`, result);
 		}).catch(err => {
