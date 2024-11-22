@@ -46,13 +46,13 @@ function run_query(q) {
 }
 function updateSong(){
   client.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user => {
-		const song={id:hchcs.curr_song().id(),Lyrics:hchcs.curr_song().lyrics()};
+		const song={id:hchcs.curr_song().id(),Lyrics:hchcs.curr_song().lyrics(),Title:hchcs.curr_song().title()};
 		console.log("saving song=",song);
 		db.collection('Songs').updateOne(
 			{ id: song.id }, // Filter
 			{ $set: { lyrics: song.Lyrics, order_date:	new Date()		} } // Update
 		).then(result => {
-			alert(`Successfully updated document:${song.Title}`, result);
+			alert(`Successfully updated document: ${song.Title}`, result);
 		}).catch(err => {
 			hchcs.curr_song().lyrics(`Failed to update document:`, err);
 		});
