@@ -28,8 +28,9 @@ function transpose(root) {
   const triad = triads[findTriadIndexByName(root)].triad;
   // Find all matches and add them to the array
   while ((match = regex.exec(resultString)) !== null) {
+    console.log(match[1],root,triad)
     matches.push(match[1]);
-    valuesArray.push(`[${triad.indexOf(match[1]) + 1==-1?'*':triad.indexOf(match[1]) + 1}]`);
+    valuesArray.push(`[${triad.indexOf(match[1]) ==-1?'*':triad.indexOf(match[1]) + 1}]`);
   }
   
   // Replace each match with corresponding value from valuesArray
