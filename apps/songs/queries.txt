@@ -1,0 +1,25 @@
+db.collection.aggregate([
+  {
+    $group: {
+      _id: { field1: "$field1", field2: "$field2" },
+      count: { $sum: 1 }
+    }
+  },
+  {
+    $match: { count: { $gt: 1 } }
+  }
+])
+
+const duplicateIndices = [];
+arr.forEach((obj, index) => {
+  const otherIndex = arr.findIndex((otherObj) => otherObj.id === obj.id);
+  if (otherIndex !== index && !duplicateIndices.includes(otherIndex)) {
+    duplicateIndices.push(otherIndex);
+  }
+});
+
+arr.sort((a, b) => {
+  if (a.age < b.age) return -1;
+  if (a.age > b.age) return 1;
+  return 0;
+})
