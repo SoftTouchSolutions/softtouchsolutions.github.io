@@ -48,6 +48,7 @@ const treeTrunkColor = 0x4b3f2f;
 // Direction arrow variables
 let directionArrow;
 let arrowTimeout;
+let actionTimeout; // Add this missing variable for acceleration/deceleration timeouts
 
 const wheelGeometry = new THREE.BoxBufferGeometry(12, 33, 12);
 const wheelMaterial = new THREE.MeshLambertMaterial({ color: 0x333333 });
@@ -935,11 +936,12 @@ window.addEventListener("keyup", function (event) {
   }
 });
 
-// Add a mousedown event listener to control the car via screen clicks
+// Update the mousedown event listener to properly handle acceleration/deceleration
 window.addEventListener("mousedown", function (event) {
   if(gameOver){
     gameOver = false;
     reset();
+    return;
   }
   startGame();
   // Check if the click is on the left or right half of the screen
@@ -952,24 +954,45 @@ window.addEventListener("mousedown", function (event) {
     accelerate = true;
     showDirectionArrow(true); // Show up arrow
   }
-  
-  // Clear any existing timeout
-  if (actionTimeout) {
-    clearTimeout(actionTimeout);
-  }
-  
-  // Hide arrow after 1 second
-  actionTimeout = setTimeout(() => {
-    if(accelerate) accelerate = false;
-    if(decelerate) decelerate = false;
-  }, 10);
 });
 
-// // Add a mouseup event listener to reset acceleration states
-// window.addEventListener("mouseup", function () {
-//   accelerate = false;
-//   decelerate = false;
-// });
+// Re-enable the mouseup event listener to properly stop acceleration/deceleration
+window.addEventListener("mouseup", function () {
+  accelerate = false;
+  decelerate = false;
+});
+
+// Add touch events for mobile devices
+window.addEventListener("touchstart", function (event) {
+  if(gameOver){
+    gameOver = false;
+    reset();
+    return;
+  }
+  
+  event.preventDefault(); // Prevent scrolling when touching the game
+  startGame();
+  
+  // Get the touch position
+  const touch = event.touches[0];
+  
+  // Check if the touch is on the left or right half of the screen
+  if (touch.clientX < window.innerWidth / 2) {
+    // Left half - decelerate
+    decelerate = true;
+    showDirectionArrow(false); // Show down arrow
+  } else {
+    // Right half - accelerate
+    accelerate = true;
+    showDirectionArrow(true); // Show up arrow
+  }
+});
+
+// Add touchend event to stop acceleration/deceleration
+window.addEventListener("touchend", function () {
+  accelerate = false;
+  decelerate = false;
+});
 
 function animation(timestamp) {
   if (!lastTimestamp) {
