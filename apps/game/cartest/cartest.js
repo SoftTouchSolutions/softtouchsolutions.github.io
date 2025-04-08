@@ -838,20 +838,6 @@ function Tree() {
   return tree;
 }
 
-accelerateButton.addEventListener("mousedown", function () {
-  startGame();
-  accelerate = true;
-});
-decelerateButton.addEventListener("mousedown", function () {
-  startGame();
-  decelerate = true;
-});
-accelerateButton.addEventListener("mouseup", function () {
-  accelerate = false;
-});
-decelerateButton.addEventListener("mouseup", function () {
-  decelerate = false;
-});
 window.addEventListener("keydown", function (event) {
   if (event.key == "ArrowUp") {
     startGame();
@@ -876,6 +862,25 @@ window.addEventListener("keyup", function (event) {
     decelerate = false;
     return;
   }
+});
+
+// Add a mousedown event listener to control the car via screen clicks
+window.addEventListener("mousedown", function (event) {
+  startGame();
+  // Check if the click is on the left or right half of the screen
+  if (event.clientX < window.innerWidth / 2) {
+    // Left half - decelerate
+    decelerate = true;
+  } else {
+    // Right half - accelerate
+    accelerate = true;
+  }
+});
+
+// Add a mouseup event listener to reset acceleration states
+window.addEventListener("mouseup", function () {
+  accelerate = false;
+  decelerate = false;
 });
 
 function animation(timestamp) {

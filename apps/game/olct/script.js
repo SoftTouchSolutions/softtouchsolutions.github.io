@@ -19,7 +19,7 @@
 // ctx.arc(100,100,50,0,Math.PI*2);
 // ctx.fill()
 
-import { Test } from './test.js';
+// import { Test } from './test.js';
 import { OneLoneCoderFlappyBird } from './fbird.js';
 
 // const game = new Test('canvas1');
