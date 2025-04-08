@@ -951,13 +951,24 @@ window.addEventListener("mousedown", function (event) {
     accelerate = true;
     showDirectionArrow(true); // Show up arrow
   }
+  
+  // Clear any existing timeout
+  if (actionTimeout) {
+    clearTimeout(actionTimeout);
+  }
+  
+  // Hide arrow after 1 second
+  actionTimeout = setTimeout(() => {
+    if(accelerate) accelerate = false;
+    if(decelerate) decelerate = false;
+  }, 10);
 });
 
-// Add a mouseup event listener to reset acceleration states
-window.addEventListener("mouseup", function () {
-  accelerate = false;
-  decelerate = false;
-});
+// // Add a mouseup event listener to reset acceleration states
+// window.addEventListener("mouseup", function () {
+//   accelerate = false;
+//   decelerate = false;
+// });
 
 function animation(timestamp) {
   if (!lastTimestamp) {
