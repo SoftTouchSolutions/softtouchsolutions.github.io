@@ -70,6 +70,7 @@ const playerAngleInitial = Math.PI;
 let playerAngleMoved;
 let accelerate = false; // Is the player accelerating
 let decelerate = false; // Is the player decelerating
+let gameOver = false; // Is the game over
 
 let otherVehicles = [];
 let ready;
@@ -866,6 +867,10 @@ window.addEventListener("keyup", function (event) {
 
 // Add a mousedown event listener to control the car via screen clicks
 window.addEventListener("mousedown", function (event) {
+  if(gameOver){
+    gameOver = false;
+    reset();
+  }
   startGame();
   // Check if the click is on the left or right half of the screen
   if (event.clientX < window.innerWidth / 2) {
@@ -1088,6 +1093,7 @@ function hitDetection() {
   if (hit) {
     if (resultsElement) resultsElement.style.display = "flex";
     renderer.setAnimationLoop(null); // Stop animation loop
+    gameOver = true;
   }
 }
 
