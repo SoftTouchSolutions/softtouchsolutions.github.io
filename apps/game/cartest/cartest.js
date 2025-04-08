@@ -862,7 +862,7 @@ function createDirectionArrow() {
 
   const geometry = new THREE.ShapeGeometry(shape);
   const material = new THREE.MeshBasicMaterial({
-    color: 0x00ff00, // Green color
+    color: 0x000000, // black color
     transparent: true,
     opacity: 0.8,
     side: THREE.DoubleSide
@@ -872,7 +872,7 @@ function createDirectionArrow() {
   
   // Position it in front of other elements but within camera view
   arrow.position.z = 200;
-  arrow.scale.set(3, 3, 3); // 3x3 size
+  arrow.scale.set(5, 5, 5); // 3x3 size
   arrow.visible = false; // Initially hidden
   
   scene.add(arrow);
