@@ -181,7 +181,6 @@ function reset() {
   playerAngleMoved = 0;
   score = 0;
   scoreElement.innerText = "Press UP";
-  speed = 0.0017;
 
   // Hide direction arrow if visible
   if (directionArrow) {
