@@ -45,6 +45,10 @@ const edgeColor = "#725F48";
 const treeCrownColor = 0x498c2c;
 const treeTrunkColor = 0x4b3f2f;
 
+// Direction arrow variables
+let directionArrow;
+let arrowTimeout;
+
 const wheelGeometry = new THREE.BoxBufferGeometry(12, 33, 12);
 const wheelMaterial = new THREE.MeshLambertMaterial({ color: 0x333333 });
 const treeTrunkGeometry = new THREE.BoxBufferGeometry(15, 15, 30);
@@ -176,6 +180,14 @@ function reset() {
   playerAngleMoved = 0;
   score = 0;
   scoreElement.innerText = "Press UP";
+
+  // Hide direction arrow if visible
+  if (directionArrow) {
+    directionArrow.visible = false;
+  }
+  if (arrowTimeout) {
+    clearTimeout(arrowTimeout);
+  }
 
   // Remove other vehicles
   otherVehicles.forEach((vehicle) => {
@@ -839,14 +851,71 @@ function Tree() {
   return tree;
 }
 
+// After scene initialization, create the direction arrow
+function createDirectionArrow() {
+  // Create a triangular shape for the arrow
+  const shape = new THREE.Shape();
+  shape.moveTo(0, 1.5); // Top point
+  shape.lineTo(-1.5, -1.5); // Bottom left
+  shape.lineTo(1.5, -1.5); // Bottom right
+  shape.lineTo(0, 1.5); // Close shape
+
+  const geometry = new THREE.ShapeGeometry(shape);
+  const material = new THREE.MeshBasicMaterial({
+    color: 0x00ff00, // Green color
+    transparent: true,
+    opacity: 0.8,
+    side: THREE.DoubleSide
+  });
+
+  const arrow = new THREE.Mesh(geometry, material);
+  
+  // Position it in front of other elements but within camera view
+  arrow.position.z = 200;
+  arrow.scale.set(3, 3, 3); // 3x3 size
+  arrow.visible = false; // Initially hidden
+  
+  scene.add(arrow);
+  return arrow;
+}
+
+function showDirectionArrow(isAccelerating) {
+  // Create arrow if it doesn't exist yet
+  if (!directionArrow) {
+    directionArrow = createDirectionArrow();
+  }
+  
+  // Set direction based on input
+  if (isAccelerating) {
+    directionArrow.rotation.z = 0; // Point up
+  } else {
+    directionArrow.rotation.z = Math.PI; // Point down (180 degrees)
+  }
+  
+  // Make arrow visible
+  directionArrow.visible = true;
+  
+  // Clear any existing timeout
+  if (arrowTimeout) {
+    clearTimeout(arrowTimeout);
+  }
+  
+  // Hide arrow after 1 second
+  arrowTimeout = setTimeout(() => {
+    directionArrow.visible = false;
+  }, 1000);
+}
+
 window.addEventListener("keydown", function (event) {
   if (event.key == "ArrowUp") {
     startGame();
     accelerate = true;
+    showDirectionArrow(true); // Show up arrow
     return;
   }
   if (event.key == "ArrowDown") {
     decelerate = true;
+    showDirectionArrow(false); // Show down arrow
     return;
   }
   if (event.key == "R" || event.key == "r") {
@@ -876,9 +945,11 @@ window.addEventListener("mousedown", function (event) {
   if (event.clientX < window.innerWidth / 2) {
     // Left half - decelerate
     decelerate = true;
+    showDirectionArrow(false); // Show down arrow
   } else {
     // Right half - accelerate
     accelerate = true;
+    showDirectionArrow(true); // Show up arrow
   }
 });
 
@@ -912,6 +983,13 @@ function animation(timestamp) {
   moveOtherVehicles(timeDelta);
 
   hitDetection();
+
+  // Keep the direction arrow centered if it exists
+  if (directionArrow && directionArrow.visible) {
+    // Position the arrow in the center of the screen in camera space
+    directionArrow.position.x = camera.position.x;
+    directionArrow.position.y = camera.position.y;
+  }
 
   renderer.render(scene, camera);
   lastTimestamp = timestamp;
@@ -1109,6 +1187,12 @@ window.addEventListener("resize", () => {
   camera.updateProjectionMatrix(); // Must be called after change
 
   positionScoreElement();
+
+  // Reposition the arrow if it exists
+  if (directionArrow) {
+    directionArrow.position.x = camera.position.x;
+    directionArrow.position.y = camera.position.y;
+  }
 
   // Reset renderer
   renderer.setSize(window.innerWidth, window.innerHeight);
