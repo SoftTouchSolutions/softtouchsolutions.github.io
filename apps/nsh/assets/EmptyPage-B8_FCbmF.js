@@ -1,1 +1,0 @@
-import{j as e}from"./mui-CVeSmhdP.js";import{f as o}from"./index-Cjmwo3Rz.js";import"./vendor-CC_ZIGTP.js";import"./utils-ngrFHoWO.js";const t=()=>e.jsx("div",{children:e.jsx(o,{title:"Empty",home:"Home",name:"Pages",fonticonsname:"Empty"})});t.propTypes={};t.defaultProps={};export{t as default};
