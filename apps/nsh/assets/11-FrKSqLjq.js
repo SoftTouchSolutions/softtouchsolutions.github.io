@@ -1,0 +1,1 @@
+const s="/assets/11-D4PzOCQ1.jpg";export{s as u};

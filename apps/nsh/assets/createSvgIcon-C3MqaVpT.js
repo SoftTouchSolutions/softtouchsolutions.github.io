@@ -1,0 +1,1 @@
+import{b as n}from"./vendor-CC_ZIGTP.js";import{u as a}from"./mui-CVeSmhdP.js";var e={};const o=n(a);var t;function f(){return t||(t=1,(function(r){"use client";Object.defineProperty(r,"__esModule",{value:!0}),Object.defineProperty(r,"default",{enumerable:!0,get:function(){return u.createSvgIcon}});var u=o})(e)),e}export{f as r};
