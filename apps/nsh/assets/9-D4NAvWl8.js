@@ -1,1 +1,0 @@
-const s="/apps/nsh/assets/9-swteL1-G.jpg";export{s as u};
