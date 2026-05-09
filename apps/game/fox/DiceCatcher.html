@@ -6,28 +6,17 @@
     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0"/>
     <title>Dice Catcher</title>
     <style>
-      html, body {
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        height: 100%;
-        background: #0d0d1a;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      /* Let #screen shrink-wrap the canvas so flexbox can centre it */
-      #screen {
-        display: inline-block;
-      }
+      html, body { padding: 0; margin: 0; overflow: hidden; height: 100%; background: #0d0d1a; }
+      #screen { width: 100%; height: 100%; }
       #qtspinner {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        height: 100%;
         color: #ffffff;
         font-family: sans-serif;
         line-height: 150%;
-        margin-top: 1.5em;
       }
     </style>
   </head>
@@ -48,8 +37,7 @@
 
         const showUi = (ui) => {
           [spinner, screen].forEach(el => el.style.display = 'none');
-          if (screen === ui) screen.style.display = 'inline-block';
-          else               ui.style.display = 'flex';
+          ui.style.display = 'block';
         };
 
         try {
@@ -70,6 +58,7 @@
             }
           });
         } catch (e) {
+          status.innerHTML = 'Failed to load: ' + e.message;
           console.error(e);
           console.error(e.stack);
         }
