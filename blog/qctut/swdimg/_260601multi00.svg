@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="675"
+     viewBox="0 0 1200 675">
+
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#162032"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+
+  <!-- Header rect -->
+  <rect x="0" y="0" width="1200" height="130" fill="#0F172A"/>
+
+  <!-- Accent strip -->
+  <rect x="0" y="0" width="8" height="130" fill="#6366F1"/>
+
+  <!-- Title -->
+  <text x="48" y="72" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="42" font-weight="700" fill="#F8FAFC">Does Adding Workers Make Code Faster?</text>
+
+  <!-- Subtitle / hook -->
+  <text x="48" y="108" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="19" font-weight="400" fill="#94A3B8">Five languages benchmarked: 100 million steps each, measured in parallel across 1, 2, 4, 8, 16, 32 workers.</text>
+
+  <!-- Separator line -->
+  <line x1="0" y1="130" x2="1200" y2="130" stroke="#6366F1" stroke-width="1.5"/>
+
+  <!-- ============================================================ -->
+  <!-- CONCEPT CARD 1 (x=32): Workers and Cores                     -->
+  <!-- ============================================================ -->
+  <rect x="32" y="158" width="255" height="350" rx="12" fill="#1E293B"/>
+  <rect x="32" y="158" width="3" height="350" fill="#6366F1"/>
+  <text x="52" y="193" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="19" font-weight="700" fill="#F8FAFC">Workers and Cores</text>
+  <text x="52" y="224" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="15" font-weight="400" fill="#94A3B8">
+    <tspan x="52" dy="0">Each worker runs on one core</tspan>
+    <tspan x="52" dy="1.4em">at the same time. More workers</tspan>
+    <tspan x="52" dy="1.4em">help until all cores are busy.</tspan>
+  </text>
+  <text x="52" y="318" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="14" font-weight="400" fill="#6366F1">
+    <tspan x="52" dy="0">Like workers sharing desks:</tspan>
+    <tspan x="52" dy="1.4em">no spare desk means no extra</tspan>
+    <tspan x="52" dy="1.4em">work done at once.</tspan>
+  </text>
+
+  <!-- ============================================================ -->
+  <!-- CONCEPT CARD 2 (x=303): CPU-Busy Work definition             -->
+  <!-- ============================================================ -->
+  <rect x="303" y="158" width="255" height="350" rx="12" fill="#1E293B"/>
+  <rect x="303" y="158" width="3" height="350" fill="#6366F1"/>
+  <text x="323" y="193" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="19" font-weight="700" fill="#F8FAFC">Processor-Busy Work</text>
+  <!-- accent top border for visual label -->
+  <rect x="303" y="215" width="255" height="2" fill="#6366F1" opacity="0.4"/>
+  <text x="323" y="232" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="12" font-weight="700" fill="#22D3EE" letter-spacing="1">CPU-BOUND</text>
+  <text x="323" y="258" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="15" font-weight="400" fill="#94A3B8">
+    <tspan x="323" dy="0">The processor never stops.</tspan>
+    <tspan x="323" dy="1.4em">It calculates non-stop from</tspan>
+    <tspan x="323" dy="1.4em">start to finish. No waiting.</tspan>
+  </text>
+  <text x="323" y="348" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="14" font-weight="400" fill="#6366F1">
+    <tspan x="323" dy="0">Example: counting 100 million</tspan>
+    <tspan x="323" dy="1.4em">squares. Pure maths. Adding</tspan>
+    <tspan x="323" dy="1.4em">one worker per core helps.</tspan>
+  </text>
+
+  <!-- ============================================================ -->
+  <!-- CONCEPT CARD 3 (x=574): Waiting Work definition              -->
+  <!-- ============================================================ -->
+  <rect x="574" y="158" width="255" height="350" rx="12" fill="#1E293B"/>
+  <rect x="574" y="158" width="3" height="350" fill="#6366F1"/>
+  <text x="594" y="193" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="19" font-weight="700" fill="#F8FAFC">Waiting Work</text>
+  <rect x="574" y="215" width="255" height="2" fill="#6366F1" opacity="0.4"/>
+  <text x="594" y="232" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="12" font-weight="700" fill="#22D3EE" letter-spacing="1">I/O-BOUND</text>
+  <text x="594" y="258" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="15" font-weight="400" fill="#94A3B8">
+    <tspan x="594" dy="0">The processor sits idle most</tspan>
+    <tspan x="594" dy="1.4em">of the time, waiting for a</tspan>
+    <tspan x="594" dy="1.4em">disk, network, or database.</tspan>
+  </text>
+  <text x="594" y="348" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="14" font-weight="400" fill="#6366F1">
+    <tspan x="594" dy="0">Cheap to add many workers:</tspan>
+    <tspan x="594" dy="1.4em">they all wait at once. A bus</tspan>
+    <tspan x="594" dy="1.4em">boards 100 people at once.</tspan>
+  </text>
+
+  <!-- ============================================================ -->
+  <!-- RIGHT COLUMN (x=845, width=323)                              -->
+  <!-- TOP: Language ranking                                         -->
+  <!-- ============================================================ -->
+  <rect x="845" y="158" width="323" height="185" rx="12" fill="#1E293B"/>
+  <rect x="845" y="158" width="323" height="3" rx="1" fill="#F59E0B"/>
+  <text x="865" y="184" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="14" font-weight="700" fill="#F59E0B">LANGUAGE VERDICT (best to worst)</text>
+
+  <!-- Rank 1 F# -->
+  <text x="865" y="208" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="15" font-weight="700" fill="#22D3EE">1. F# .NET 9</text>
+  <text x="990" y="208" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="13" font-weight="400" fill="#94A3B8">29ms  |  4.30x at N=4</text>
+
+  <!-- Rank 2 Go -->
+  <text x="865" y="230" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="15" font-weight="700" fill="#F8FAFC">2. Go 1.25</text>
+  <text x="990" y="230" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="13" font-weight="400" fill="#94A3B8">24ms  |  3.84x at N=4</text>
+
+  <!-- Rank 3 Rust -->
+  <text x="865" y="252" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="15" font-weight="700" fill="#F8FAFC">3. Rust 1.92</text>
+  <text x="990" y="252" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="13" font-weight="400" fill="#94A3B8">32ms  |  3.88x at N=4</text>
+
+  <!-- Rank 4 C++ -->
+  <text x="865" y="274" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="15" font-weight="700" fill="#F8FAFC">4. C++20</text>
+  <text x="990" y="274" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="13" font-weight="400" fill="#94A3B8">49ms  |  3.92x at N=4</text>
+
+  <!-- Rank 5 C -->
+  <text x="865" y="296" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="15" font-weight="700" fill="#94A3B8">5. C pthreads</text>
+  <text x="990" y="296" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="13" font-weight="400" fill="#94A3B8">56ms  |  3.61x at N=4</text>
+
+  <text x="865" y="330" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="12" font-weight="400" fill="#94A3B8">Score: raw speed + N=4 and N=8 throughput combined</text>
+
+  <!-- ============================================================ -->
+  <!-- SPEEDUP CHART -->
+  <rect x="845" y="358" width="323" height="150" rx="12" fill="#162032"/>
+  <rect x="845" y="358" width="323" height="3" rx="1" fill="#22D3EE"/>
+  <text x="1006" y="376" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#F8FAFC" text-anchor="middle">Throughput Speedup vs Workers</text>
+  <line x1="881" y1="478" x2="1156" y2="478" stroke="#334155" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="878" y="482" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#64748B" text-anchor="end">1x</text>
+  <line x1="881" y1="443" x2="1156" y2="443" stroke="#334155" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="878" y="447" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#64748B" text-anchor="end">4x</text>
+  <line x1="881" y1="396" x2="1156" y2="396" stroke="#334155" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="878" y="400" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#64748B" text-anchor="end">8x</text>
+  <line x1="881" y1="384" x2="881" y2="478" stroke="#475569" stroke-width="1"/>
+  <line x1="881" y1="478" x2="1156" y2="478" stroke="#475569" stroke-width="1"/>
+  <text x="881" y="489" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#64748B" text-anchor="middle">1</text>
+  <text x="936" y="489" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#64748B" text-anchor="middle">2</text>
+  <text x="991" y="489" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#64748B" text-anchor="middle">4</text>
+  <text x="1046" y="489" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#64748B" text-anchor="middle">8</text>
+  <text x="1101" y="489" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#64748B" text-anchor="middle">16</text>
+  <text x="1156" y="489" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#64748B" text-anchor="middle">32</text>
+  <text x="1018" y="500" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#475569" text-anchor="middle">Workers (N)</text>
+  <polyline points="881,478 936,462 991,439 1046,425 1101,415 1156,391" fill="none" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="881" cy="478" r="2.5" fill="#6366F1"/>
+  <circle cx="936" cy="462" r="2.5" fill="#6366F1"/>
+  <circle cx="991" cy="439" r="2.5" fill="#6366F1"/>
+  <circle cx="1046" cy="425" r="2.5" fill="#6366F1"/>
+  <circle cx="1101" cy="415" r="2.5" fill="#6366F1"/>
+  <circle cx="1156" cy="391" r="2.5" fill="#6366F1"/>
+  <polyline points="881,478 936,472 991,445 1046,435 1101,422 1156,419" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="881" cy="478" r="2.5" fill="#22D3EE"/>
+  <circle cx="936" cy="472" r="2.5" fill="#22D3EE"/>
+  <circle cx="991" cy="445" r="2.5" fill="#22D3EE"/>
+  <circle cx="1046" cy="435" r="2.5" fill="#22D3EE"/>
+  <circle cx="1101" cy="422" r="2.5" fill="#22D3EE"/>
+  <circle cx="1156" cy="419" r="2.5" fill="#22D3EE"/>
+  <polyline points="881,478 936,466 991,444 1046,437 1101,409 1156,410" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="881" cy="478" r="2.5" fill="#F59E0B"/>
+  <circle cx="936" cy="466" r="2.5" fill="#F59E0B"/>
+  <circle cx="991" cy="444" r="2.5" fill="#F59E0B"/>
+  <circle cx="1046" cy="437" r="2.5" fill="#F59E0B"/>
+  <circle cx="1101" cy="409" r="2.5" fill="#F59E0B"/>
+  <circle cx="1156" cy="410" r="2.5" fill="#F59E0B"/>
+  <polyline points="881,478 936,466 991,444 1046,427 1101,424 1156,414" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="881" cy="478" r="2.5" fill="#34D399"/>
+  <circle cx="936" cy="466" r="2.5" fill="#34D399"/>
+  <circle cx="991" cy="444" r="2.5" fill="#34D399"/>
+  <circle cx="1046" cy="427" r="2.5" fill="#34D399"/>
+  <circle cx="1101" cy="424" r="2.5" fill="#34D399"/>
+  <circle cx="1156" cy="414" r="2.5" fill="#34D399"/>
+  <polyline points="881,478 936,471 991,447 1046,427 1101,406 1156,401" fill="none" stroke="#F472B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="881" cy="478" r="2.5" fill="#F472B6"/>
+  <circle cx="936" cy="471" r="2.5" fill="#F472B6"/>
+  <circle cx="991" cy="447" r="2.5" fill="#F472B6"/>
+  <circle cx="1046" cy="427" r="2.5" fill="#F472B6"/>
+  <circle cx="1101" cy="406" r="2.5" fill="#F472B6"/>
+  <circle cx="1156" cy="401" r="2.5" fill="#F472B6"/>
+  <circle cx="877" cy="498" r="3" fill="#6366F1"/>
+  <text x="883" y="501.5" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#6366F1">F#</text>
+  <circle cx="941" cy="498" r="3" fill="#22D3EE"/>
+  <text x="947" y="501.5" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#22D3EE">Go</text>
+  <circle cx="1005" cy="498" r="3" fill="#F59E0B"/>
+  <text x="1011" y="501.5" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#F59E0B">Rust</text>
+  <circle cx="1069" cy="498" r="3" fill="#34D399"/>
+  <text x="1075" y="501.5" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#34D399">C++</text>
+  <circle cx="1133" cy="498" r="3" fill="#F472B6"/>
+  <text x="1139" y="501.5" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="9" fill="#F472B6">C</text>
+  <!-- ============================================================ -->
+  <!-- TAKEAWAY BAR                                                  -->
+  <!-- ============================================================ -->
+  <rect x="0" y="590" width="1200" height="85" fill="#F59E0B" opacity="0.85"/>
+  <text x="600" y="640" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">More processor workers speed things up, but not past your core count. F# leads; C trails.</text>
+
+  <!-- Attribution -->
+  <text x="1168" y="667" font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="12" font-weight="400" fill="#94A3B8" text-anchor="end">I. John Alamina - Multi-Processing Series, Episode 1 - Lab 1.1</text>
+
+</svg>

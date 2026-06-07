@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#162032"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+
+  <!-- HEADER y=0-120 -->
+  <rect x="0" y="0" width="1200" height="120" fill="#0F172A"/>
+  <rect x="0" y="0" width="8" height="120" fill="#6366F1"/>
+  <text x="48" y="66" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="46" font-weight="700" fill="#F8FAFC">Logic Gates</text>
+  <text x="48" y="102" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="17" fill="#94A3B8">Seven logic gates underpin all digital circuits. NAND and NOR are universal gates that can each rebuild all the others.</text>
+  <line x1="0" y1="120" x2="1200" y2="120" stroke="#6366F1" stroke-width="1.5"/>
+
+  <!-- GATE TILES y=130-322 h=192, 5 tiles w=216 gap=14 x=32,262,492,722,952 -->
+
+  <!-- TILE 1: NOT  x=32 -->
+  <rect x="32" y="130" width="216" height="192" rx="10" fill="#1E293B"/>
+  <rect x="32" y="130" width="3"   height="192" fill="#6366F1"/>
+  <!-- NOT symbol: triangle + bubble. translate(114,142) bounding-box 52x30 -->
+  <g transform="translate(114,142)">
+    <line x1="0" y1="15" x2="8" y2="15" stroke="#94A3B8" stroke-width="1.5"/>
+    <path d="M 8,2 L 8,28 L 34,15 Z" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="38" cy="15" r="5" fill="#1E293B" stroke="#22D3EE" stroke-width="2"/>
+    <line x1="43" y1="15" x2="52" y2="15" stroke="#94A3B8" stroke-width="1.5"/>
+  </g>
+  <text x="140" y="192" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#F8FAFC">NOT Gate</text>
+  <text x="140" y="213" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">Also called an inverter.</text>
+  <text x="140" y="231" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">One input. One output.</text>
+  <text x="140" y="254" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#F59E0B">EXCEPTION RULE</text>
+  <text x="140" y="272" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">Always flips: 0 becomes 1,</text>
+  <text x="140" y="289" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">1 becomes 0. No exceptions.</text>
+  <text x="140" y="312" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-style="italic" fill="#6366F1">Like a light switch that flips.</text>
+
+  <!-- TILE 2: AND  x=262 -->
+  <rect x="262" y="130" width="216" height="192" rx="10" fill="#1E293B"/>
+  <rect x="262" y="130" width="3"   height="192" fill="#6366F1"/>
+  <!-- AND symbol: D-shape. translate(344,142) -->
+  <g transform="translate(344,142)">
+    <line x1="0" y1="8"  x2="10" y2="8"  stroke="#94A3B8" stroke-width="1.5"/>
+    <line x1="0" y1="22" x2="10" y2="22" stroke="#94A3B8" stroke-width="1.5"/>
+    <path d="M 10,2 L 10,28 L 26,28 A 13,13 0 0 0 26,2 Z" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="39" y1="15" x2="52" y2="15" stroke="#94A3B8" stroke-width="1.5"/>
+  </g>
+  <text x="370" y="192" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#F8FAFC">AND Gate</text>
+  <text x="370" y="213" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">Output HIGH only when</text>
+  <text x="370" y="231" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">ALL inputs are HIGH.</text>
+  <text x="370" y="254" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#F59E0B">EXCEPTION RULE</text>
+  <text x="370" y="272" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">A=1 AND B=1 gives Y=1.</text>
+  <text x="370" y="289" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">Every other combo gives Y=0.</text>
+  <text x="370" y="312" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-style="italic" fill="#6366F1">Both keys needed to open the lock.</text>
+
+  <!-- TILE 3: OR  x=492 -->
+  <rect x="492" y="130" width="216" height="192" rx="10" fill="#1E293B"/>
+  <rect x="492" y="130" width="3"   height="192" fill="#6366F1"/>
+  <!-- OR symbol: curved shield. translate(574,142) -->
+  <g transform="translate(574,142)">
+    <line x1="0" y1="8"  x2="9"  y2="8"  stroke="#94A3B8" stroke-width="1.5"/>
+    <line x1="0" y1="22" x2="9"  y2="22" stroke="#94A3B8" stroke-width="1.5"/>
+    <path d="M 6,2 C 18,2 38,8 38,15 C 38,22 18,28 6,28 Q 13,15 6,2 Z" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="38" y1="15" x2="52" y2="15" stroke="#94A3B8" stroke-width="1.5"/>
+  </g>
+  <text x="600" y="192" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#F8FAFC">OR Gate</text>
+  <text x="600" y="213" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">Output HIGH if any input</text>
+  <text x="600" y="231" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">is HIGH.</text>
+  <text x="600" y="254" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#F59E0B">EXCEPTION RULE</text>
+  <text x="600" y="272" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">A=0 AND B=0 gives Y=0.</text>
+  <text x="600" y="289" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">Every other combo gives Y=1.</text>
+  <text x="600" y="312" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-style="italic" fill="#6366F1">Any sensor triggers the alarm.</text>
+
+  <!-- TILE 4: NAND  x=722 -->
+  <rect x="722" y="130" width="216" height="192" rx="10" fill="#1E293B"/>
+  <rect x="722" y="130" width="3"   height="192" fill="#6366F1"/>
+  <!-- NAND symbol: shifted AND + bubble. translate(804,142) -->
+  <g transform="translate(804,142)">
+    <line x1="0" y1="8"  x2="8"  y2="8"  stroke="#94A3B8" stroke-width="1.5"/>
+    <line x1="0" y1="22" x2="8"  y2="22" stroke="#94A3B8" stroke-width="1.5"/>
+    <path d="M 8,2 L 8,28 L 22,28 A 13,13 0 0 0 22,2 Z" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="40" cy="15" r="5" fill="#1E293B" stroke="#22D3EE" stroke-width="2"/>
+    <line x1="45" y1="15" x2="52" y2="15" stroke="#94A3B8" stroke-width="1.5"/>
+  </g>
+  <text x="830" y="192" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#F8FAFC">NAND Gate</text>
+  <text x="830" y="213" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">AND with output flipped.</text>
+  <text x="830" y="231" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">Universal: builds any gate.</text>
+  <text x="830" y="254" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#F59E0B">EXCEPTION RULE</text>
+  <text x="830" y="272" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">A=1 AND B=1 gives Y=0.</text>
+  <text x="830" y="289" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">Every other combo gives Y=1.</text>
+  <text x="830" y="312" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-style="italic" fill="#6366F1">Two in series = AND gate.</text>
+
+  <!-- TILE 5: NOR  x=952 -->
+  <rect x="952" y="130" width="216" height="192" rx="10" fill="#1E293B"/>
+  <rect x="952" y="130" width="3"   height="192" fill="#6366F1"/>
+  <!-- NOR symbol: shifted OR + bubble. translate(1034,142) -->
+  <g transform="translate(1034,142)">
+    <line x1="0" y1="8"  x2="7"  y2="8"  stroke="#94A3B8" stroke-width="1.5"/>
+    <line x1="0" y1="22" x2="7"  y2="22" stroke="#94A3B8" stroke-width="1.5"/>
+    <path d="M 4,2 C 16,2 34,8 34,15 C 34,22 16,28 4,28 Q 11,15 4,2 Z" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="39" cy="15" r="5" fill="#1E293B" stroke="#22D3EE" stroke-width="2"/>
+    <line x1="44" y1="15" x2="52" y2="15" stroke="#94A3B8" stroke-width="1.5"/>
+  </g>
+  <text x="1060" y="192" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#F8FAFC">NOR Gate</text>
+  <text x="1060" y="213" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">OR with output flipped.</text>
+  <text x="1060" y="231" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">Universal: builds any gate.</text>
+  <text x="1060" y="254" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#F59E0B">EXCEPTION RULE</text>
+  <text x="1060" y="272" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">A=0 AND B=0 gives Y=1.</text>
+  <text x="1060" y="289" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">Every other combo gives Y=0.</text>
+  <text x="1060" y="312" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-style="italic" fill="#6366F1">Three NOR gates can make AND.</text>
+
+  <!-- Section divider -->
+  <line x1="32" y1="330" x2="1168" y2="330" stroke="#6366F1" stroke-width="1" opacity="0.35"/>
+
+  <!-- LOWER SECTION y=338-578 h=240 -->
+
+  <!-- LEFT CARD: Key Insight  x=32 w=370 h=240 -->
+  <rect x="32"  y="338" width="370" height="240" rx="10" fill="#1E293B"/>
+  <rect x="32"  y="338" width="3"   height="240" fill="#6366F1"/>
+  <text x="52" y="364" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#F8FAFC">NAND: The Universal Gate</text>
+  <text x="52" y="388" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">NAND alone can recreate any gate type.</text>
+  <text x="52" y="406" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">Flip NOT(A AND B) twice and you get AND.</text>
+  <text x="52" y="432" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" font-weight="600" fill="#22D3EE">NOT(NOT(A AND B)) = A AND B</text>
+  <text x="52" y="454" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">This is De Morgan's law in action.</text>
+  <text x="52" y="472" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">Tie both NAND inputs together</text>
+  <text x="52" y="490" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">and the gate becomes a NOT gate.</text>
+  <text x="52" y="552" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="12" font-style="italic" fill="#6366F1">The Swiss Army knife of digital design.</text>
+
+  <!-- MIDDLE CARD: Verilog Code  x=416 w=408 h=240 -->
+  <rect x="416" y="338" width="408" height="240" rx="10" fill="#1E293B"/>
+  <rect x="416" y="338" width="3"   height="240" fill="#6366F1"/>
+  <text x="436" y="364" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#F8FAFC">Build AND from NAND in Verilog</text>
+  <!-- Code block -->
+  <rect x="436" y="374" width="372" height="104" rx="6" fill="#162032"/>
+  <rect x="436" y="374" width="372" height="2" fill="#22D3EE" opacity="0.6"/>
+  <text font-family="'Courier New',Courier,monospace" font-size="12" fill="#22D3EE">
+    <tspan x="448" y="395">module nand_and(input a, b, output y);</tspan>
+    <tspan x="448" dy="1.65em" fill="#94A3B8">  wire nand_out;</tspan>
+    <tspan x="448" dy="1.65em" fill="#22D3EE">  nand G1 (nand_out, a, b);</tspan>
+    <tspan x="448" dy="1.65em" fill="#22D3EE">  nand G2 (y, nand_out, nand_out);</tspan>
+    <tspan x="448" dy="1.65em" fill="#6366F1">endmodule</tspan>
+  </text>
+  <text x="436" y="494" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">G1 outputs NOT(A AND B). G2 flips it back to AND.</text>
+  <text x="436" y="513" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">Output y=1 only when both a=1 and b=1.</text>
+  <text x="436" y="532" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">Test all 4 input combos. Check y matches AND table.</text>
+  <text x="436" y="554" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="12" font-style="italic" fill="#6366F1">Free to run at edaplayground.com - no install needed.</text>
+
+  <!-- RIGHT: XOR and XNOR GATE TILES  x=836 w=332 -->
+
+  <!-- TILE 6: XOR  y=338 h=113 -->
+  <rect x="836" y="338" width="332" height="113" rx="10" fill="#1E293B"/>
+  <rect x="836" y="338" width="3"   height="113" fill="#6366F1"/>
+  <!-- XOR symbol: OR body + extra back curve. translate(976,350) bounding-box 52x30 -->
+  <g transform="translate(976,350)">
+    <line x1="0" y1="8"  x2="9"  y2="8"  stroke="#94A3B8" stroke-width="1.5"/>
+    <line x1="0" y1="22" x2="9"  y2="22" stroke="#94A3B8" stroke-width="1.5"/>
+    <path d="M 3,2 Q 10,15 3,28" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 6,2 C 18,2 38,8 38,15 C 38,22 18,28 6,28 Q 13,15 6,2 Z" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="38" y1="15" x2="52" y2="15" stroke="#94A3B8" stroke-width="1.5"/>
+  </g>
+  <text x="1002" y="392" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#F8FAFC">XOR Gate</text>
+  <text x="1002" y="410" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="12" fill="#94A3B8">(Exclusive OR): HIGH when inputs differ.</text>
+  <text x="1002" y="430" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#F59E0B">EXCEPTION RULE</text>
+  <text x="1002" y="447" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">Different inputs: Y=1. Same inputs: Y=0.</text>
+
+  <!-- TILE 7: XNOR  y=461 h=117 -->
+  <rect x="836" y="461" width="332" height="117" rx="10" fill="#1E293B"/>
+  <rect x="836" y="461" width="3"   height="117" fill="#6366F1"/>
+  <!-- XNOR symbol: shifted OR body + extra back curve + bubble. translate(976,473) -->
+  <g transform="translate(976,473)">
+    <line x1="0" y1="8"  x2="7"  y2="8"  stroke="#94A3B8" stroke-width="1.5"/>
+    <line x1="0" y1="22" x2="7"  y2="22" stroke="#94A3B8" stroke-width="1.5"/>
+    <path d="M 1,2 Q 8,15 1,28" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 4,2 C 16,2 34,8 34,15 C 34,22 16,28 4,28 Q 11,15 4,2 Z" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="39" cy="15" r="5" fill="#1E293B" stroke="#22D3EE" stroke-width="2"/>
+    <line x1="44" y1="15" x2="52" y2="15" stroke="#94A3B8" stroke-width="1.5"/>
+  </g>
+  <text x="1002" y="515" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#F8FAFC">XNOR Gate</text>
+  <text x="1002" y="533" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="12" fill="#94A3B8">(Exclusive NOR): HIGH when inputs match.</text>
+  <text x="1002" y="553" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#F59E0B">EXCEPTION RULE</text>
+  <text x="1002" y="570" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="13" fill="#F8FAFC">Same inputs: Y=1. Different inputs: Y=0.</text>
+
+  <!-- TAKEAWAY BAR y=582 h=93 -->
+  <rect x="0" y="582" width="1200" height="93" fill="#F59E0B" opacity="0.85"/>
+  <text x="600" y="634" text-anchor="middle" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="19" font-weight="600" fill="#FFFFFF">Wire two NAND gates together in code and you have a working AND gate.</text>
+  <text x="1168" y="667" text-anchor="end" font-family="'Segoe UI',Arial,Helvetica,sans-serif" font-size="11" fill="#FFFFFF" opacity="0.65">Verilog Fundamentals Series | Maxfield, Programming FPGAs, McGraw-Hill 2017</text>
+
+</svg>
