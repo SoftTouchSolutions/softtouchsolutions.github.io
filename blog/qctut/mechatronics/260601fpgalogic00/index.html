@@ -1,13 +1,30 @@
 <!DOCTYPE html><html lang="en" data-astro-cid-kkb4hemy> <head><!-- KaTeX --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4RtvSljzu5t6Nyd7/wKRFVNNMdTFn5enTvJ2vFAktiN5Bcd3" crossorigin="anonymous"><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.0.7"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://softtouchsolutions.github.io/blog/qctut/mechatronics/260601fpgalogic00/"><!-- Primary Meta Tags --><title>Logic Gates</title><meta name="title" content="Logic Gates"><meta name="description" content="FPGA Fundamental Series - Basics"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://softtouchsolutions.github.io/blog/qctut/mechatronics/260601fpgalogic00/"><meta property="og:title" content="Logic Gates"><meta property="og:description" content="FPGA Fundamental Series - Basics"><meta property="og:image" content="https://softtouchsolutions.github.io/blog-placeholder-1.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://softtouchsolutions.github.io/blog/qctut/mechatronics/260601fpgalogic00/"><meta property="twitter:title" content="Logic Gates"><meta property="twitter:description" content="FPGA Fundamental Series - Basics"><meta property="twitter:image" content="https://softtouchsolutions.github.io/blog-placeholder-1.jpg"><style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@font-face{font-family:Atkinson;src:url(/blog/qctut/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/blog/qctut/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Atkinson,sans-serif;margin:0;padding:0;text-align:left;background:linear-gradient(var(--gray-gradient)) no-repeat;background-size:100% 600px;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{margin:0 0 .5rem;color:rgb(var(--black));line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.prose p{margin-bottom:2em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%}img{max-width:100%;height:auto;border-radius:8px}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:2px}pre{padding:1.5em;border-radius:8px}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:0;font-size:1.333em}hr{border:none;border-top:1px solid rgb(var(--gray-light))}@media (max-width: 720px){body{font-size:18px}main{padding:1em}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media (max-width: 720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}footer[data-astro-cid-sz7xmlte]{padding:2em 1em 6em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:1em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}
 main[data-astro-cid-kkb4hemy]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-kkb4hemy]{width:100%}.hero-image[data-astro-cid-kkb4hemy] img[data-astro-cid-kkb4hemy]{display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.prose[data-astro-cid-kkb4hemy]{width:720px;max-width:calc(100% - 2em);margin:auto;padding:1em;color:rgb(var(--gray-dark))}.title[data-astro-cid-kkb4hemy]{margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title[data-astro-cid-kkb4hemy] h1[data-astro-cid-kkb4hemy]{margin:0 0 .5em}.date[data-astro-cid-kkb4hemy]{margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on[data-astro-cid-kkb4hemy]{font-style:italic}
-</style></head> <body data-astro-cid-kkb4hemy> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>John Alamina&#39;s Blog</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Home </a>  <a href="/blog/qctut/statistics" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Statistics </a>  <a href="/blog/qctut/quantum" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Quantum </a>  <a href="/blog/qctut/mechatronics" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Mechatronics </a>  <a href="/blog/qctut/softwaredev" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Software </a>  </div> <div class="social-links" data-astro-cid-3ef6ksr2> <a href="https://m.webtoo.ls/@astro" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Follow Astro on Mastodon</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://twitter.com/astrodotbuild" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Follow Astro on Twitter</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://github.com/withastro/astro" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to Astro's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-3ef6ksr2></path></svg> </a> </div> </nav> </header>  <main data-astro-cid-kkb4hemy> <article data-astro-cid-kkb4hemy> <div class="hero-image" data-astro-cid-kkb4hemy> <img width="1020" height="510" src="/blog/qctut/mecimg/260601fpgalogic00.svg" alt="" data-astro-cid-kkb4hemy> </div> <div class="prose" data-astro-cid-kkb4hemy> <div class="title" data-astro-cid-kkb4hemy> <div class="date" data-astro-cid-kkb4hemy> <time datetime="2026-06-06T23:00:00.000Z"> Jun 7, 2026 </time>  </div> <h1 data-astro-cid-kkb4hemy>Logic Gates</h1> <hr data-astro-cid-kkb4hemy> </div>  <p>Welcome to this Verilog Fundamentals tutorial series. In the previous <a href="https://www.linkedin.com/pulse/using-eda-playground-dr-john-alamina-phd-fhea-csm-ejlye/">article</a>, we introduced EDA Playground and walked through the complete simulation workflow: writing a Verilog module, writing a testbench, running Icarus Verilog, reading the console output, and viewing signal traces in EPwave. With that workflow established, this article introduces the five fundamental logic gates, NOT, AND, OR, NAND, and NOR, with their schematic symbols and truth tables. De Morgan’s law is then explained, showing why NAND and NOR are universal gates. The article concludes with two gate-level Verilog examples run in EDA Playground: a demonstration that two NAND gates in series produce AND behaviour, and a 2-to-1 multiplexer assembled from NOT, AND, and OR gate primitives.</p>
+</style></head> <body data-astro-cid-kkb4hemy> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>John Alamina&#39;s Blog</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Home </a>  <a href="/blog/qctut/statistics" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Statistics </a>  <a href="/blog/qctut/quantum" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Quantum </a>  <a href="/blog/qctut/mechatronics" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Mechatronics </a>  <a href="/blog/qctut/softwaredev" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Software </a>  </div> <div class="social-links" data-astro-cid-3ef6ksr2> <a href="https://m.webtoo.ls/@astro" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Follow Astro on Mastodon</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://twitter.com/astrodotbuild" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Follow Astro on Twitter</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://github.com/withastro/astro" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to Astro's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-3ef6ksr2></path></svg> </a> </div> </nav> </header>  <main data-astro-cid-kkb4hemy> <article data-astro-cid-kkb4hemy> <div class="hero-image" data-astro-cid-kkb4hemy> <img width="1020" height="510" src="/blog/qctut/mecimg/260601fpgalogic00.svg" alt="" data-astro-cid-kkb4hemy> </div> <div class="prose" data-astro-cid-kkb4hemy> <div class="title" data-astro-cid-kkb4hemy> <div class="date" data-astro-cid-kkb4hemy> <time datetime="2026-06-06T23:00:00.000Z"> Jun 7, 2026 </time>  </div> <h1 data-astro-cid-kkb4hemy>Logic Gates</h1> <hr data-astro-cid-kkb4hemy> </div>  <p>Welcome to this Verilog Fundamentals tutorial series. In the previous <a href="https://www.linkedin.com/pulse/using-eda-playground-dr-john-alamina-phd-fhea-csm-ejlye/">article</a>, we introduced EDA Playground [2] and walked through the complete simulation workflow: writing a Verilog module, writing a testbench, running Icarus Verilog, reading the console output, and viewing signal traces in EPwave. With that workflow established, this article introduces the five fundamental logic gates, NOT, AND, OR, NAND, and NOR, with their schematic symbols and truth tables. De Morgan’s law is then explained, showing why NAND and NOR are universal gates. The article concludes with two gate-level Verilog examples run in EDA Playground: a demonstration that two NAND gates in series produce AND behaviour, and a 2-to-1 multiplexer assembled from NOT, AND, and OR gate primitives.</p>
 <h2 id="logic-gates">Logic Gates</h2>
 <p>Logic gates are the building blocks of all digital electronics. Think of each gate as a tiny decision-maker: it looks at one or more input signals and produces one output signal based on a fixed rule. Every input and output has only two possible states, which engineers call HIGH and LOW. HIGH means the voltage is near the top of the circuit’s supply, and LOW means it is near zero volts. In everyday terms, HIGH is on and LOW is off, just like a light switch. The supply voltage on an FPGA is typically 1.8 V, 3.3 V, or 5 V depending on the device and the logic bank, but the high-or-low distinction is all that matters for understanding what each gate does.  In this article, gate names are capitalised for emphasis, and this is also the convention in digital electronics literature.</p>
 <h2 id="the-not-gate">The NOT Gate</h2>
 <p>The simplest logic gate is the NOT gate. It is also called an inverter. It has one input and one output, and its rule is the simplest of all: it always does the opposite of what comes in. If the input is high, the output is low. If the input is low, the output is high. Think of it like a light switch with a twist: pressing it turns the light off if it was on, or on if it was off.</p>
 <p>The schematic symbol for the NOT gate is shown in the illustration below. Notice the small circle at the output tip of the symbol. That little circle is the universal sign for inversion in electronics schematics and will appear again on other gates later in this article. Below the symbol is the truth table for the NOT gate. A truth table is a complete list of every possible input combination and the output that results. Because the NOT gate has only one input, the truth table has just two rows, one for each possible input state. By convention, inputs are labelled starting at the beginning of the alphabet using names such as A, B, and C. Outputs are often labelled Q or letters near the end of the alphabet such as X, Y, and Z.
-<img src="/blog/qctut/mecimg/x/v11not.png" alt="NOT gate schematic symbol showing a triangle with a circle on the output">
-<img src="/blog/qctut/mecimg/x/v12not.png" alt="NOT gate truth table showing output is the inverse of input"></p>
+<img src="/blog/qctut/mecimg/x/v11not.png" alt="NOT gate schematic symbol showing a triangle with a circle on the output"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">A</th><th align="center">Q</th></tr></thead><tbody><tr><td align="center">0</td><td align="center">1</td></tr><tr><td align="center">1</td><td align="center">0</td></tr></tbody></table>
 <p>In Verilog, the NOT gate is available as a built-in primitive. The output port comes first in the port list, followed by the input:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#6A737D">// Verilog -- NOT gate primitive</span></span>
 <span class="line"><span style="color:#F97583">not</span><span style="color:#E1E4E8"> G1 (q, a);   </span><span style="color:#6A737D">// q = NOT a</span></span></code></pre>
@@ -15,8 +32,38 @@ main[data-astro-cid-kkb4hemy]{width:calc(100% - 2em);max-width:100%;margin:0}.he
 <h2 id="the-and-gate">The AND Gate</h2>
 <p>The AND gate has two or more inputs and one output. Its rule is that the output is high only when every single one of its inputs is high at the same time. If any input is low, the output goes low too. Think of it like a bicycle lock with two separate key slots: both keys must be inserted and turned before the lock opens. One key on its own is not enough.</p>
 <p>The schematic symbol for a two-input AND gate is shown in the illustration below, followed by its truth table. The truth table has four rows because with two inputs there are four possible combinations. Notice that the output is 1 only in the last row, where both A and B are 1.
-<img src="/blog/qctut/mecimg/x/v13and.png" alt="Two-input AND gate schematic symbol">
-<img src="/blog/qctut/mecimg/x/v14and.png" alt="Two-input AND gate truth table"></p>
+<img src="/blog/qctut/mecimg/x/v13and.png" alt="Two-input AND gate schematic symbol"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">A</th><th align="center">B</th><th align="center">Y</th></tr></thead><tbody><tr><td align="center">0</td><td align="center">0</td><td align="center">0</td></tr><tr><td align="center">0</td><td align="center">1</td><td align="center">0</td></tr><tr><td align="center">1</td><td align="center">0</td><td align="center">0</td></tr><tr><td align="center">1</td><td align="center">1</td><td align="center">1</td></tr></tbody></table>
 <p>In Verilog, the AND gate primitive places the output first, followed by all inputs:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#6A737D">// Verilog -- AND gate primitive</span></span>
 <span class="line"><span style="color:#F97583">and</span><span style="color:#E1E4E8"> G1 (y, a, b);   </span><span style="color:#6A737D">// y = a AND b</span></span></code></pre>
@@ -24,8 +71,38 @@ main[data-astro-cid-kkb4hemy]{width:calc(100% - 2em);max-width:100%;margin:0}.he
 <h2 id="the-or-gate">The OR Gate</h2>
 <p>The OR gate also has two or more inputs and one output. Its rule is the opposite of the AND gate: the output is high if any of its inputs is high. It does not matter which input is high or how many are high, so long as at least one is. Think of it like a car alarm that can be triggered by the door sensor, the bonnet sensor, or the motion sensor: any one of them firing is enough to set it off.</p>
 <p>The schematic symbol for a two-input OR gate is shown in the illustration below, and its truth table follows. Notice that the output is 0 only in the first row, where both A and B are 0. Every other combination gives an output of 1.
-<img src="/blog/qctut/mecimg/x/v15or.png" alt="Two-input OR gate schematic symbol">
-<img src="/blog/qctut/mecimg/x/v16or.png" alt="Two-input OR gate truth table"></p>
+<img src="/blog/qctut/mecimg/x/v15or.png" alt="Two-input OR gate schematic symbol"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">A</th><th align="center">B</th><th align="center">Y</th></tr></thead><tbody><tr><td align="center">0</td><td align="center">0</td><td align="center">0</td></tr><tr><td align="center">0</td><td align="center">1</td><td align="center">1</td></tr><tr><td align="center">1</td><td align="center">0</td><td align="center">1</td></tr><tr><td align="center">1</td><td align="center">1</td><td align="center">1</td></tr></tbody></table>
 <p>In Verilog, the OR gate primitive follows the same output-first port convention:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#6A737D">// Verilog -- OR gate primitive</span></span>
 <span class="line"><span style="color:#F97583">or</span><span style="color:#E1E4E8"> G1 (y, a, b);   </span><span style="color:#6A737D">// y = a OR b</span></span></code></pre>
@@ -33,10 +110,74 @@ main[data-astro-cid-kkb4hemy]{width:calc(100% - 2em);max-width:100%;margin:0}.he
 <h2 id="nand-and-nor-gates">NAND and NOR Gates</h2>
 <p>NAND stands for NOT AND, and NOR stands for NOT OR. These gates work exactly as their names suggest: a NAND gate is an AND gate with its output flipped, and a NOR gate is an OR gate with its output flipped. Recall the small circle on the output of the NOT gate symbol seen earlier. That same circle appears on the NAND and NOR symbols to show that the output has been inverted. Compare the NAND symbol and truth table with the AND gate above: every output entry is the opposite.</p>
 <p>The schematic symbols and truth tables for both gates are shown in the illustrations below.
-<img src="/blog/qctut/mecimg/x/v17nand.png" alt="NAND gate schematic symbol showing an AND gate body with an inverted output">
-<img src="/blog/qctut/mecimg/x/v19nandt.png" alt="NAND gate truth table">
-<img src="/blog/qctut/mecimg/x/v18nor.png" alt="NOR gate schematic symbol showing an OR gate body with an inverted output">
-<img src="/blog/qctut/mecimg/x/v20nort.png" alt="NOR gate truth table"></p>
+<img src="/blog/qctut/mecimg/x/v17nand.png" alt="NAND gate schematic symbol showing an AND gate body with an inverted output"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">A</th><th align="center">B</th><th align="center">Y</th></tr></thead><tbody><tr><td align="center">0</td><td align="center">0</td><td align="center">1</td></tr><tr><td align="center">0</td><td align="center">1</td><td align="center">1</td></tr><tr><td align="center">1</td><td align="center">0</td><td align="center">1</td></tr><tr><td align="center">1</td><td align="center">1</td><td align="center">0</td></tr><tr><td align="center"><img src="/blog/qctut/mecimg/x/v18nor.png" alt="NOR gate schematic symbol showing an OR gate body with an inverted output"></td><td align="center"></td><td align="center"></td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">A</th><th align="center">B</th><th align="center">Y</th></tr></thead><tbody><tr><td align="center">0</td><td align="center">0</td><td align="center">1</td></tr><tr><td align="center">0</td><td align="center">1</td><td align="center">0</td></tr><tr><td align="center">1</td><td align="center">0</td><td align="center">0</td></tr><tr><td align="center">1</td><td align="center">1</td><td align="center">0</td></tr></tbody></table>
 <p>Both NAND and NOR gates are described as universal gates because either one of them alone is enough to build any other type of logic gate. To make a NOT gate from a NAND or NOR gate, simply connect both inputs to the same signal. The diagram below shows how three NOR gates can be wired together to produce the behaviour of a single AND gate.</p>
 <p>Both primitives follow the same output-first port order used by AND and OR:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#6A737D">// Verilog -- NAND and NOR gate primitives</span></span>
@@ -47,12 +188,12 @@ main[data-astro-cid-kkb4hemy]{width:calc(100% - 2em);max-width:100%;margin:0}.he
 <p>The three-NOR-gate construction in the diagram above makes use of a rule called De Morgan’s law. This law is easier to grasp by starting with plain English. Consider the statement “it is NOT the case that A is true AND B is true.” De Morgan’s law tells us that this is exactly the same as saying “either A is NOT true, OR B is NOT true.” In other words, flipping the result of an AND is the same as flipping each individual input and using OR instead. That is exactly what the NOR-gate AND construction does: each input is individually inverted by a NOR gate with its inputs tied together, those inverted signals are OR-combined, and then the combined result is inverted again, giving the overall effect of AND-ing the original inputs. Once this pattern is clear, it is not hard to see why NAND and NOR are called universal gates. Any logic function, no matter how complex, can be broken down and rebuilt using only one of them.</p>
 <p>De Morgan’s law has two equivalent forms. The first states that NOT(A AND B) equals (NOT A) OR (NOT B). The second states that NOT(A OR B) equals (NOT A) AND (NOT B). Together these two forms mean that any logic function built from AND, OR, and NOT can be rebuilt entirely from NAND gates alone, or entirely from NOR gates alone, because a NAND gate is NOT layered on top of AND, and a NOR gate is NOT layered on top of OR.</p>
 <p>Substituting values confirms the first form. With A equal to 1 and B equal to 0, the left side gives NOT(1 AND 0) = NOT(0) = 1, and the right side gives (NOT 1) OR (NOT 0) = 0 OR 1 = 1. Both produce the same result. With A and B both equal to 1, the left side gives NOT(1 AND 1) = NOT(1) = 0, and the right side gives (NOT 1) OR (NOT 1) = 0 OR 0 = 0. Again both sides agree. The equality holds for all four combinations of A and B, which is the full content of the first form. The second form can be verified the same way: substituting each row of the OR truth table into NOT(A OR B) and (NOT A) AND (NOT B) produces identical results in every case.</p>
-<p>The NAND-gate form of a plain AND function follows directly from the first form of the law. A single NAND gate computes NOT(A AND B). Tying both inputs of a second NAND gate to the first gate’s output inverts that result, producing NOT(NOT(A AND B)), which simplifies to A AND B. Gate-level Verilog makes this construction explicit in code, and the first example below implements it so that the equivalence can be confirmed in simulation.</p>
-<h2 id="gate-level-modelling">Gate level modelling</h2>
+<p>The NAND-gate form of a plain AND function follows directly from the first form of the law. A single NAND gate computes NOT(A AND B). Tying both inputs of a second NAND gate to the first gate’s output inverts that result, producing NOT(NOT(A AND B)), which simplifies to A AND B. Gate-level Verilog makes this construction explicit in code, and the first example below implements it so that the equivalence can be confirmed in simulation.
+<img src="/blog/qctut/mecimg/x/v21.png" alt="AND gate constructed from three NOR gates using De Morgan&#x27;s law"></p>
+<h2 id="gate-level-modelling">Gate-level modelling</h2>
 <p>Gate-level modelling is the style of Verilog in which a design is described by instantiating named logic-gate primitives and connecting them with wires, directly mirroring a circuit schematic. Verilog provides built-in primitives for all five gates covered in this article: <code>not</code>, <code>and</code>, <code>or</code>, <code>nand</code>, and <code>nor</code>. Each primitive is instantiated with an optional instance name followed by the port connections in output-first order. The two examples below build complete gate-level modules and verify them in EDA Playground using the workflow established in the previous article.</p>
 <h3 id="example-1-constructing-an-and-gate-from-nand-gates">Example 1: Constructing an AND Gate from NAND Gates</h3>
 <p>This example implements the De Morgan’s law construction described above: two NAND gates connected in series to produce AND behaviour. The diagram below shows the equivalent construction using NOR gates; the NAND version follows exactly the same principle applied to the other universal gate.</p>
-<p><img src="/blog/qctut/mecimg/x/v21.png" alt="AND gate constructed from three NOR gates using De Morgan&#x27;s law"></p>
 <p>The first gate, <code>G1</code>, accepts inputs <code>a</code> and <code>b</code> and drives an internal wire <code>nand_out</code> with NOT(A AND B). The second gate, <code>G2</code>, takes <code>nand_out</code> on both its input connections, which is equivalent to a NOT gate, and drives the output <code>y</code> with the final AND result.</p>
 <p>Enter the following module in the Design panel in EDA Playground:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color:#6A737D">// Verilog -- AND gate constructed from two NAND gates</span></span>
@@ -171,6 +312,9 @@ main[data-astro-cid-kkb4hemy]{width:calc(100% - 2em);max-width:100%;margin:0}.he
 <h2 id="references">References</h2>
 <p>[1] Maxfield, C. <em>Programming FPGAs: Getting Started with Verilog</em>. McGraw-Hill, 2017.
 Cited for gate schematic symbols, truth tables, universal gate constructions, the De Morgan’s law example circuit, and the 2-to-1 multiplexer gate-level design used in this article.</p>
+<p>[2] “EDA Playground.” Doulos, 2012–present.
+Available at <a href="https://www.edaplayground.com/">https://www.edaplayground.com/</a>.
+Cited for the browser-based Verilog simulation environment used to run both gate-level examples in this article.</p>
 <h2 id="glossary">Glossary</h2>
 <p><strong>AND gate</strong>: A logic gate whose output is high only when all of its inputs are simultaneously high; in this article demonstrated with a schematic symbol, a truth table, and a two-NAND-gate Verilog construction in Example 1.</p>
 <p><strong>combinational logic</strong>: Digital logic whose output at any moment depends only on its current inputs, with no memory of previous states; both Verilog examples in this article describe combinational circuits.</p>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" width="420" height="420">
+
+  <!-- Background -->
+  <rect width="420" height="420" fill="#0d1117"/>
+
+  <!-- ── Win highlights (drawn under grid lines and letters) ── -->
+
+  <!-- Horizontal middle row [3,4,5]: E-C-S -->
+  <rect x="78" y="185" width="264" height="50" rx="25"
+        fill="#ffd700" fill-opacity="0.12"
+        stroke="#ffd700" stroke-width="2"/>
+
+  <!-- Vertical middle column [1,4,7]: E-C-S -->
+  <rect x="185" y="78" width="50" height="264" rx="25"
+        fill="#ffd700" fill-opacity="0.12"
+        stroke="#ffd700" stroke-width="2"/>
+
+  <!-- Diagonal top-left → bottom-right [0,4,8]: E-C-S -->
+  <rect x="60" y="185" width="300" height="50" rx="25"
+        fill="#ffd700" fill-opacity="0.12"
+        stroke="#ffd700" stroke-width="2"
+        transform="rotate(45,210,210)"/>
+
+  <!-- Diagonal top-right → bottom-left [2,4,6]: E-C-S -->
+  <rect x="60" y="185" width="300" height="50" rx="25"
+        fill="#ffd700" fill-opacity="0.12"
+        stroke="#ffd700" stroke-width="2"
+        transform="rotate(-45,210,210)"/>
+
+  <!-- ── Grid (75,75) 270×270, cells 90×90 ── -->
+
+  <!-- Border -->
+  <rect x="75" y="75" width="270" height="270"
+        fill="none" stroke="#30363d" stroke-width="2"/>
+
+  <!-- Vertical dividers -->
+  <line x1="165" y1="75"  x2="165" y2="345" stroke="#30363d" stroke-width="2"/>
+  <line x1="255" y1="75"  x2="255" y2="345" stroke="#30363d" stroke-width="2"/>
+
+  <!-- Horizontal dividers -->
+  <line x1="75"  y1="165" x2="345" y2="165" stroke="#30363d" stroke-width="2"/>
+  <line x1="75"  y1="255" x2="345" y2="255" stroke="#30363d" stroke-width="2"/>
+
+  <!-- ── ECS letters ──
+       Cell centres:
+         col 0 → x=120   col 1 → x=210   col 2 → x=300
+         row 0 → y=120   row 1 → y=210   row 2 → y=300
+
+       E (blue)  = starts of ECS triplets: [0][1][2][3]
+       C (amber) = shared centre [4]
+       S (green) = ends of ECS triplets: [5][6][7][8]
+  ── -->
+
+  <!-- Row 0: E E E -->
+  <!-- [0] top-left  — starts TL-BR diagonal -->
+  <text x="120" y="120"
+        font-family="'Courier New', Courier, monospace"
+        font-size="52" font-weight="bold"
+        text-anchor="middle" dominant-baseline="central"
+        fill="#79c0ff">E</text>
+
+  <!-- [1] top-centre — starts vertical column -->
+  <text x="210" y="120"
+        font-family="'Courier New', Courier, monospace"
+        font-size="52" font-weight="bold"
+        text-anchor="middle" dominant-baseline="central"
+        fill="#79c0ff">E</text>
+
+  <!-- [2] top-right  — starts TR-BL diagonal (3rd right) -->
+  <text x="300" y="120"
+        font-family="'Courier New', Courier, monospace"
+        font-size="52" font-weight="bold"
+        text-anchor="middle" dominant-baseline="central"
+        fill="#79c0ff">E</text>
+
+  <!-- Row 1: E C S -->
+  <!-- [3] middle-left — starts horizontal row (clockwise origin) -->
+  <text x="120" y="210"
+        font-family="'Courier New', Courier, monospace"
+        font-size="52" font-weight="bold"
+        text-anchor="middle" dominant-baseline="central"
+        fill="#79c0ff">E</text>
+
+  <!-- [4] centre — shared C, written once -->
+  <text x="210" y="210"
+        font-family="'Courier New', Courier, monospace"
+        font-size="52" font-weight="bold"
+        text-anchor="middle" dominant-baseline="central"
+        fill="#f0883e">C</text>
+
+  <!-- [5] middle-right — ends horizontal row -->
+  <text x="300" y="210"
+        font-family="'Courier New', Courier, monospace"
+        font-size="52" font-weight="bold"
+        text-anchor="middle" dominant-baseline="central"
+        fill="#56d364">S</text>
+
+  <!-- Row 2: S S S -->
+  <!-- [6] bottom-left  — ends TR-BL diagonal -->
+  <text x="120" y="300"
+        font-family="'Courier New', Courier, monospace"
+        font-size="52" font-weight="bold"
+        text-anchor="middle" dominant-baseline="central"
+        fill="#56d364">S</text>
+
+  <!-- [7] bottom-centre — ends vertical column -->
+  <text x="210" y="300"
+        font-family="'Courier New', Courier, monospace"
+        font-size="52" font-weight="bold"
+        text-anchor="middle" dominant-baseline="central"
+        fill="#56d364">S</text>
+
+  <!-- [8] bottom-right  — ends TL-BR diagonal -->
+  <text x="300" y="300"
+        font-family="'Courier New', Courier, monospace"
+        font-size="52" font-weight="bold"
+        text-anchor="middle" dominant-baseline="central"
+        fill="#56d364">S</text>
+
+</svg>
