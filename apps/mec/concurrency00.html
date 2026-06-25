@@ -1,0 +1,488 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--color-text-primary)}
+.wrap{max-width:680px;padding:1.5rem 0}
+.progress{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.pip{height:4px;flex:1;border-radius:2px;background:var(--color-border-tertiary);transition:background 0.3s;min-width:20px}
+.pip.done{background:#1D9E75}
+.pip.active{background:#7F77DD}
+.screen{display:none}
+.screen.active{display:block}
+h2{font-size:18px;font-weight:500;margin-bottom:0.75rem}
+h3{font-size:15px;font-weight:500;margin-bottom:0.5rem;color:var(--color-text-secondary)}
+p{font-size:15px;line-height:1.7;color:var(--color-text-secondary);margin-bottom:0.9rem}
+p b{font-weight:500;color:var(--color-text-primary)}
+code{font-family:var(--font-mono);font-size:13px;background:var(--color-background-secondary);padding:2px 5px;border-radius:4px}
+pre{font-family:var(--font-mono);font-size:13px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:1rem;overflow-x:auto;margin-bottom:1rem;line-height:1.6}
+.kw{color:#7F77DD}
+.cm{color:#888780;font-style:italic}
+.ty{color:#1D9E75}
+.st{color:#BA7517}
+.fn{color:#185FA5}
+.nav{display:flex;gap:10px;margin-top:1.5rem;align-items:center}
+.nav button{padding:8px 18px;font-size:14px;font-weight:500;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-primary);cursor:pointer}
+.nav button:hover{background:var(--color-background-secondary)}
+.nav button.primary{background:#534AB7;color:#EEEDFE;border-color:#534AB7}
+.nav button.primary:hover{background:#3C3489}
+.step-label{font-size:13px;color:var(--color-text-tertiary)}
+.demo{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin:1rem 0;background:var(--color-background-primary)}
+.demo-label{font-size:12px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem}
+.thread-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:13px}
+.thread-bar{height:26px;border-radius:4px;display:flex;align-items:center;padding:0 10px;font-family:var(--font-mono);font-size:12px;font-weight:500;transition:all 0.5s;white-space:nowrap;overflow:hidden}
+.t-running{background:#EEEDFE;color:#3C3489}
+.t-blocked{background:#FAECE7;color:#993C1D}
+.t-parked{background:#F1EFE8;color:#5F5E5A}
+.t-done{background:#EAF3DE;color:#3B6D11}
+.badge{font-size:11px;padding:3px 8px;border-radius:4px;font-weight:500}
+.b-send{background:#E6F1FB;color:#0C447C}
+.b-nosend{background:#FAECE7;color:#993C1D}
+.b-sync{background:#EAF3DE;color:#3B6D11}
+.b-nosync{background:#FAECE7;color:#993C1D}
+.q-block{margin-bottom:1.2rem}
+.q-block p{margin-bottom:0.5rem;color:var(--color-text-primary);font-weight:500}
+.choices{display:flex;flex-direction:column;gap:6px}
+.choice{padding:10px 14px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);cursor:pointer;font-size:14px;background:transparent;text-align:left;color:var(--color-text-primary);transition:background 0.15s}
+.choice:hover{background:var(--color-background-secondary)}
+.choice.correct{border-color:#1D9E75;background:#EAF3DE;color:#27500A}
+.choice.wrong{border-color:#E24B4A;background:#FCEBEB;color:#791F1F}
+.choice.disabled{pointer-events:none}
+.fb{font-size:13px;margin-top:6px;padding:8px 12px;border-radius:6px}
+.fb.ok{background:#EAF3DE;color:#27500A}
+.fb.no{background:#FCEBEB;color:#791F1F}
+.vis{display:flex;gap:8px;flex-wrap:wrap;margin:0.75rem 0}
+.box{border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:8px 12px;font-size:13px;text-align:center;min-width:80px}
+.arrow{font-size:20px;color:var(--color-text-tertiary);align-self:center}
+.mutex-demo{position:relative;margin:1rem 0}
+.lock-icon{font-size:22px;margin-bottom:4px}
+.slide-hint{font-size:13px;color:var(--color-text-tertiary);margin-bottom:0.5rem}
+</style>
+
+<div class="wrap">
+<h2 id="main-title" style="margin-bottom:0.4rem">Rust concurrency — interactive tutorial</h2>
+<p style="font-size:13px;color:var(--color-text-tertiary);margin-bottom:1.25rem" id="topic-label">Topic 1 of 6 — Threads</p>
+<div class="progress" id="progress"></div>
+<div id="screens"></div>
+</div>
+
+<script>
+const TOPICS = [
+  {
+    title:"Threads",
+    subtitle:"Spawning & joining independent work",
+    content:`
+<p>A <b>thread</b> is an independently scheduled sequence of instructions. Your program starts as one thread; you can spawn more. Each thread gets its own stack but shares the process's heap.</p>
+<p>In Rust you spawn threads with <code>std::thread::spawn</code>. It takes a <b>closure</b> and returns a <code>JoinHandle</code>. Calling <code>.join()</code> on the handle blocks the current thread until that child finishes.</p>
+<pre><span class="kw">use</span> std::thread;
+
+<span class="kw">fn</span> <span class="fn">main</span>() {
+    <span class="kw">let</span> handle = thread::<span class="fn">spawn</span>(|| {
+        println!(<span class="st">"hello from a new thread"</span>);
+    });
+
+    handle.<span class="fn">join</span>().<span class="fn">unwrap</span>(); <span class="cm">// wait for it to finish</span>
+}</pre>
+<p>If you drop the handle without joining, the spawned thread becomes <b>detached</b> — it keeps running until it finishes, but you lose the ability to wait for it or receive its return value.</p>
+`,
+    demo: buildThreadVis,
+    quiz:[
+      {q:"What does calling .join() on a JoinHandle do?",
+       opts:["Kills the spawned thread immediately","Blocks the calling thread until the spawned thread finishes","Sends a message to the spawned thread","Detaches the thread from the runtime"],
+       ans:1,fb:".join() parks the calling thread in a waiting state until the child thread completes, then returns its result (or panic payload)."}
+    ]
+  },
+  {
+    title:"Ownership across threads",
+    subtitle:"Moving data into closures",
+    content:`
+<p>Rust's ownership rules apply across threads. When a closure is passed to <code>spawn</code>, it must be <code>'static</code> — it cannot borrow data that might be dropped before the thread ends.</p>
+<p>The <code>move</code> keyword tells the closure to <b>take ownership</b> of any captured variables rather than borrowing them. This is the standard way to hand data to a new thread.</p>
+<pre><span class="kw">let</span> name = <span class="ty">String</span>::<span class="fn">from</span>(<span class="st">"world"</span>);
+
+<span class="kw">let</span> handle = thread::<span class="fn">spawn</span>(<span class="kw">move</span> || {
+    <span class="cm">// 'name' has been moved into this closure</span>
+    println!(<span class="st">"hello, {name}"</span>);
+});
+<span class="cm">// 'name' is no longer accessible here</span>
+handle.<span class="fn">join</span>().<span class="fn">unwrap</span>();</pre>
+<p>Without <code>move</code>, the compiler rejects the code because the closure borrows <code>name</code>, but the borrow could outlive <code>name</code>'s scope.</p>
+`,
+    demo: buildMoveVis,
+    quiz:[
+      {q:"Why do thread closures typically need the move keyword?",
+       opts:["It makes the thread run faster","The closure must own its data because it can outlive the surrounding scope","It allows sharing references between threads","It enables async/await inside the thread"],
+       ans:1,fb:"'move' transfers ownership of captured values into the closure so the closure is 'static — it doesn't borrow anything that could be dropped before the thread finishes."}
+    ]
+  },
+  {
+    title:"Interior mutability",
+    subtitle:"Mutating through a shared reference",
+    content:`
+<p>Rust normally enforces: <b>either one mutable reference, or any number of immutable references</b>. Interior mutability is a pattern that lets you mutate data even through an <code>&</code> (shared) reference — by moving the borrow-check to runtime.</p>
+<p><code>Cell&lt;T&gt;</code> works for <code>Copy</code> types via get/set. <code>RefCell&lt;T&gt;</code> works for any type: <code>.borrow()</code> gives an immutable guard, <code>.borrow_mut()</code> gives a mutable guard — and <b>panics at runtime</b> if you violate the rules.</p>
+<pre><span class="kw">use</span> std::cell::<span class="ty">RefCell</span>;
+
+<span class="kw">let</span> data = <span class="ty">RefCell</span>::<span class="fn">new</span>(<span class="kw">vec</span>![<span class="st">1</span>, <span class="st">2</span>, <span class="st">3</span>]);
+
+{
+    <span class="kw">let</span> <span class="kw">mut</span> v = data.<span class="fn">borrow_mut</span>(); <span class="cm">// runtime borrow check</span>
+    v.<span class="fn">push</span>(<span class="st">4</span>);
+} <span class="cm">// guard dropped — borrow released</span>
+
+println!(<span class="st">"{:?}"</span>, data.<span class="fn">borrow</span>()); <span class="cm">// [1, 2, 3, 4]</span></pre>
+<p><b>Neither <code>Cell</code> nor <code>RefCell</code> is thread-safe.</b> For shared mutation across threads you need <code>Mutex&lt;T&gt;</code> — which brings us to the next topic.</p>
+`,
+    demo: buildRefCellVis,
+    quiz:[
+      {q:"What happens if you call .borrow_mut() on a RefCell while a .borrow() guard is still alive?",
+       opts:["Compile error","Silent undefined behaviour","Runtime panic","The new borrow waits until the first is released"],
+       ans:2,fb:"RefCell enforces Rust's aliasing rules at runtime. Attempting a mutable borrow while any immutable borrow is live causes an immediate panic."}
+    ]
+  },
+  {
+    title:"Send and Sync",
+    subtitle:"The traits that make concurrency safe",
+    content:`
+<p><code>Send</code> and <code>Sync</code> are marker traits — they have no methods. The compiler checks them automatically.</p>
+<p><b><code>Send</code></b>: a type is <code>Send</code> if it is safe to <b>transfer ownership</b> to another thread. Almost all types are <code>Send</code>. <code>Rc&lt;T&gt;</code> is not — its reference count is not atomic.</p>
+<p><b><code>Sync</code></b>: a type <code>T</code> is <code>Sync</code> if <code>&T</code> is <code>Send</code> — i.e., it's safe to have multiple threads <b>reading via shared references</b> simultaneously. <code>RefCell&lt;T&gt;</code> is not <code>Sync</code> because its runtime borrow-check is not thread-safe.</p>
+<p><code>thread::spawn</code> requires the closure to be <code>Send + 'static</code>. If you try to move a non-<code>Send</code> type into a thread, the compiler rejects it — this is how Rust prevents data races at compile time.</p>
+`,
+    demo: buildSendSyncVis,
+    quiz:[
+      {q:"Why is Rc<T> not Send?",
+       opts:["It allocates on the stack","Its reference count uses plain integer operations that are not atomic","Rc stands for Remote Channel","It implements Drop"],
+       ans:1,fb:"Rc<T> uses non-atomic reference counting. If two threads cloned or dropped the same Rc simultaneously, the count could corrupt. Arc<T> (Atomic Rc) is the thread-safe alternative."}
+    ]
+  },
+  {
+    title:"Mutex and Arc",
+    subtitle:"Safe shared mutable state across threads",
+    content:`
+<p>A <b>Mutex</b> (mutual exclusion lock) wraps data and ensures only one thread can access it at a time. You call <code>.lock()</code> to acquire — all other threads block until you release by dropping the guard.</p>
+<p>To share a <code>Mutex</code> across threads you wrap it in <code>Arc&lt;T&gt;</code> (Atomically Reference Counted) — the thread-safe version of <code>Rc&lt;T&gt;</code>. The common pattern is <code>Arc&lt;Mutex&lt;T&gt;&gt;</code>.</p>
+<pre><span class="kw">use</span> std::sync::{<span class="ty">Arc</span>, <span class="ty">Mutex</span>};
+
+<span class="kw">let</span> counter = <span class="ty">Arc</span>::<span class="fn">new</span>(<span class="ty">Mutex</span>::<span class="fn">new</span>(<span class="st">0u32</span>));
+
+<span class="kw">let</span> handles: <span class="ty">Vec</span>&lt;_&gt; = (<span class="st">0</span>..<span class="st">4</span>).<span class="fn">map</span>(|_| {
+    <span class="kw">let</span> c = <span class="ty">Arc</span>::<span class="fn">clone</span>(&counter);
+    thread::<span class="fn">spawn</span>(<span class="kw">move</span> || {
+        <span class="kw">let mut</span> guard = c.<span class="fn">lock</span>().<span class="fn">unwrap</span>();
+        *guard += <span class="st">1</span>;
+    }) <span class="cm">// guard dropped → lock released</span>
+}).<span class="fn">collect</span>();
+
+handles.<span class="fn">into_iter</span>().<span class="fn">for_each</span>(|h| h.<span class="fn">join</span>().<span class="fn">unwrap</span>());
+println!(<span class="st">"{}"</span>, *counter.<span class="fn">lock</span>().<span class="fn">unwrap</span>()); <span class="cm">// 4</span></pre>
+<p>A thread that panics while holding a lock makes the mutex <b>poisoned</b>. <code>.lock()</code> returns <code>Err</code> in that case — <code>.unwrap()</code> propagates the panic.</p>
+`,
+    demo: buildMutexVis,
+    quiz:[
+      {q:"Why do we need Arc<Mutex<T>> rather than just Mutex<T>?",
+       opts:["Mutex alone is not Send","Multiple threads need shared ownership — Arc gives reference-counted shared ownership across threads","Arc makes locking faster","Mutex requires a heap allocation"],
+       ans:1,fb:"Moving a Mutex into one thread gives that thread exclusive ownership. To share it across several threads you need Arc — it lets multiple owners hold a reference-counted pointer to the same allocation."}
+    ]
+  },
+  {
+    title:"Condition variables & thread parking",
+    subtitle:"Coordinating threads without busy-waiting",
+    content:`
+<p>Sometimes a thread needs to <b>wait for a condition</b> — not just for a lock. A <code>Condvar</code> lets a thread sleep until another thread signals it.</p>
+<p><code>.wait(guard)</code> atomically releases the mutex and sleeps. <code>.notify_one()</code> wakes one waiter; <code>.notify_all()</code> wakes all. Always re-check the condition after waking — spurious wake-ups can occur.</p>
+<pre><span class="kw">let</span> pair = <span class="ty">Arc</span>::<span class="fn">new</span>((<span class="ty">Mutex</span>::<span class="fn">new</span>(<span class="kw">false</span>), <span class="ty">Condvar</span>::<span class="fn">new</span>()));
+<span class="kw">let</span> p2 = <span class="ty">Arc</span>::<span class="fn">clone</span>(&pair);
+
+thread::<span class="fn">spawn</span>(<span class="kw">move</span> || {
+    <span class="kw">let</span> (lock, cvar) = &*p2;
+    *lock.<span class="fn">lock</span>().<span class="fn">unwrap</span>() = <span class="kw">true</span>;
+    cvar.<span class="fn">notify_one</span>(); <span class="cm">// wake the waiter</span>
+});
+
+<span class="kw">let</span> (lock, cvar) = &*pair;
+<span class="kw">let</span> <span class="kw">mut</span> ready = lock.<span class="fn">lock</span>().<span class="fn">unwrap</span>();
+<span class="kw">while</span> !*ready { ready = cvar.<span class="fn">wait</span>(ready).<span class="fn">unwrap</span>(); }</pre>
+<p><b>Thread parking</b> is a lighter primitive: <code>thread::park()</code> suspends the current thread; <code>handle.thread().unpark()</code> wakes it. Unlike <code>Condvar</code>, parking doesn't involve a mutex — it's best for simple one-to-one wake-ups where no shared state needs protecting.</p>
+`,
+    demo: buildCondvarVis,
+    quiz:[
+      {q:"Why should you always re-check your condition after a Condvar.wait() returns?",
+       opts:["The mutex might have been poisoned","Spurious wake-ups can occur — the OS may wake a thread even without notify being called","wait() consumes the guard permanently","notify_one() resets the condition to false"],
+       ans:1,fb:"POSIX (and Rust's Condvar) allows spurious wake-ups — a thread may be woken for reasons unrelated to your notify call. Always wrap .wait() in a while loop checking the actual condition."}
+    ]
+  }
+];
+
+let current = 0;
+let quizDone = [];
+
+function buildThreadVis(el){
+  el.innerHTML=`<div class="demo-label">Thread lifecycle</div>
+<div class="thread-row"><span style="width:90px;font-size:13px;color:var(--color-text-secondary)">main</span><div class="thread-bar t-running" id="tv-main" style="width:220px">▶ running</div></div>
+<div class="thread-row"><span style="width:90px;font-size:13px;color:var(--color-text-secondary)">spawned</span><div class="thread-bar t-parked" id="tv-child" style="width:50px">idle</div></div>
+<div style="display:flex;gap:8px;margin-top:0.75rem;flex-wrap:wrap">
+<button onclick="animThread()">▶ run animation</button>
+</div>
+<div id="tv-msg" style="font-size:13px;color:var(--color-text-tertiary);margin-top:8px;min-height:18px"></div>`;
+}
+
+function animThread(){
+  const main=document.getElementById('tv-main'),
+        child=document.getElementById('tv-child'),
+        msg=document.getElementById('tv-msg');
+  const steps=[
+    ()=>{main.className='thread-bar t-running';main.style.width='220px';main.textContent='▶ spawn()';child.className='thread-bar t-parked';child.style.width='50px';child.textContent='idle';msg.textContent='main calls thread::spawn(...)'},
+    ()=>{child.className='thread-bar t-running';child.style.width='180px';child.textContent='▶ running';msg.textContent='spawned thread starts executing'},
+    ()=>{main.className='thread-bar t-blocked';main.style.width='160px';main.textContent='⏸ join()';msg.textContent='main blocks on handle.join()'},
+    ()=>{child.className='thread-bar t-done';child.style.width='110px';child.textContent='✓ done';msg.textContent='spawned thread finishes'},
+    ()=>{main.className='thread-bar t-running';main.style.width='220px';main.textContent='▶ resumed';msg.textContent='main thread wakes — join() returns'},
+  ];
+  let i=0;
+  const iv=setInterval(()=>{if(i<steps.length){steps[i]();i++;}else{clearInterval(iv);}},1100);
+}
+
+function buildMoveVis(el){
+  el.innerHTML=`<div class="demo-label">Ownership transfer with move</div>
+<div class="vis">
+  <div class="box" style="background:var(--color-background-secondary)"><div style="font-size:11px;color:var(--color-text-tertiary)">main scope</div><code>name</code><br><span style="font-size:12px;color:var(--color-text-secondary)">"world"</span></div>
+  <div class="arrow">→</div>
+  <div class="box" style="background:#EEEDFE;border-color:#AFA9EC"><div style="font-size:11px;color:#534AB7">closure</div><code>name</code><br><span style="font-size:12px;color:#534AB7">moved in</span></div>
+  <div class="arrow">→</div>
+  <div class="box" style="background:#E1F5EE;border-color:#5DCAA5"><div style="font-size:11px;color:#0F6E56">thread</div><code>name</code><br><span style="font-size:12px;color:#0F6E56">owned</span></div>
+</div>
+<p style="font-size:13px;margin-top:4px">After <code>move</code>, the main scope can no longer use <code>name</code> — the compiler enforces this statically.</p>`;
+}
+
+function buildRefCellVis(el){
+  el.innerHTML=`<div class="demo-label">RefCell borrow states</div>
+<div id="rc-state" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:0.75rem">
+<div class="box" id="rc-box" style="min-width:120px;background:var(--color-background-secondary)"><div style="font-size:11px;color:var(--color-text-tertiary)">RefCell</div><div id="rc-inner" style="font-size:13px;font-weight:500">vec![1,2,3]</div><div id="rc-borrows" style="font-size:11px;color:#185FA5;margin-top:4px">no borrows</div></div>
+</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<button id="rc-btn-r" onclick="rcBorrow('r')">borrow() →</button>
+<button id="rc-btn-m" onclick="rcBorrow('m')">borrow_mut() →</button>
+<button onclick="rcReset()">reset</button>
+</div>
+<div id="rc-msg" style="font-size:13px;margin-top:8px;min-height:36px;padding:6px 10px;border-radius:6px"></div>`;
+  window._rcState={r:0,m:0};
+}
+
+function rcBorrow(t){
+  const s=window._rcState,msg=document.getElementById('rc-msg'),b=document.getElementById('rc-borrows');
+  if(t==='r'){
+    if(s.m>0){msg.className='fb no';msg.textContent='💥 runtime panic! Cannot borrow() while borrow_mut() is active.';return;}
+    s.r++;b.textContent=`${s.r} immutable borrow${s.r>1?'s':''}`;b.style.color='#185FA5';
+    msg.className='fb ok';msg.textContent=`✓ borrow() acquired. ${s.r} active immutable borrow${s.r>1?'s':''}.`;
+  } else {
+    if(s.r>0||s.m>0){msg.className='fb no';msg.textContent=`💥 runtime panic! Cannot borrow_mut() while ${s.r>0?'immutable borrows are':'a mutable borrow is'} active.`;return;}
+    s.m=1;b.textContent='1 mutable borrow';b.style.color='#993C1D';
+    msg.className='fb ok';msg.textContent='✓ borrow_mut() acquired. All other borrows now blocked.';
+  }
+}
+function rcReset(){window._rcState={r:0,m:0};document.getElementById('rc-borrows').textContent='no borrows';document.getElementById('rc-borrows').style.color='#185FA5';document.getElementById('rc-msg').className='';document.getElementById('rc-msg').textContent='';}
+
+function buildSendSyncVis(el){
+  const types=[
+    {name:'i32',send:true,sync:true,note:'plain data'},
+    {name:'String',send:true,sync:true,note:'heap-alloc, owned'},
+    {name:'Arc<T>',send:true,sync:true,note:'atomic refcount'},
+    {name:'Rc<T>',send:false,sync:false,note:'non-atomic refcount'},
+    {name:'RefCell<T>',send:true,sync:false,note:'non-atomic borrow check'},
+    {name:'Mutex<T>',send:true,sync:true,note:'guards Send+Sync access'},
+    {name:'*mut T',send:false,sync:false,note:'raw pointer — opt out'},
+  ];
+  el.innerHTML=`<div class="demo-label">Send & Sync at a glance</div>
+<table style="width:100%;border-collapse:collapse;font-size:13px">
+<thead><tr>
+<th style="text-align:left;padding:6px 8px;border-bottom:0.5px solid var(--color-border-tertiary);font-weight:500">Type</th>
+<th style="padding:6px 8px;border-bottom:0.5px solid var(--color-border-tertiary);font-weight:500">Send</th>
+<th style="padding:6px 8px;border-bottom:0.5px solid var(--color-border-tertiary);font-weight:500">Sync</th>
+<th style="text-align:left;padding:6px 8px;border-bottom:0.5px solid var(--color-border-tertiary);font-weight:500;color:var(--color-text-secondary)">Why</th>
+</tr></thead>
+<tbody>${types.map(t=>`<tr>
+<td style="padding:6px 8px;font-family:var(--font-mono)">${t.name}</td>
+<td style="padding:6px 8px;text-align:center"><span class="badge ${t.send?'b-send':'b-nosend'}">${t.send?'✓ yes':'✗ no'}</span></td>
+<td style="padding:6px 8px;text-align:center"><span class="badge ${t.sync?'b-sync':'b-nosync'}">${t.sync?'✓ yes':'✗ no'}</span></td>
+<td style="padding:6px 8px;color:var(--color-text-secondary)">${t.note}</td>
+</tr>`).join('')}</tbody>
+</table>`;
+}
+
+function buildMutexVis(el){
+  el.innerHTML=`<div class="demo-label">Mutex contention — click threads to acquire the lock</div>
+<div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
+<div>
+<div id="mx-lock" style="width:90px;height:90px;border-radius:12px;border:2px solid #534AB7;background:#EEEDFE;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:default;transition:all 0.3s">
+<div class="lock-icon" id="mx-icon">🔓</div>
+<div style="font-size:12px;font-weight:500;color:#3C3489" id="mx-label">unlocked</div>
+<div style="font-size:11px;color:#534AB7;margin-top:2px" id="mx-owner"></div>
+</div>
+<div style="font-size:11px;color:var(--color-text-tertiary);text-align:center;margin-top:4px">Mutex&lt;u32&gt;</div>
+</div>
+<div>
+${[1,2,3].map(i=>`<div class="thread-row"><button onclick="mxAcquire(${i})" id="mx-t${i}-btn" style="width:110px">${i===1?'thread 1 — acquire':'thread '+i+' — acquire'}</button><div class="thread-bar t-parked" id="mx-t${i}-bar" style="width:80px;margin-left:0">waiting</div></div>`).join('')}
+<button onclick="mxRelease()" style="margin-top:6px">release lock</button>
+</div>
+</div>
+<div id="mx-msg" style="font-size:13px;color:var(--color-text-tertiary);margin-top:8px;min-height:18px"></div>`;
+  window._mx={owner:null,queue:[]};
+}
+
+function mxAcquire(t){
+  const s=window._mx,msg=document.getElementById('mx-msg');
+  if(s.owner===t){msg.textContent=`thread ${t} already holds the lock`;return;}
+  if(s.owner===null){
+    s.owner=t;
+    document.getElementById('mx-icon').textContent='🔒';
+    document.getElementById('mx-label').textContent='locked';
+    document.getElementById('mx-owner').textContent=`by thread ${t}`;
+    document.getElementById('mx-lock').style.background='#FAECE7';
+    document.getElementById('mx-lock').style.borderColor='#993C1D';
+    document.getElementById(`mx-t${t}-bar`).className='thread-bar t-running';
+    document.getElementById(`mx-t${t}-bar`).textContent='▶ running';
+    msg.textContent=`thread ${t} acquired the lock — others must wait`;
+  } else {
+    if(!s.queue.includes(t)) s.queue.push(t);
+    document.getElementById(`mx-t${t}-bar`).className='thread-bar t-blocked';
+    document.getElementById(`mx-t${t}-bar`).textContent='⏸ blocked';
+    msg.textContent=`thread ${t} is blocked — thread ${s.owner} holds the lock`;
+  }
+}
+
+function mxRelease(){
+  const s=window._mx,msg=document.getElementById('mx-msg');
+  if(!s.owner){msg.textContent='lock is not held';return;}
+  const prev=s.owner;
+  document.getElementById(`mx-t${prev}-bar`).className='thread-bar t-parked';
+  document.getElementById(`mx-t${prev}-bar`).textContent='waiting';
+  s.owner=null;
+  if(s.queue.length>0){
+    const next=s.queue.shift();
+    setTimeout(()=>mxAcquire(next),200);
+  } else {
+    document.getElementById('mx-icon').textContent='🔓';
+    document.getElementById('mx-label').textContent='unlocked';
+    document.getElementById('mx-owner').textContent='';
+    document.getElementById('mx-lock').style.background='#EEEDFE';
+    document.getElementById('mx-lock').style.borderColor='#534AB7';
+    msg.textContent=`thread ${prev} released — lock is free`;
+  }
+}
+
+function buildCondvarVis(el){
+  el.innerHTML=`<div class="demo-label">Condvar vs thread parking — choose a primitive</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0.75rem">
+<div class="box" style="text-align:left;padding:12px">
+<div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:6px">Condvar</div>
+<ul style="font-size:13px;color:var(--color-text-secondary);padding-left:1rem;line-height:1.8">
+<li>Paired with a Mutex</li>
+<li>Many waiters possible</li>
+<li>notify_one / notify_all</li>
+<li>Spurious wake-ups → use while loop</li>
+</ul>
+</div>
+<div class="box" style="text-align:left;padding:12px">
+<div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:6px">thread::park</div>
+<ul style="font-size:13px;color:var(--color-text-secondary);padding-left:1rem;line-height:1.8">
+<li>No mutex needed</li>
+<li>One-to-one signalling</li>
+<li>handle.thread().unpark()</li>
+<li>Token-based — unpark before park is fine</li>
+</ul>
+</div>
+</div>
+<div id="cv-sim" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+<div class="thread-bar t-parked" id="cv-waiter" style="width:130px">waiter: parked</div>
+<div class="arrow">←</div>
+<div>
+<button onclick="cvUnpark()">unpark() ↗</button><br>
+<button onclick="cvNotify()" style="margin-top:6px">Condvar.notify() ↗</button>
+</div>
+</div>
+<div id="cv-msg" style="font-size:13px;color:var(--color-text-tertiary);margin-top:8px;min-height:18px"></div>`;
+}
+
+function cvUnpark(){
+  const w=document.getElementById('cv-waiter'),msg=document.getElementById('cv-msg');
+  w.className='thread-bar t-running';w.textContent='▶ unparked';
+  msg.textContent='unpark() consumed the token — thread resumes immediately';
+  setTimeout(()=>{w.className='thread-bar t-parked';w.textContent='waiter: parked';msg.textContent='thread parked itself again'},2000);
+}
+function cvNotify(){
+  const w=document.getElementById('cv-waiter'),msg=document.getElementById('cv-msg');
+  w.className='thread-bar t-running';w.textContent='▶ notified';
+  msg.textContent='Condvar.notify_one() — waiter wakes, re-acquires mutex, re-checks condition';
+  setTimeout(()=>{w.className='thread-bar t-parked';w.textContent='waiter: parked';msg.textContent='condition was spurious — thread went back to wait()'},2200);
+}
+
+function render(){
+  const t=TOPICS[current];
+  document.getElementById('main-title').textContent=`${t.title}`;
+  document.getElementById('topic-label').textContent=`Topic ${current+1} of ${TOPICS.length} — ${t.subtitle}`;
+
+  const prog=document.getElementById('progress');
+  prog.innerHTML='';
+  TOPICS.forEach((_,i)=>{
+    const d=document.createElement('div');
+    d.className='pip'+(i<current?' done':i===current?' active':'');
+    prog.appendChild(d);
+  });
+
+  const screens=document.getElementById('screens');
+  screens.innerHTML=`<div class="screen active">
+<h3>${t.subtitle}</h3>
+${t.content}
+<div class="demo" id="demo-area"><div class="demo-label">loading…</div></div>
+<div id="quiz-area"></div>
+<div class="nav">
+${current>0?'<button onclick="go(-1)">← back</button>':''}
+<button class="primary" id="next-btn" onclick="go(1)">${current===TOPICS.length-1?'finish ↗':'next topic →'}</button>
+<span class="step-label">${current+1} / ${TOPICS.length}</span>
+</div>
+</div>`;
+
+  t.demo(document.getElementById('demo-area'));
+  renderQuiz(t.quiz);
+}
+
+function renderQuiz(qs){
+  const area=document.getElementById('quiz-area');
+  area.innerHTML='<div style="height:1px;background:var(--color-border-tertiary);margin:1rem 0"></div>';
+  qs.forEach((q,qi)=>{
+    const done=quizDone[current]&&quizDone[current][qi];
+    const block=document.createElement('div');
+    block.className='q-block';
+    block.innerHTML=`<p>🎯 ${q.q}</p><div class="choices">${q.opts.map((o,i)=>`<button class="choice${done?(i===q.ans?' correct':' wrong disabled'):''}" onclick="answer(${qi},${i})">${o}</button>`).join('')}</div>${done?`<div class="fb ok">✓ ${q.fb}</div>`:''}`;
+    area.appendChild(block);
+  });
+}
+
+function answer(qi,ai){
+  if(!quizDone[current]) quizDone[current]={};
+  quizDone[current][qi]=true;
+  const q=TOPICS[current].quiz[qi];
+  const area=document.getElementById('quiz-area').querySelectorAll('.q-block')[qi];
+  area.querySelectorAll('.choice').forEach((b,i)=>{
+    b.classList.add(i===q.ans?'correct':'wrong','disabled');
+  });
+  const fb=document.createElement('div');
+  fb.className=ai===q.ans?'fb ok':'fb no';
+  fb.textContent=(ai===q.ans?'✓ ':'✗ ')+q.fb;
+  area.appendChild(fb);
+}
+
+function go(dir){
+  const next=current+dir;
+  if(next<0||next>TOPICS.length-1){
+    if(next>=TOPICS.length){
+      sendPrompt("I've finished the Rust concurrency tutorial — give me a challenge exercise covering all 6 topics.");
+    }
+    return;
+  }
+  current=next;
+  render();
+  window.scrollTo&&window.scrollTo(0,0);
+}
+
+render();
+</script>
