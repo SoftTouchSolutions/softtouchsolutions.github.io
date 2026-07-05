@@ -1,0 +1,136 @@
+@startuml
+' MVHR Control System — Activity Diagram with Swimlanes
+' Each operating mode is a swimlane showing actuator state,
+' sensor monitoring, and exit-condition decision logic.
+'
+' Render: plantuml _activity.puml
+
+!pragma layout smetana
+skinparam backgroundColor #FAFAFA
+skinparam activityBorderColor #555
+skinparam activityBackgroundColor #FFF
+skinparam activityBorderThickness 1
+skinparam swimlaneBorderColor #CCC
+skinparam swimlaneBorderThickness 1
+skinparam defaultTextAlignment center
+skinparam ArrowColor #555
+skinparam ArrowThickness 1
+
+title <size:16><b>MVHR Control System</b></size>\n<size:10>Activity Diagram with Swimlanes</size>
+header <size:9>Priority cascade: FROST_PROTECT > FAULT > BOOST > BYPASS > NORMAL</size>
+
+' ==============================================================================
+' NORMAL
+' ==============================================================================
+|NORMAL|
+start
+:Demand-controlled ventilation;
+note right: Fans 40-60%\nDamper CLOSED
+:Monitor T_out, CO2, VOC, RH;
+
+if (T_out < +2 °C ?) then (yes)
+  --> |FROST_PROTECT| T_out < frost threshold
+elseif (Fault condition ?) then (yes)
+  --> |FAULT| Any fault
+elseif (CO2 > 900 / VOC > 200\n/ RH > 75% / Manual ?) then (yes)
+  --> |BOOST| Boost trigger
+elseif (T_out > T_ext + 2 °C\n& Summer flag ?) then (yes)
+  --> |BYPASS| Bypass trigger
+else (no - stay here)
+  --> |NORMAL|
+endif
+
+' ==============================================================================
+' BOOST
+' ==============================================================================
+|BOOST|
+:Maximum ventilation;
+note right: Fans 100%\nDamper CLOSED
+:Monitor CO2, VOC, RH;
+
+if (All < hysteresis\n& dwell >= 120 s ?) then (yes)
+  --> |NORMAL| Exit hysteresis met
+elseif (T_out < +2 °C ?) then (yes)
+  --> |FROST_PROTECT| Frost override
+elseif (Fault condition ?) then (yes)
+  --> |FAULT| Any fault
+else (no - stay here)
+  --> |BOOST|
+endif
+
+' ==============================================================================
+' BYPASS
+' ==============================================================================
+|BYPASS|
+:Summer cooling mode;
+note right: Fans 40-60%\nDamper OPEN
+:Monitor T_out vs T_ext;
+
+if (T_out < T_ext - 2 °C\n& dwell met ?) then (yes)
+  --> |NORMAL| Exit bypass
+elseif (T_out < +2 °C ?) then (yes)
+  --> |FROST_PROTECT| Frost override
+elseif (Fault condition ?) then (yes)
+  --> |FAULT| Any fault
+else (no - stay here)
+  --> |BYPASS|
+endif
+
+' ==============================================================================
+' FROST_PROTECT
+' ==============================================================================
+|FROST_PROTECT|
+:Anti-ice protection;
+note right: FAN_S reduced 30-50%\nPre-heater ON (if fitted)
+:Monitor RPM_s, ΔP, T_out;
+
+if (T_out >= +2 °C + hyst. ?) then (yes)
+  --> |NORMAL| Frost cleared
+elseif (RPM_s < 450\nor ΔP rise >= 20 Pa / 60 s ?) then (yes)
+  --> |DEFROST| Enter defrost
+elseif (Fault condition ?) then (yes)
+  --> |FAULT| Any fault
+else (no - stay here)
+  --> |FROST_PROTECT|
+endif
+
+' ==============================================================================
+' DEFROST
+' ==============================================================================
+|DEFROST|
+:Ice removal cycle;
+note right: FAN_S 0%\nFAN_E running\nTimer = 600 s
+:Countdown timer;
+
+if (Timer >= 600 s ?) then (yes)
+  --> |FROST_PROTECT| Defrost complete
+elseif (Fault condition ?) then (yes)
+  --> |FAULT| Any fault
+else (no - stay here)
+  --> |DEFROST|
+endif
+
+' ==============================================================================
+' FAULT
+' ==============================================================================
+|FAULT|
+:Safe shutdown;
+note right: Fans OFF/MIN\nDamper CLOSED\n<b>LATCHING</b>
+:Wait for manual reset\n& fault condition cleared;
+
+--> |NORMAL| Manual reset (HMI / MQTT)\n& fault condition cleared
+
+' ==============================================================================
+' Legend
+' ==============================================================================
+legend right
+  <size:9><b>Legend</b></size>
+  <size:9>Mode transition (condition-triggered)</size>
+  <size:9>Fault transition (any mode → FAULT)</size>
+  <size:9>Manual reset (FAULT → NORMAL)</size>
+  <size:9><b>FAULT is latching</b> — no auto-recover</size>
+  <size:9>Initial state: NORMAL</size>
+  <size:9>Defrost entered only from FROST_PROTECT</size>
+endlegend
+
+@enduml

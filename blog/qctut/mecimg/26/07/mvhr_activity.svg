@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 550" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#555"/>
+    </marker>
+    <marker id="ar-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#1565C0"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1320" height="550" fill="#FAFAFA"/>
+  <rect x="5" y="5" width="1310" height="540" fill="none" stroke="#E0E0E0" stroke-width="1" rx="4"/>
+
+  <!-- Title -->
+  <text x="660" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#333">MVHR Control System &#8212; Activity Diagram (Swimlanes)</text>
+  <text x="660" y="39" text-anchor="middle" font-size="9" fill="#666">Priority cascade: FROST_PROTECT &gt; FAULT &gt; BOOST &gt; BYPASS &gt; NORMAL</text>
+
+  <!-- ==================== SWIMLANE BACKGROUNDS ==================== -->
+  <rect x="30" y="52" width="195" height="485" fill="#F1F8E9"/>
+  <rect x="245" y="52" width="195" height="485" fill="#FFF3E0"/>
+  <rect x="460" y="52" width="195" height="485" fill="#E3F2FD"/>
+  <rect x="675" y="52" width="195" height="485" fill="#E0F7FA"/>
+  <rect x="890" y="52" width="195" height="485" fill="#F3E5F5"/>
+  <rect x="1105" y="52" width="195" height="485" fill="#FFEBEE"/>
+
+  <!-- ==================== LANE DIVIDERS ==================== -->
+  <line x1="225" y1="52" x2="225" y2="535" stroke="#CCC" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="440" y1="52" x2="440" y2="535" stroke="#CCC" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="655" y1="52" x2="655" y2="535" stroke="#CCC" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="870" y1="52" x2="870" y2="535" stroke="#CCC" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="1085" y1="52" x2="1085" y2="535" stroke="#CCC" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ==================== LANE HEADERS ==================== -->
+  <rect x="30" y="52" width="195" height="28" rx="4" fill="#43A047"/>
+  <text x="127" y="71" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">NORMAL</text>
+
+  <rect x="245" y="52" width="195" height="28" rx="4" fill="#FB8C00"/>
+  <text x="337" y="71" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">BOOST</text>
+
+  <rect x="460" y="52" width="195" height="28" rx="4" fill="#1E88E5"/>
+  <text x="547" y="71" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">BYPASS</text>
+
+  <rect x="675" y="52" width="195" height="28" rx="4" fill="#00897B"/>
+  <text x="757" y="71" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">FROST_PROTECT</text>
+
+  <rect x="890" y="52" width="195" height="28" rx="4" fill="#7B1FA2"/>
+  <text x="967" y="71" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">DEFROST</text>
+
+  <rect x="1105" y="52" width="195" height="28" rx="4" fill="#E53935"/>
+  <text x="1177" y="71" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">FAULT</text>
+
+  <!-- ==================== INITIAL STATE ==================== -->
+  <circle cx="127" cy="88" r="5" fill="#43A047"/>
+  <path d="M 127 93 L 127 100" fill="none" stroke="#43A047" stroke-width="1.5"/>
+  <text x="145" y="92" font-size="7" fill="#43A047" font-style="italic">start</text>
+
+  <!-- ==================== ACTIVITY BOXES ==================== -->
+
+  <!-- NORMAL -->
+  <rect x="42" y="105" width="170" height="38" rx="6" fill="#fff" stroke="#43A047" stroke-width="1.2"/>
+  <text x="127" y="122" text-anchor="middle" font-size="9" font-weight="600" fill="#333">Demand-controlled ventilation</text>
+  <text x="127" y="135" text-anchor="middle" font-size="8" fill="#555">Fans 40&#8211;60%, Damper CLOSED</text>
+
+  <!-- BOOST -->
+  <rect x="257" y="105" width="170" height="38" rx="6" fill="#fff" stroke="#FB8C00" stroke-width="1.2"/>
+  <text x="342" y="122" text-anchor="middle" font-size="9" font-weight="600" fill="#333">Maximum ventilation</text>
+  <text x="342" y="135" text-anchor="middle" font-size="8" fill="#555">Fans 100%, Damper CLOSED</text>
+
+  <!-- BYPASS -->
+  <rect x="472" y="105" width="170" height="38" rx="6" fill="#fff" stroke="#1E88E5" stroke-width="1.2"/>
+  <text x="557" y="122" text-anchor="middle" font-size="9" font-weight="600" fill="#333">Summer cooling mode</text>
+  <text x="557" y="135" text-anchor="middle" font-size="8" fill="#555">Fans 40&#8211;60%, Damper OPEN</text>
+
+  <!-- FROST_PROTECT -->
+  <rect x="687" y="105" width="170" height="38" rx="6" fill="#fff" stroke="#00897B" stroke-width="1.2"/>
+  <text x="772" y="122" text-anchor="middle" font-size="9" font-weight="600" fill="#333">Anti-ice protection</text>
+  <text x="772" y="135" text-anchor="middle" font-size="8" fill="#555">FAN_S reduced, Pre-heat ON</text>
+
+  <!-- DEFROST -->
+  <rect x="902" y="105" width="170" height="38" rx="6" fill="#fff" stroke="#7B1FA2" stroke-width="1.2"/>
+  <text x="987" y="122" text-anchor="middle" font-size="9" font-weight="600" fill="#333">Ice removal cycle</text>
+  <text x="987" y="135" text-anchor="middle" font-size="8" fill="#555">FAN_S 0%, FAN_E running</text>
+
+  <!-- FAULT -->
+  <rect x="1117" y="105" width="170" height="38" rx="6" fill="#fff" stroke="#E53935" stroke-width="1.2"/>
+  <text x="1202" y="122" text-anchor="middle" font-size="9" font-weight="600" fill="#333">Safe shutdown</text>
+  <text x="1202" y="135" text-anchor="middle" font-size="8" fill="#555">Fans OFF/MIN, Damper CLOSED</text>
+
+  <!-- ==================== MONITOR BOXES ==================== -->
+  <rect x="42" y="158" width="170" height="16" rx="3" fill="#f5f5f5" stroke="#ddd" stroke-width="0.8"/>
+  <text x="127" y="169" text-anchor="middle" font-size="7.5" fill="#666" font-style="italic">Monitor: T_out, CO2, VOC, RH</text>
+
+  <rect x="257" y="158" width="170" height="16" rx="3" fill="#f5f5f5" stroke="#ddd" stroke-width="0.8"/>
+  <text x="342" y="169" text-anchor="middle" font-size="7.5" fill="#666" font-style="italic">Monitor: CO2, VOC, RH levels</text>
+
+  <rect x="472" y="158" width="170" height="16" rx="3" fill="#f5f5f5" stroke="#ddd" stroke-width="0.8"/>
+  <text x="557" y="169" text-anchor="middle" font-size="7.5" fill="#666" font-style="italic">Monitor: T_out vs T_ext</text>
+
+  <rect x="687" y="158" width="170" height="16" rx="3" fill="#f5f5f5" stroke="#ddd" stroke-width="0.8"/>
+  <text x="772" y="169" text-anchor="middle" font-size="7.5" fill="#666" font-style="italic">Monitor: RPM_s, &#916;P, T_out</text>
+
+  <rect x="902" y="158" width="170" height="16" rx="3" fill="#f5f5f5" stroke="#ddd" stroke-width="0.8"/>
+  <text x="987" y="169" text-anchor="middle" font-size="7.5" fill="#666" font-style="italic">Timer: 600s countdown</text>
+
+  <rect x="1117" y="158" width="170" height="16" rx="3" fill="#f5f5f5" stroke="#ddd" stroke-width="0.8"/>
+  <text x="1202" y="169" text-anchor="middle" font-size="7.5" fill="#666" font-style="italic">Wait: manual reset required</text>
+
+  <!-- ==================== FAULT TRIGGER NOTES (FAULT LANE) ==================== -->
+  <rect x="1115" y="188" width="175" height="98" rx="4" fill="#fff" stroke="#E53935" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="1202" y="201" text-anchor="middle" font-size="8" font-weight="600" fill="#C62828">Fault Triggers</text>
+  <text x="1120" y="214" font-size="7.5" fill="#555">&#8226; Fan stall / overcurrent</text>
+  <text x="1120" y="226" font-size="7.5" fill="#555">&#8226; Sensor stuck / implausible</text>
+  <text x="1120" y="238" font-size="7.5" fill="#555">&#8226; &#916;P_f &gt; 250 Pa (filter)</text>
+  <text x="1120" y="250" font-size="7.5" fill="#555">&#8226; RPM &#916; &gt; 20% &gt; 30s</text>
+  <text x="1120" y="262" font-size="7.5" fill="#555">&#8226; Watchdog timeout</text>
+  <text x="1120" y="278" font-size="7.5" fill="#888" font-style="italic">FAULT is latching</text>
+
+  <!-- ==================== ARROWS: TRANSITIONS BETWEEN LANES ==================== -->
+
+  <!--
+    Leftgoing (&#8592;): source on right, target on left
+    Rightgoing (&#8594;): source on left, target on right
+  -->
+
+  <!-- L1: BOOST &#8592; NORMAL (y=200) -->
+  <path d="M 248 200 L 222 200" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="235" y="195" text-anchor="middle" font-size="7.5" fill="#555">All &lt; hyst &amp; dwell &#8805; 120s</text>
+
+  <!-- R1: NORMAL &#8594; BOOST (y=215) -->
+  <path d="M 222 215 L 248 215" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="235" y="225" text-anchor="middle" font-size="7" fill="#555">CO2&gt;900 / VOC&gt;200</text>
+  <text x="235" y="233" text-anchor="middle" font-size="7" fill="#555">RH&gt;75% / Manual</text>
+
+  <!-- L4: DEFROST &#8592; FROST_PROTECT (y=200) -->
+  <!-- Must offset from L1 since same y level but different x range -->
+  <path d="M 893 198 L 867 198" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="880" y="193" text-anchor="middle" font-size="7.5" fill="#555">Timer &#8805; 600s expired</text>
+
+  <!-- R5: FROST_PROTECT &#8594; DEFROST (y=215) -->
+  <path d="M 867 213 L 893 213" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="880" y="223" text-anchor="middle" font-size="7" fill="#555">RPM_s &lt;450</text>
+  <text x="880" y="231" text-anchor="middle" font-size="7" fill="#555">or &#916;P &#8805;20Pa/60s</text>
+
+  <!-- R2: NORMAL &#8594; BYPASS (y=235) -->
+  <path d="M 222 235 L 463 235" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="342" y="229" text-anchor="middle" font-size="7.5" fill="#555">T_out &gt; T_ext + 2&#176;C</text>
+  <text x="342" y="238" text-anchor="middle" font-size="7" fill="#555">&amp; Summer flag</text>
+
+  <!-- L2: BYPASS &#8592; NORMAL (y=250) -->
+  <path d="M 463 250 L 222 250" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="342" y="256" text-anchor="middle" font-size="7.5" fill="#555">T_out &lt; T_ext &#8722; 2&#176;C &amp; dwell met</text>
+
+  <!-- R3: NORMAL &#8594; FROST_PROTECT (y=270) -->
+  <path d="M 222 270 L 678 270" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="450" y="265" text-anchor="middle" font-size="7.5" fill="#555">T_out &lt; +2&#176;C (frost threshold)</text>
+
+  <!-- L3: FROST_PROTECT &#8592; NORMAL (y=295) -->
+  <path d="M 678 295 L 222 295" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="450" y="289" text-anchor="middle" font-size="7.5" fill="#555">T_out &#8805; frost threshold + hysteresis</text>
+
+  <!-- R4: NORMAL &#8594; FAULT (y=315) -->
+  <path d="M 222 315 L 1108 315" fill="none" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#ar)"/>
+  <text x="665" y="310" text-anchor="middle" font-size="7.5" fill="#888" font-style="italic">Any fault condition</text>
+
+  <!-- L5: FAULT &#8592; NORMAL (y=335) -->
+  <path d="M 1108 335 L 222 335" fill="none" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="7,4" marker-end="url(#ar-blue)"/>
+  <text x="655" y="328" text-anchor="middle" font-size="7.5" fill="#1565C0">Manual reset (HMI / MQTT)</text>
+  <text x="655" y="338" text-anchor="middle" font-size="7" fill="#1565C0">&amp; fault condition cleared</text>
+
+  <!-- R6: BOOST &#8594; FAULT (y=360) -->
+  <path d="M 437 360 L 1108 360" fill="none" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#ar)"/>
+  <text x="772" y="355" text-anchor="middle" font-size="7.5" fill="#888" font-style="italic">Any fault</text>
+
+  <!-- R7: BYPASS &#8594; FAULT (y=385) -->
+  <path d="M 652 385 L 1108 385" fill="none" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#ar)"/>
+  <text x="880" y="380" text-anchor="middle" font-size="7.5" fill="#888" font-style="italic">Any fault</text>
+
+  <!-- R8: FROST_PROTECT &#8594; FAULT (y=410) -->
+  <path d="M 867 410 L 1108 410" fill="none" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#ar)"/>
+  <text x="987" y="405" text-anchor="middle" font-size="7.5" fill="#888" font-style="italic">Any fault</text>
+
+  <!-- R9: DEFROST &#8594; FAULT (y=435) -->
+  <path d="M 1082 435 L 1108 435" fill="none" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#ar)"/>
+  <text x="1095" y="430" text-anchor="middle" font-size="7.5" fill="#888" font-style="italic">Any fault</text>
+
+  <!-- ==================== LEGEND ==================== -->
+  <rect x="30" y="485" width="1150" height="28" rx="5" fill="#fff" stroke="#CCC" stroke-width="0.8"/>
+  <text x="42" y="503" font-size="8" font-weight="700" fill="#555">Legend:</text>
+  <line x1="80" y1="500" x2="94" y2="500" stroke="#555" stroke-width="1.2"/>
+  <text x="100" y="503" font-size="7.5" fill="#555">Mode transition</text>
+  <line x1="180" y1="500" x2="194" y2="500" stroke="#999" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="200" y="503" font-size="7.5" fill="#555">Fault transition</text>
+  <line x1="280" y1="500" x2="294" y2="500" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="300" y="503" font-size="7.5" fill="#555">Manual reset</text>
+  <circle cx="370" cy="500" r="3.5" fill="#43A047"/>
+  <text x="378" y="503" font-size="7.5" fill="#555">Initial state (NORMAL)</text>
+  <text x="492" y="503" font-size="7.5" fill="#CCC">|</text>
+  <text x="500" y="503" font-size="7.5" fill="#888">Priority: FROST &gt; FAULT &gt; BOOST &gt; BYPASS &gt; NORMAL</text>
+  <text x="700" y="503" font-size="7.5" fill="#CCC">|</text>
+  <text x="708" y="503" font-size="7.5" fill="#888">FAULT is latching</text>
+</svg>

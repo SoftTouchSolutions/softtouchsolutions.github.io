@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2700" viewBox="0 0 1800 2700">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#faf8f6"/>
+      <stop offset="100%" stop-color="#f1f1f1"/>
+    </linearGradient>
+
+    <linearGradient id="footer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1b1f3b"/>
+      <stop offset="100%" stop-color="#5b2ca0"/>
+    </linearGradient>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="1800" height="2700" fill="url(#bg)"/>
+
+  <text x="120" y="360"
+        font-family="Arial"
+        font-size="290"
+        font-weight="700"
+        fill="#111b35">Rust</text>
+
+  <text x="120" y="540"
+        font-family="Arial"
+        font-size="120"
+        font-weight="700"
+        fill="#111b35">the</text>
+
+  <text x="360" y="540"
+        font-family="Arial"
+        font-size="150"
+        font-weight="700"
+        fill="#f97316">good</text>
+
+  <text x="120" y="700"
+        font-family="Arial"
+        font-size="170"
+        font-weight="700"
+        fill="#6b3fd6">parts</text>
+
+  <text x="1380" y="360"
+        text-anchor="middle"
+        font-family="Arial"
+        font-size="70"
+        fill="#6b3fd6">
+      A first course
+  </text>
+
+  <text x="120" y="930"
+        font-family="Arial"
+        font-size="70"
+        font-weight="700"
+        fill="#222">
+      Inspired by Harvard's CS50
+  </text>
+
+  <g filter="url(#shadow)">
+    <rect x="950" y="1150" width="220" height="120" rx="8" fill="#f97316"/>
+    <rect x="1080" y="1030" width="220" height="120" rx="8" fill="#6b3fd6"/>
+    <rect x="860" y="1270" width="220" height="120" rx="8" fill="#1d4ed8"/>
+    <rect x="1170" y="1270" width="220" height="120" rx="8" fill="#22c55e"/>
+    <rect x="930" y="1390" width="220" height="120" rx="8" fill="#facc15"/>
+    <rect x="1160" y="1510" width="220" height="120" rx="8" fill="#7c3aed"/>
+    <rect x="820" y="1510" width="220" height="120" rx="8" fill="#f97316"/>
+    <rect x="950" y="1630" width="220" height="120" rx="8" fill="#0ea5e9"/>
+    <rect x="1080" y="1750" width="220" height="120" rx="8" fill="#22c55e"/>
+  </g>
+
+  <circle cx="1060" cy="1210" r="55" fill="none" stroke="#111" stroke-width="10"/>
+  <text x="1028" y="1235"
+        font-family="Arial"
+        font-size="60"
+        font-weight="700">R</text>
+
+  <rect x="180" y="1800" width="180" height="90" rx="6" fill="#3b82f6"/>
+  <rect x="410" y="1720" width="180" height="90" rx="6" fill="#22c55e"/>
+  <rect x="650" y="1820" width="180" height="90" rx="6" fill="#6b3fd6"/>
+  <rect x="920" y="1930" width="180" height="90" rx="6" fill="#f97316"/>
+
+  <text x="210" y="1860" font-size="48" fill="white" font-family="Arial" font-weight="700">
+    SAFE
+  </text>
+
+  <text x="440" y="1780" font-size="48" fill="white" font-family="Arial" font-weight="700">
+    FAST
+  </text>
+
+  <text x="675" y="1880" font-size="42" fill="white" font-family="Arial" font-weight="700">
+    FUN
+  </text>
+
+  <rect x="0" y="2280" width="1800" height="180" fill="#111b35"/>
+
+  <text x="225" y="2375" text-anchor="middle"
+        font-size="40" fill="white" font-family="Arial">
+      Memory Safety
+  </text>
+
+  <text x="675" y="2375" text-anchor="middle"
+        font-size="40" fill="white" font-family="Arial">
+      Performance
+  </text>
+
+  <text x="1125" y="2375" text-anchor="middle"
+        font-size="40" fill="white" font-family="Arial">
+      Zero-Cost
+  </text>
+
+  <text x="1575" y="2375" text-anchor="middle"
+        font-size="40" fill="white" font-family="Arial">
+      Productivity
+  </text>
+
+  <rect x="0" y="2460" width="1800" height="240" fill="url(#footer)"/>
+
+  <text x="900" y="2600"
+        text-anchor="middle"
+        font-family="Arial"
+        font-size="72"
+        letter-spacing="8"
+        fill="white">
+      IYALLA JOHN ALAMINA
+  </text>
+</svg>
