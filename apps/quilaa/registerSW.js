@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/apps/quilaa/sw.js', { scope: '/apps/quilaa/' })})}

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Quilaa">
+  <rect width="512" height="512" rx="112" fill="#0ea5e9"/>
+  <path d="M128 128h64v132L298 128h85L277 256l106 128h-85L192 252v132h-64z" fill="#fff"/>
+</svg>
