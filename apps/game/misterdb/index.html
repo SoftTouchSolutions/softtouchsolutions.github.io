@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MiSTer Game Catalog</title>
+    <style>html, body { margin: 0; height: 100%; background: #0e0f0c; }</style>
+  <link rel="modulepreload" href="/apps/game/misterdb/misterdb-bevyui-30fda5072825806a.js" crossorigin="anonymous" integrity="sha384-+dKdVEQl+sE8kISSFmK4DSmFz/QpGl1Ci3I81dAzHKAE9J1neqVNSRLZOzORHHBv"><link rel="preload" href="/apps/game/misterdb/misterdb-bevyui-30fda5072825806a_bg.wasm" crossorigin="anonymous" integrity="sha384-ODLOmm3hxVoduv9+fHJgfa3zDDOm85pJ2Ni64G/pNn3RzJKZQgDACk2/I4OiLOSj" as="fetch" type="application/wasm"></head>
+  
+<script type="module">
+import init, * as bindings from '/apps/game/misterdb/misterdb-bevyui-30fda5072825806a.js';
+const wasm = await init({ module_or_path: '/apps/game/misterdb/misterdb-bevyui-30fda5072825806a_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+  <body></body>
+</html>
