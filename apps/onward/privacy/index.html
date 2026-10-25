@@ -1,0 +1,119 @@
+<!doctype html>
+<!--
+  DRAFT - NEEDS THE OWNER'S REVIEW BEFORE PUBLISHING. THIS IS NOT LEGAL ADVICE.
+  Drafted 2026-10-18 for "Almost Aboard" (store paperwork task G12, see Onw11sub.md).
+  Placeholders to replace before publishing:
+    [CONTROLLER NAME AND ADDRESS]  [SUPPORT EMAIL]  [EFFECTIVE DATE]
+    [HOSTING LOCATION CONFIRMATION]  [TRANSFER SAFEGUARD]
+  Also delete the visible draft banner below. Do not publish until the Settings screen
+  in the app really has "Export my data" and "Delete my data" (features 7.2, 7.3).
+  Served at https://softtouchsolutions.github.io/apps/onward/privacy/ once deployed (not deployed yet).
+-->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Almost Aboard - Privacy policy</title>
+<style>
+  :root { color-scheme: light dark; --bg:#ffffff; --fg:#1b1f24; --muted:#57606a; --line:#d0d7de; --accent:#312783; --warn:#fff4ce; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1318; --fg:#e6edf3; --muted:#9aa4af; --line:#30363d; --accent:#9db4ff; --warn:#3a3200; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:46rem; margin:0 auto; padding:1rem 1rem 4rem; }
+  h1 { font-size:1.8rem; line-height:1.25; } h2 { font-size:1.25rem; margin-top:2rem; border-top:1px solid var(--line); padding-top:1rem; }
+  a { color:var(--accent); } table { border-collapse:collapse; width:100%; font-size:.95rem; }
+  th,td { border:1px solid var(--line); padding:.45rem .6rem; text-align:left; vertical-align:top; }
+  .meta { color:var(--muted); } .draft { background:var(--warn); padding:.7rem 1rem; border-radius:6px; }
+  .scroll { overflow-x:auto; }
+</style>
+</head>
+<body>
+<main>
+<p class="draft"><strong>DRAFT for review. Not yet published. Not legal advice.</strong> Delete this box before publishing.</p>
+
+<h1>Almost Aboard: privacy policy</h1>
+<p class="meta">Effective date: [EFFECTIVE DATE]</p>
+
+<p>Almost Aboard is a mobile app that watches a UK train journey you set up and sends you notifications about it, for example a delay, a platform or a cancellation. This policy explains what personal data the app and its server handle, why, who else handles it, how long it is kept, and what you can do about it.</p>
+
+<h2>1. Who is responsible for your data</h2>
+<p>The data controller is: [CONTROLLER NAME AND ADDRESS].</p>
+<p>Contact for anything in this policy: [SUPPORT EMAIL].</p>
+<p>Almost Aboard is an independent app. It is not affiliated with, endorsed by or operated by National Rail, Network Rail or any train operator.</p>
+
+<h2>2. What we collect</h2>
+<p>There is no sign-up. You do not give us your name, email address or phone number. When you first use the app, the server creates an anonymous user ID for you. We collect only what is needed to run the alerts you ask for:</p>
+<div class="scroll"><table>
+<thead><tr><th>Data</th><th>What it is</th></tr></thead>
+<tbody>
+<tr><td>Anonymous user ID</td><td>A random identifier created by the server. It is not linked to your name or contact details.</td></tr>
+<tr><td>Device and push tokens</td><td>Technical addresses that let the server send a notification to your phone, plus the device platform (iOS or Android), the app version, and when the app last contacted the server.</td></tr>
+<tr><td>Trips and recurring schedules</td><td>The journeys you add: the stations, the train you chose, the days it repeats, and whether a trip is skipped or suspended.</td></tr>
+<tr><td>Last notified state</td><td>A record of the last status we told you about for a trip, so that we do not send you the same alert twice.</td></tr>
+<tr><td>Notification log</td><td>A record of which notifications were sent to your device and when.</td></tr>
+</tbody></table></div>
+<p>Because a journey can reveal where you travel and when, we treat trips and schedules as personal data even though your identity is not attached to them.</p>
+
+<h2>3. What we do not collect</h2>
+<ul>
+<li>We do not collect your precise location. The app does not ask for location permission.</li>
+<li>We do not use advertising, advertising identifiers or analytics or tracking software, and we do not track you across other apps or websites.</li>
+<li>We do not sell your data or share it for advertising.</li>
+</ul>
+
+<h2>4. Why we use it, and our lawful basis</h2>
+<div class="scroll"><table>
+<thead><tr><th>Purpose</th><th>Data</th><th>Lawful basis (UK GDPR)</th></tr></thead>
+<tbody>
+<tr><td>Watch the trips you set up and send you the notifications you asked for</td><td>All items in section 2</td><td>Performing the service you asked for (Article 6(1)(b))</td></tr>
+<tr><td>Avoid duplicate alerts, remove invalid device tokens, keep the service secure and fix faults</td><td>Last notified state, notification log, tokens</td><td>Our legitimate interest in running a reliable and secure service (Article 6(1)(f))</td></tr>
+</tbody></table></div>
+<p>Notifications are sent only if you allow them in your phone settings. You can turn them off at any time in your phone settings.</p>
+
+<h2>5. Who else handles your data</h2>
+<p>We do not sell or rent your data. We use these service providers (processors) who handle data on our behalf:</p>
+<div class="scroll"><table>
+<thead><tr><th>Provider</th><th>Role</th><th>Data they receive</th></tr></thead>
+<tbody>
+<tr><td>Expo (Expo push notification service)</td><td>Receives our notification requests and passes them on to Apple or Google</td><td>Your push token and the notification content</td></tr>
+<tr><td>Apple (Apple Push Notification service) and Google (Firebase Cloud Messaging)</td><td>Deliver notifications to iPhones and Android phones</td><td>Your push token and the notification content</td></tr>
+<tr><td>Hostinger (virtual server hosting)</td><td>Hosts our server and database. Location: [HOSTING LOCATION CONFIRMATION]</td><td>All items in section 2, stored on our server</td></tr>
+</tbody></table></div>
+<p>Live train information comes from National Rail's Darwin data feed through the Rail Data Marketplace. That information flows to us. We do not send your personal data to it.</p>
+<p>Some of these providers may process data outside the UK, for example in the United States. Where they do, the transfer is covered by: [TRANSFER SAFEGUARD].</p>
+<p>Notification content (for example, "your 07:42 to Leeds is delayed") can be shown on your lock screen. Check your phone settings if you do not want that.</p>
+
+<h2>6. How long we keep it</h2>
+<ul>
+<li>Alert history (the notification log) is deleted 30 days after it is created.</li>
+<li>Device and push tokens are deleted when they stop working (the phone tells us the token is no longer valid), and when you delete your account.</li>
+<li>Unused data: if you do not use the app, and no alert is delivered to your phone, for 180 days, your anonymous user ID and everything linked to it is deleted automatically. The 180 days start when we first store data for you and restart whenever you use the app or one of your saved journeys sends you an alert that is delivered to your phone.</li>
+<li>If you use Delete my data (section 8), everything linked to your anonymous user ID is deleted.</li>
+</ul>
+
+<h2>7. Your rights</h2>
+<p>Under UK data protection law you can ask to see your data, have it corrected, have it erased, restrict or object to how it is used, and receive it in a portable form. You can also complain to the Information Commissioner's Office at <a href="https://ico.org.uk/">ico.org.uk</a>.</p>
+<p>Because the app has no sign-up, we can only find data that belongs to a phone that still has the app installed and holds its anonymous ID. The in-app tools in section 8 are therefore the quickest and most reliable way to use your rights. If you need anything else, contact [SUPPORT EMAIL].</p>
+
+<h2>8. Export or delete your data in the app</h2>
+<ul>
+<li><strong>Export:</strong> open <em>Settings</em>, then <em>Export my data</em>. You get a file with your trips, schedules and registered devices.</li>
+<li><strong>Delete:</strong> open <em>Settings</em>, then <em>Delete my data</em>, and confirm. This deletes your anonymous user ID, device and push tokens, trips, recurring schedules, last notified state and notification log from our server.</li>
+</ul>
+<p>Deleting the app from your phone does not by itself delete the data held on our server. Use <em>Delete my data</em> first. If you can no longer open the app, contact [SUPPORT EMAIL] and tell us as much as you can; we may not be able to identify your data without the app.</p>
+
+<h2>9. Children</h2>
+<p>Almost Aboard is a general travel tool. It is not aimed at children and we do not knowingly collect personal data from them beyond what is described here. Because the app has no sign-up, we do not know a user's age.</p>
+
+<h2>10. Security</h2>
+<p>Data is sent between the app and our server over an encrypted connection (HTTPS). Access to the server is restricted.</p>
+
+<h2>11. Changes to this policy</h2>
+<p>If we change what we collect or who we share it with, we will update this page and its effective date, and tell you in the app where the change is significant.</p>
+
+<h2>12. Contact</h2>
+<p>[SUPPORT EMAIL] &middot; [CONTROLLER NAME AND ADDRESS]</p>
+<p class="meta"><a href="../support/">Support and help</a></p>
+</main>
+</body>
+</html>
